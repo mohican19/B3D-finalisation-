@@ -5,7 +5,7 @@ class Vue
 {
     const VUEPATH = 'app/vue/';
     const VUETEMPLATES = self::VUEPATH . 'templates/' ;
-    const VUEERRORS = self::VUEPATH . 'errors/';
+    const VUEERRORS = self::VUEPATH . 'erreurs/';
     // Nom du fichier associé à la vue
     private $fichier;
     // Titre de la vue (défini dans le fichier vue)
@@ -26,7 +26,7 @@ class Vue
         // Génération de la partie spécifique de la vue
         $contenu = $this->genererFichier($this->fichier, $donnees);
         // Génération du gabarit commun utilisant la partie spécifique
-        $vue = $this->genererFichier(self::VUEPATH.'default.php', array('titre' => $this->titre, 'contenu' => $contenu));
+        $vue = $this->genererFichier(self::VUEPATH.'gabarit.php', array('titre' => $this->titre, 'contenu' => $contenu));
         // Renvoi de la vue au navigateur
         echo $vue;
     }
