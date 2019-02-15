@@ -1,0 +1,67 @@
+/******************************************/
+/*          css B3D                       */
+/*      ABE-JMI-EMO-NLA                   */
+/*                                        */
+/******************************************/
+/************************/
+/*******general******/
+@font-face {
+  font-family: ;
+  src: url("");
+}
+
+* {
+  font-family: sans-serif;
+}
+
+/*******general******/
+html {
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  color: ;
+  line-height: ;
+}
+
+
+/*****Header*******/
+
+/*****Footer*******/
+
+/*****bloc-contact*******/
+
+
+/****choix langue********/
+
+/****** page produit*****/
+
+/***********tableaux************/
+.table, tr, td, th {
+}
+
+/****page société******/
+
+/******page-contact(FormContact)*****/
+
+/*********Fil Ariane**********/
+
+/***********************************/
+/********Tablette/Petit pc**********/
+@media screen and (min-width: 768px) and (max-width: 992px){
+
+}
+/*************************************
+/*****Tablette/grand smartphone******/
+@media screen and (min-width:576px) and (max-width:768px){
+}
+
+/*************************/
+/*******Smartphone********/
+@media screen and (max-width: 576px) {
+}
