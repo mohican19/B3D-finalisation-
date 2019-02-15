@@ -6,11 +6,11 @@ use \app\vue\Vue;
 /**
  *
  */
-abstract class Controler
+class Controleur
 {
     public function __construct($action)
     {
         $vue = new Vue($action);
-        $vue->generate([]);
+        $vue->generer([]);
     }
 }

@@ -38,7 +38,21 @@ p {
 
 
 /****choix langue********/
-
+#choix-langue {
+  display: flex;
+  background-image: url("../images/B3D_Essences_Acacia_11.jpg");
+  height: 100%;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.btn, .btnsep {
+  background: none;
+  color: white;
+  font-size: 1rem;
+  margin: 15px;
+}
 /****** page produit*****/
 
 /***********tableaux************/
