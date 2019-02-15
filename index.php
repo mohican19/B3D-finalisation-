@@ -1,6 +1,6 @@
 <?php
 use \app\Autoload ;
-use \app\controler\Router ;
+use \app\controleur\Router ;
 
 session_start();
 

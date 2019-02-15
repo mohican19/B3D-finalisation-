@@ -1,5 +1,5 @@
 <?php
-namespace app\controler;
+namespace app\controleur;
 
 use \app\vue\Vue;
 
