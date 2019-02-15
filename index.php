@@ -1,10 +1,10 @@
 <?php
 use \app\Autoload ;
-use \app\controleur\Router ;
+use \app\controleur\Routeur ;
 
 session_start();
 
 require 'app/Autoload.php';
 Autoload::register();
-$router = new Router();
-$router->requestRouting();
+$routeur = new Routeur();
+$routeur->requestRouting();
