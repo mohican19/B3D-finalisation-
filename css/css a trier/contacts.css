@@ -1,0 +1,117 @@
+
+.top_otst{
+  margin-top: 120px;
+}
+
+.input_otst{
+  margin-bottom: 10px;
+}
+
+.star{
+  color: #ae2626;
+  font-weight: bold;
+}
+
+label{margin-bottom: 5px;}
+
+.center{
+  text-align: center;
+}
+
+.error{
+  color: #ae2626;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Clearable text inputs */
+.clearable{
+position: relative;
+display: inline-block;
+width: 100%;
+}
+.clearable input[type=text]{
+padding-right: 24px;
+width: 100%;
+box-sizing: border-box;
+}
+.clearable__clear{
+display: none;
+position: absolute;
+right:0; top:25%;
+padding: 0 8px;
+font-style: normal;
+font-size: 0.9em;
+user-select: none;
+cursor: pointer;
+color: #C0C0C0;
+}
+.clearable input::-ms-clear {
+display: none;
+}
+
+.bot_sert{
+  margin-bottom: 10px;
+}
+
+.bot_sert a{
+  color: #fff;
+  text-decoration: none;
+}
+
+ .stat_circle{
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 0px;
+
+
+  text-align: centre;
+
+
+
+}
+ .stat_circle i{
+     font-size: 1.5em;
+     margin: 0px;
+     padding: 0px;
+     /* color: #ae2626; */
+ }
+
+.stat_text{
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1em;
+}
+.spincrement{
+  text-align: center;
+  font-weight: 900;
+  font-size: 5em;
+
+
+
+}
+
+
+/*---------------*/
+#toTop {
+  text-align:center;
+  padding:5px;
+  position:fixed;
+  bottom:10px; /* отступ кнопки от нижнего края страницы*/
+  right:10px;
+  cursor:pointer;
+  display:none;
+  color:#333;
+  font-size: 3em;
+  opacity: 0.5;
+}
+
+.bot_envoye{
+  background-color: #ae2626;
+  border: #ae2626;
+  border-bottom: 3px #8f1f1f solid;
+}
+.bot_envoye:hover{
+  background-color: #8f1f1f;
+  border-bottom: 3px #8f1f1f solid;
+}

@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=Acme');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+.hide {
+  display: none;
+}
+html
+{
+  max-height: 100%;
+}
+
+h2{
+
+  font-size: 22px;
+}
+
+h3.pour_table{
+
+  font-size: 22px;
+  padding-top: 15px;
+  font-family: 'Acme', sans-serif;
+}
+
+.contact_cont h2{
+  font-family: 'Acme', sans-serif;
+    font-size: 22px;
+}
+
+body{
+  margin: 0;
+  min-height: 100%;
+  font-size: 1em !important;
+  overflow-x: hidden;
+  background-image: url('../ressources/society/bg.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+}
+.navbar#large-desktop,
+.panel-white .header, h2 {
+  font-family: 'Acme', sans-serif;
+}
+
+.navbar#large-desktop.background {
+  height: 250px;
+  background-image: url('../ressources/society/header_bg.png');
+  color: #fff !important;
+  padding-bottom: 50px;
+
+
+}
+.navbar#large-desktop .navbar#large-desktop-brand{
+  padding-left: 25px;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #fff !important;
+}
+.navbar#large-desktop .nav-link a {
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: 900;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+.navbar#large-desktop .nav-link.active {
+  border-top: 1px solid #ae2626;
+  margin-top: -1px;
+  color: #fff !important;
+}
+.navbar#large-desktop .nav-link:hover{
+  transition: all 0.3s ease-in-out;
+  border-top: 1px solid #ae2626;
+  margin-top: -1px;
+  color: #fff !important;
+}
+.nav-item.active {
+  border-top: 1px solid #ae2626;
+}
+.page-content {
+  border-top: 3px solid #ae2626;
+}
+
+
+.page-content .container {
+  position: relative;
+  top: -50px;
+}
+
+.panel-white {
+  background-color:#fff;
+  position: relative;
+  top: 44px;
+}
+.panel-white .header {
+  color:#fff;
+  padding:10px;
+  background-color: #ae2626;
+  display: block;
+  position: relative;
+  top: -44px;
+  font-size:18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+}
+.panel-white .header i{
+  margin: 0 5px;
+}
+.panel-white > .content{
+  position: relative;
+  top: -40px;
+  margin-bottom: 40px;
+  padding: 10px;
+}
+/*--------footer-----------*/
+
+.obrez{
+   height: auto;
+   overflow: hidden;
+   position: relative;
+   bottom: -250px;
+   padding-top: 50px;
+
+
+
+}
+
+
+footer{
+  /* height: 250px; */
+  background-image: url('../ressources/society/footer_bg.png');
+  background-position: bottom;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top: 3px solid #ae2626;
+
+
+
+
+}
+
+.cont1 {
+
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  top: 50px;
+
+
+}
+.cont1 .panel-white {
+  width: 100%;
+}
+/* .contact_cont{
+  margin-bottom: 10px;
+} */
+.cont1 .row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.wo_marg{
+  margin: 0px;
+  padding: 0px;
+}
+
+@media (max-width: 768px){
+  .obrez{bottom: -450px;}
+  .wo_marg{
+  padding-left: : 5px;
+  padding-right: 5px;
+
+}
+
+  body {
+    background-repeat: repeat;
+  }
+}
+
+@media (min-width: 768px){
+  .obrez{bottom: -280px;}
+    .wo_marg{
+  padding-left: : 5px;
+  padding-right: 5px;
+
+}
+}
+
+.copyright_cont{
+  padding-top: 120px;
+  color: #fff;
+  font-size: 0.8em;
+  padding-bottom: 20px;
+}
+
+.cr_text{
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+
+
+.corr3dv{
+    text-transform: uppercase;
+}
+.green{
+  color: #7CFC00;
+}
+
+.site_dev_par{
+  text-align: right;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown-lang {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-lang .dropdown-content {
+  display: none;
+  color: #444 !important;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  position:fixed;
+}
+
+.dropdown-lang .dropdown-content a {
+  border-top: 1px solid #fff;
+}
+
+.dropdown-lang a:hover{
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-lang .dropdown-content a {
+  color: #444 !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-lang:hover .dropdown-content {display: block;}
+
+.nav.navbar-nav.navbar-right {
+  position: relative;
+  right: 100px;
+}
+
+@media (max-width: 768px){
+    .cr_text{padding-left: 50px;
+}
+
+
+
+}
+
+ @media (min-width: 576px && max-width: 768px) {
+    .cr_text{padding-left: 50px;}
+
+}
+
+@media (max-width: 768px){
+  .site_dev_par{display: none;}
+  .site_dev_par2{display: none;}
+  .cr_text{padding-left: 50px;}
+
+}
+
+@media (max-width: 576px) {
+.cr_text{padding-left: 50px;}
+
+}
+
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
