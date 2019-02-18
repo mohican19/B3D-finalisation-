@@ -8,7 +8,7 @@ use \app\vue\Vue;
  */
 class Controleur
 {
-  protected $vue;
+    protected $vue;
     public function __construct($action)
     {
         $this->vue = new Vue($action);

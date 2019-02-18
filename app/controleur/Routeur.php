@@ -21,9 +21,10 @@ class Routeur
             if (isset($_GET['action'])) {
                 if ($_GET['action'] == 'societe') {
                   $this->action = $_GET['action'];
-                    $this->ctrlSociete = new ControleurSociete($this->action);
+                  $this->ctrlSociete = new ControleurSociete($this->action);
                 } elseif ($_GET['action'] == 'contact') {
-                    $this->ctrlContact = new ControleurContact();
+                  $this->action = $_GET['action'];
+                  $this->ctrlContact = new ControleurContact($this->action);
                 } elseif ($_GET['action'] == 'produit') {
                     $idProduit = intval($_GET['id']);
                     if ($idProduit != 0) {
