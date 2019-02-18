@@ -8,9 +8,10 @@ use \app\vue\Vue;
  */
 class Controleur
 {
+  protected $vue;
     public function __construct($action)
     {
-        $vue = new Vue($action);
-        $vue->generer([]);
+        $this->vue = new Vue($action);
+        $this->vue->generer([]);
     }
 }

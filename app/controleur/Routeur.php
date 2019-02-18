@@ -4,6 +4,8 @@ namespace app\controleur;
 use \app\Database;
 use \app\vue\Vue;
 
+
+
 class Routeur
 {
     private $ctrlAccueil;
@@ -18,7 +20,8 @@ class Routeur
         try {
             if (isset($_GET['action'])) {
                 if ($_GET['action'] == 'societe') {
-                    $this->ctrlSociete = new ControleurSociete();
+                  $this->action = $_GET['action'];
+                    $this->ctrlSociete = new ControleurSociete($this->action);
                 } elseif ($_GET['action'] == 'contact') {
                     $this->ctrlContact = new ControleurContact();
                 } elseif ($_GET['action'] == 'produit') {
