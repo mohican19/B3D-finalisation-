@@ -4,8 +4,6 @@ namespace app\controleur;
 use \app\Database;
 use \app\vue\Vue;
 
-
-
 class Routeur
 {
     private $ctrlAccueil;
@@ -46,7 +44,7 @@ class Routeur
     // Affiche une erreur
     private function erreur($msgErreur)
     {
-        $vue = new Vue("Erreur");
+        $vue = new Vue("erreur");
         $vue->generer(array('msgErreur' => $msgErreur));
     }
 }
