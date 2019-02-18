@@ -8,6 +8,15 @@ $rgpd = 'Conditions générales d\'utilisation';
 $submit = 'Envoyer';
  ?>
 
+ <div class="alert alert-success d-none">
+   <h2></h2>
+   <div id="valide"></div>
+ </div>
+
+ <div class="alert alert-danger d-none">
+  <h2></h2>
+  <div id="errors"></div>
+  </div>
 
   <form id="form-contact" method="POST" accept-charset="utf-8" class="row">
 
