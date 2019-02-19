@@ -13,47 +13,42 @@ $contactMenu = 'Contact';
 
 
 
-<header>
-<nav id="large-desktop" class="navbar navbar-expand-lg navbar-light bg-light background">
-    <a class="navbar-brand" href="./index.php">
-      <img src="images/logo_blanc_100.png"/>
-    </a>
+<header class="d-flex align-items-center ">
+  <div class="row m-5">
+    <div clas="col-2 ">
+        <a class="" href="./index.php">
+            <img src="images/logo_blanc_100.png"/>
+        </a>
+    </div>
+    <div clas="col-6">
+      <nav id="large-desktop" class="navbar navbar-expand-lg  background ">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="society.php"><?= $societeMenu ;?></a>
-      </li>
-      <div class="dropdown">
-      <li class="nav-item">
-        <a class="nav-link" id="open-dropdown" href="produits.php"><?= $produitsMenu; ?><i class="fas fa-caret-down"></i></a>
-      </li>
-        <div class="dropdown-content">
-          <a href="details_produits1.php"><?= $chataignierSsMenu ;?></a>
-          <a href="details_produits2.php"><?= $acaciaSsMenu ;?></a>
-          <a href="details_produits3.php"><?= $pinSsMenu ;?></a>
-        </div>
-      </div>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="contacts.php"><?= $contactMenu ;?></a>
-      </li>
-    </ul>
+            <li class="nav-item">
+              <a class="nav-link <?php if(strpos($_SERVER['REQUEST_URI'], 'index')) { echo('active'); } ?>" href="index.php"><?= $societeMenu ;?></a>
+            </li>
 
-    <ul class="nav navbar-nav navbar-right">
-    <div class="dropdown-lang">
-      <li class="nav-item"><i class="fas fa-globe"></i> <?= $_SESSION['lang'];?> </li>
-        <div class="dropdown-content">
-          <a href="?lang=french">Français</a>
-          <a href="?lang=english">Anglais</a>
-          <a href="?lang=spanish">Espagnol</a>
-          <a href="?lang=germany">Allemand</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle <?php if(strpos($_SERVER['REQUEST_URI'], 'society')) { echo('active'); } ?>" data-toggle="dropdown" href="produits.php"><?= $produitsMenu; ?></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="details_produits1.php"><?= $chataignierSsMenu ;?></a>
+                <a class="dropdown-item" href="details_produits2.php"><?= $acaciaSsMenu ;?></a>
+                <a class="dropdown-item" href="details_produits3.php"><?= $pinSsMenu ;?></a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link <?php if(strpos($_SERVER['REQUEST_URI'], 'society')) { echo('active'); } ?>" href="contacts.php"><?= $contactMenu ;?></a>
+            </li>
+
+          </ul>
         </div>
-      </div>
-    </ul>
+      </nav>
+    </div>
+    <div clas="col-4"></div>
   </div>
-</nav>
+
 
 <!-- menu sur mobile ... -->
 <div id="mobile" class="mobile-navbar-content">
@@ -80,53 +75,50 @@ $contactMenu = 'Contact';
 </header>
 
 <style>
-.navbar#large-desktop,
-.panel-white .header, h2 {
-  font-family: 'Acme', sans-serif;
-}
 
-.navbar#large-desktop.background {
-  height: 250px;
-  background-image: url('images/header_bg.png');
-  color: #fff !important;
-  padding-bottom: 50px;
-
+header {
+    background-image: url('images/header_bg.png');
+    font-family: 'Acme', sans-serif;
+    height: 250px;
 
 }
-.navbar#large-desktop .navbar#large-desktop-brand{
-  padding-left: 25px;
-}
-.navbar-light .navbar-nav .nav-link {
+
+header a {
   color: #fff !important;
 }
-.navbar#large-desktop .nav-link a {
-  color: #fff !important;
-  text-transform: uppercase;
-  font-weight: 900;
-  transition: all 0.3s ease-in-out;
-  position: relative;
-}
-.navbar#large-desktop .nav-link.active {
-  border-top: 1px solid #ae2626;
+
+
+/* soulignement des liens du menu */
+.navbar .nav-link.active {
+  border-top: 2px solid #ae2626;
   margin-top: -1px;
-  color: #fff !important;
 }
-.navbar#large-desktop .nav-link:hover{
+
+.navbar .nav-link:hover{
   transition: all 0.3s ease-in-out;
-  border-top: 1px solid #ae2626;
+  border-top: 2px solid #ae2626;
   margin-top: -1px;
-  color: #fff !important;
+  text-transform: bold;
 }
+
+/*soulignement de la page où l'on est, classe active déterminé via php $_SERVER['REQUEST_URI'] */
 .nav-item.active {
-  border-top: 1px solid #ae2626;
+  border-top: 2px solid #ae2626;
 }
-#arrow {
-  padding-left:5px;
-}
-#mobile-dropdown {
-  display: inline-block;
 
-}
+
+
+
+
+
+
+
+</style>
+
+<!-- mobile -->
+<style type="text/css">
+
+/* menu mobile */
 .mobile-dropdown-content {
   display: block;
   position: absolute;
@@ -145,46 +137,16 @@ $contactMenu = 'Contact';
   display: block;
 }
 
-.dropdown-lang {
-  position: relative;
+#mobile-dropdown {
   display: inline-block;
+
 }
 
-.dropdown-lang .dropdown-content {
-  display: none;
-  color: #444 !important;
-  background-color: #fff;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  position:fixed;
+#arrow {
+  padding-left:5px;
 }
 
-.dropdown-lang .dropdown-content a {
-  border-top: 1px solid #fff;
-}
 
-.dropdown-lang a:hover{
-    display: block;
-    transition: all 0.3s ease-in-out;
-}
-
-.dropdown-lang .dropdown-content a {
-  color: #444 !important;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-.dropdown-lang:hover .dropdown-content {display: block;}
-
-.nav.navbar-nav.navbar-right {
-  position: relative;
-  right: 100px;
-}
-
-</style>
-
-<style type="text/css">
   #mobile a {
     color: #fff;
     text-decoration: none;
@@ -259,7 +221,7 @@ $contactMenu = 'Contact';
   display: inline-block;
 }
 
-.dropdown .dropdown-content {
+.dropdown .dropdown-menu {
   display: none;
   position: absolute;
   color: #fff !important;
@@ -270,25 +232,26 @@ $contactMenu = 'Contact';
   position:fixed;
 }
 
-.dropdown .dropdown-content a {
+.dropdown .dropdown-menu a {
   border-top: 1px solid #fff;
   margin-top: 2px;
-}
-
-.dropdown .dropdown-content a:hover{
-    transition: all 0.3s ease-in-out;
-    border-top: 2px solid #ae2626 !important;
-    margin-top: 0px;
-  }
-
-.dropdown .dropdown-content a {
   color: #fff;
   padding: 12px 16px;
   text-decoration: none;
   display: table-cell;
 }
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown .dropdown-menu a:hover{
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    border-top: 2px solid #ae2626 !important;
+    margin-top: 0px;
+  }
+
+
+.dropdown:hover .dropdown-menu {display: block;}
+
+
 </style>
 
 <script type="text/javascript">
