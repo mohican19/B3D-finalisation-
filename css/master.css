@@ -34,7 +34,7 @@ body {
 }
 
 p {
-  color: white;
+  color: ;
   line-height: ;
 }
 
@@ -45,6 +45,7 @@ p {
   font-family: 'Acme', sans-serif;
   height: 15em;
   border-bottom: 3px solid var(--color-1);
+  color: white;
   }
 
   header a {
@@ -141,6 +142,7 @@ footer {
   height: 10em;
   font-family: 'Acme';
   border-top: 3px solid var(--color-1);
+  color: white;
 }
 
 .bas-de-page {
