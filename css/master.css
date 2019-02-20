@@ -1,38 +1,138 @@
 /******************************************/
 /*          css B3D                       */
-/*      ABE-JMI-EMO-NLA                   */
+/*      ABE-JMI-EMO-NLA-JB?               */
 /*                                        */
 /******************************************/
 /************************/
 /*******general******/
-@font-face {
-  font-family: ;
-  src: url("");
+
+@import url('https://fonts.googleapis.com/css?family=Acme');
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 }
 
 * {
-  font-family: sans-serif;
+  font-family:;
 }
 
 /*******general******/
 html {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 body {
   margin: 0;
   padding: 0;
+  background: red;
 }
 
 p {
-  color: ;
+  color:white;
   line-height: ;
 }
 
+/***********************************************************************/
+/******************HEADER***********************************************/
+header {
+  background-image: url('../images/header_bg.png');
+  font-family: 'Acme', sans-serif;
+  height: 15em;
+  border-bottom: 3px solid #ae2626;
+  }
 
-/*****Header*******/
+  header a {
+    color: #fff !important;
+  }
 
-/*****Footer*******/
+
+  /* soulignement des liens du menu */
+  .navbar .nav-link.active {
+    border-top: 2px solid #ae2626;
+    margin-top: -1px;
+  }
+
+  .navbar .nav-link:hover{
+    transition: all 0.3s ease-in-out;
+    border-top: 2px solid #ae2626;
+    margin-top: -1px;
+    font-weight: bold;
+  }
+
+  /*soulignement de la page où l'on est, classe active déterminé via php $_SERVER['REQUEST_URI'] */
+  .nav-item.active {
+    border-top: 2px solid #ae2626;
+  }
+
+  /**** nav panel jeremy *****/
+
+  nav>ul>li .nav-panel {
+      max-height: 0;
+      overflow: hidden;
+      position: ;
+      left: 0;
+      top: 100%;
+      z-index: 10;
+      transition: max-height 0s ease-in;
+    }
+  nav>ul>li .nav-panel {
+      background-color: #fff;
+      width: 44em;
+      transform: translate(-50%, 0);
+    }
+  nav>ul>li:hover .nav-panel {
+      max-height: 100vh;
+      transition-duration: 1s;
+    }
+  nav>ul>li:hover .nav-panel {
+      border: 1px solid #ccc;
+      border-radius: 0.25em;
+      box-shadow: 2px 2px 6px #000;
+    }
+  .product-area-content {
+      padding: 0.4em;
+      display: flex;
+      /*flex-wrap: wrap;*/
+      justify-content: space-around;
+      background-color: #330100;
+    }
+
+  .product-link {
+      width: 10em;
+      margin: ;
+      padding: 1em 1em 0 1em !important;
+      /*border: 1px solid #777;
+      border-radius: 0.25em;*/
+      transition: transform 250ms ease-in;
+    }
+
+  .product-link:hover {
+      background-color: #ae2626 !important;
+      transform: scale(1.05);
+      font-weight: bold;
+    }
+
+    .product-link img {
+      display: block;
+      width: 100%;
+      outline: 1px solid #ddd;
+    }
+
+/**********************************************/
+/*****************FOOTER***********************/
+footer {
+  background-image: url('../images/footer_bg.png');
+  height: 10em;
+  font-family: 'Acme';
+  border-top: 3px solid #ae2626;
+}
+
+.bas-de-page {
+  height: 100%;
+}
+
+.texte-footer {
+  line-height: 0.2em;
+}
 
 /*****bloc-contact*******/
 

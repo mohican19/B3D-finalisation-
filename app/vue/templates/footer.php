@@ -4,73 +4,37 @@ utilisation via include 'app/vue/templates/footer.php';
 --------------------------------->
 
 <?php
-$textFooter1= "B3D, ". date('Y') .". Tous droits réservés.<br> Copies des documents uniquement s'il existe un lien indexé vers la source.";
+$textFooter1= "B3D, ". date('Y') .". Tous droits réservés";
 $textFooter2 = "Site développé par:";
+$textFooter3 = "Mentions légales";
 ?>
 
 <footer id="footer" class="container-fluid">
-  <div class="container copyright_cont">
-    <div class="row">
-      <div class="col-md-1 col-sm-1 col-1">
-        <a href="#"><img src='images/logo_blanc_100.png'></a>
+
+    <div class="bas-de-page row">
+      <div class="col-lg-1 col-md-1 col-sm-1  m-0 pr-0 d-flex align-items-center">
+        <a href="index.php"><img src='images/logo_blanc_100.png'></a>
       </div>
-      <div class="col-md-7 col-sm-11 col-11 cr_text">
-        <p><?= $textFooter1 ?></p>
-            </div>
-      <div class="col-md-3  col-sm-11 site_dev_par">
+      <div class="col-lg-8 col-md-8 col-sm-11  pt-1 justify-content-start d-flex align-items-center">
+        <div class="texte-footer">
+            <p><?= $textFooter1 ?></p>
+            <a href="index.php"><?= $textFooter3 ?></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-2  col-sm-11 justify-content-end d-flex align-items-center">
         <p><?= $textFooter2;?></p>
       </div>
-      <div class="col-md-1 col-sm-1 site_dev_par2">
-        <a href="https://corrtech.fr/"><img src='images/corrd3v.png'></a>
-        <div class="corr3dv">coяr<span class="green">d3v</span></div>
+      <div class="col-lg-1 col-md-1 col-sm-1 pl-0 justify-content-start d-flex align-items-center">
+        <a href="https://corrtech.fr/"><img src='images/logoPromo.png' width="100%"></a>
       </div>
     </div>
-  </div>
+
 </footer>
 
 <style>
 
-p {
-  color: white;
-  line-height: ;
-}
-
-footer {
-  background-image: url('images/footer_bg.png');
-  background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-top: 3px solid #ae2626;
-}
-.copyright_cont{
-  padding-top: 120px;
-  color: #fff;
-  font-size: 0.8em;
-  padding-bottom: 20px;
-}
-
-.cr_text{
-  align-items: center;
-  display: flex;
-  justify-content: flex-start;
-
-}
 
 
-
-.corr3dv{
-    text-transform: uppercase;
-}
-.green{
-  color: #7CFC00;
-}
-
-.site_dev_par{
-  text-align: right;
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-}
 @media (max-width: 768px){
     .cr_text{padding-left: 50px;
     }

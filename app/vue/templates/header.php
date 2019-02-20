@@ -8,20 +8,21 @@ $produitsMenu = 'Produits';
 $chataignierSsMenu = 'Chataignier';
 $acaciaSsMenu = 'Acacia';
 $pinSsMenu = 'Pin';
+$boisFeuSsMenu = 'Bois de Feu';
 $contactMenu = 'Contact';
  ?>
 
 
 
-<header class="d-flex align-items-center ">
-  <div class="row m-5">
-    <div clas="col-2 ">
+<header class="container-fluid ">
+  <div class="en-tete row">
+    <div class="col-lg-1 col-md-3 col-sm-10  d-flex  align-items-center">
         <a class="" href="./index.php">
-            <img src="images/logo_blanc_100.png"/>
+            <img src="images/logo_blanc_100.png" class=""/>
         </a>
     </div>
-    <div clas="col-6">
-      <nav id="large-desktop" class="navbar navbar-expand-lg  background ">
+    <div class="col-lg-8 col-md-8 col-sm-10 justify-content-start d-flex align-items-center">
+      <nav id="large-desktop" class="navbar navbar-expand-lg ">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
 
@@ -30,11 +31,37 @@ $contactMenu = 'Contact';
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle <?php if(strpos($_SERVER['REQUEST_URI'], 'society')) { echo('active'); } ?>" data-toggle="dropdown" href="produits.php"><?= $produitsMenu; ?></a>
+              <a class="nav-link  dropdown-toggle<?php if(strpos($_SERVER['REQUEST_URI'], 'society')) { echo('active'); } ?>" data-toggle="dropdown" href="produits.php"><?= $produitsMenu; ?></a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="details_produits1.php"><?= $chataignierSsMenu ;?></a>
+
+                <div class="nav-panel">
+                  <div class="product-area-content text-center">
+                        <a class="product-link" href="acacia.php">
+                        <img src="images/menu-produits-acacia-5-small.jpg" alt="produits B3D - acacia">
+                        <?= $acaciaSsMenu ?>
+                        </a>
+
+                        <a class="product-link" href="pin.php">
+                        <img src="images/menu-produits-pin-1-small.jpg"  alt="produits B3D - pin">
+                        <?= $pinSsMenu ?>
+                        </a>
+
+                        <a class="product-link" href="chataignier.php">
+                        <img src="images/menu-produits-chataignier-2-small.jpg" alt="produits B3D - chataignier">
+                        <?= $chataignierSsMenu ?>
+                        </a>
+
+                        <a class="product-link" href="bois-de-chauffe.php">
+                        <img src="images/menu-produits-acacia-7-small.jpg" alt="produits B3D - bois de chauffe">
+                        <?= $boisFeuSsMenu ?>
+                        </a>
+                  </div><!-- product-area-content -->
+                </div><!-- nav-panel -->
+
+
+          <!--      <a class="dropdown-item" href="details_produits1.php"><?= $chataignierSsMenu ;?></a>
                 <a class="dropdown-item" href="details_produits2.php"><?= $acaciaSsMenu ;?></a>
-                <a class="dropdown-item" href="details_produits3.php"><?= $pinSsMenu ;?></a>
+                <a class="dropdown-item" href="details_produits3.php"><?= $pinSsMenu ;?></a> -->
               </div>
             </li>
 
@@ -46,11 +73,28 @@ $contactMenu = 'Contact';
         </div>
       </nav>
     </div>
-    <div clas="col-4"></div>
+    <!-- icones choix langue  -->
+    <div class="col-lg-3 col-md-3 col-sm-10 d-flex justify-content-end align-items-start pt-2 pr-5">
+      <div class="row">
+					<ul class="list-inline">
+						<li class="list-inline-item">
+							<a class="drapeau" href="#"><img src="images/FR.svg" width="30px" height="30px" alt="French Flag" style=""></a>
+						</li>
+            <li class="list-inline-item">
+							<a class="drapeau" href="#"><img src="images/DE.svg" width="30px" height="30px" alt="French Flag" style=""></a>
+						</li>
+            <li class="list-inline-item">
+							<a class="drapeau" href="#"><img src="images/ES.svg" width="30px" height="30px" alt="French Flag" style=""></a>
+						</li>
+            <li class="list-inline-item">
+							<a class="drapeau" href="#"><img src="images/EN.svg" width="30px" height="30px" alt="French Flag" style=""></a>
+						</li>
+					</ul>
+				</div>
+    </div>
   </div>
-
-
 <!-- menu sur mobile ... -->
+<!--
 <div id="mobile" class="mobile-navbar-content">
   <img id="background" src="images/header_bg.png">
   <img id="logo" style="width: 80px;margin: 10px 0;" src="images/logo_blanc_100.png" />
@@ -71,49 +115,15 @@ $contactMenu = 'Contact';
      <a href="contacts.php"><li class="link"><?= $contactMenu;?></li></a>
   </ul>
 </div>
-
+-->
 </header>
 
 <style>
-
-header {
-    background-image: url('images/header_bg.png');
-    font-family: 'Acme', sans-serif;
-    height: 250px;
-
-}
-
-header a {
-  color: #fff !important;
+.en-tete {
+  height: 80%;
 }
 
 
-/* soulignement des liens du menu */
-.navbar .nav-link.active {
-  border-top: 2px solid #ae2626;
-  margin-top: -1px;
-}
-
-.navbar .nav-link:hover{
-  transition: all 0.3s ease-in-out;
-  border-top: 2px solid #ae2626;
-  margin-top: -1px;
-  text-transform: bold;
-}
-
-/*soulignement de la page où l'on est, classe active déterminé via php $_SERVER['REQUEST_URI'] */
-.nav-item.active {
-  border-top: 2px solid #ae2626;
-}
-
-
-
-
-
-
-
-
-</style>
 
 <!-- mobile -->
 <style type="text/css">
