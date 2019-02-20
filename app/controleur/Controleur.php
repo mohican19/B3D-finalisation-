@@ -14,8 +14,8 @@ class Controleur
     {
         $this->appelVue($action, $this->donnees);
     }
-// Fonction qui créée un nouvel objet Vue
-    protected function appelVue($action, $donnees = [])
+
+    private function appelVue($action, $donnees = [])
     {
         $this->vue = new Vue($action);
         $this->vue->generer($donnees);
