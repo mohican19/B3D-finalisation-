@@ -3,12 +3,19 @@
 /*      ABE-JMI-EMO-NLA-JB?               */
 /*                                        */
 /******************************************/
+
+
 /************************/
 /*******general******/
 
 @import url('https://fonts.googleapis.com/css?family=Acme');
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+
+:root {
+    --color-1: #ae2626; /* utilisable avec var(--color-1), soulignement .... */
+    --color-2: #330100; /* bloc sous-menu produits */
 }
 
 * {
@@ -23,44 +30,54 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: red;
+  background: yellow;
 }
 
 p {
-  color:white;
+  color: white;
   line-height: ;
 }
 
 /***********************************************************************/
 /******************HEADER***********************************************/
-header {
+  header {
   background-image: url('../images/header_bg.png');
   font-family: 'Acme', sans-serif;
   height: 15em;
-  border-bottom: 3px solid #ae2626;
+  border-bottom: 3px solid var(--color-1);
   }
 
   header a {
     color: #fff !important;
   }
 
+/*hauteur de la ligne/row dans le header */
+  .en-tete {
+    height: 80%;
+  }
+
+  /* taille des drapeaux */
+  .drapeau {
+    width: 2em;
+    height: 2em;
+  }
 
   /* soulignement des liens du menu */
   .navbar .nav-link.active {
-    border-top: 2px solid #ae2626;
+    border-top: 2px solid var(--color-1);
     margin-top: -1px;
   }
 
   .navbar .nav-link:hover{
     transition: all 0.3s ease-in-out;
-    border-top: 2px solid #ae2626;
+    border-top: 2px solid var(--color-1);
     margin-top: -1px;
     font-weight: bold;
   }
 
   /*soulignement de la page où l'on est, classe active déterminé via php $_SERVER['REQUEST_URI'] */
   .nav-item.active {
-    border-top: 2px solid #ae2626;
+    border-top: 2px solid var(--color-1);
   }
 
   /**** nav panel jeremy *****/
@@ -93,7 +110,7 @@ header {
       display: flex;
       /*flex-wrap: wrap;*/
       justify-content: space-around;
-      background-color: #330100;
+      background-color: var(--color-2);
     }
 
   .product-link {
@@ -106,7 +123,7 @@ header {
     }
 
   .product-link:hover {
-      background-color: #ae2626 !important;
+      background-color: var(--color-1) !important;
       transform: scale(1.05);
       font-weight: bold;
     }
@@ -123,7 +140,7 @@ footer {
   background-image: url('../images/footer_bg.png');
   height: 10em;
   font-family: 'Acme';
-  border-top: 3px solid #ae2626;
+  border-top: 3px solid var(--color-1);
 }
 
 .bas-de-page {

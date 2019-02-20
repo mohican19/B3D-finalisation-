@@ -78,16 +78,16 @@ $contactMenu = 'Contact';
       <div class="row">
 					<ul class="list-inline">
 						<li class="list-inline-item">
-							<a class="drapeau" href="#"><img src="images/FR.svg" width="30px" height="30px" alt="French Flag" style=""></a>
+							<a href="#"><img src="images/FR.svg" class="drapeau" alt="French Flag" style=""></a>
 						</li>
             <li class="list-inline-item">
-							<a class="drapeau" href="#"><img src="images/DE.svg" width="30px" height="30px" alt="French Flag" style=""></a>
+							<a href="#"><img src="images/DE.svg" class="drapeau" alt="Germen Flag" style=""></a>
 						</li>
             <li class="list-inline-item">
-							<a class="drapeau" href="#"><img src="images/ES.svg" width="30px" height="30px" alt="French Flag" style=""></a>
+							<a  href="#"><img src="images/ES.svg" class="drapeau" alt="Spanish Flag" style=""></a>
 						</li>
             <li class="list-inline-item">
-							<a class="drapeau" href="#"><img src="images/EN.svg" width="30px" height="30px" alt="French Flag" style=""></a>
+							<a  href="#"><img src="images/EN.svg" class="drapeau" alt="English Flag" style=""></a>
 						</li>
 					</ul>
 				</div>
@@ -117,11 +117,9 @@ $contactMenu = 'Contact';
 </div>
 -->
 </header>
-
 <style>
-.en-tete {
-  height: 80%;
-}
+
+
 
 
 
