@@ -1,0 +1,5 @@
+ErrorDocument 403 /B3D-finalisation-/app/vue/erreurs/403.php
+deny from all
+<Files 403.php>
+allow from all
+</Files>

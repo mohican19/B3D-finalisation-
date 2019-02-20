@@ -1,0 +1,3 @@
+#Erreurs personnalisées
+
+ErrorDocument 404 /B3D-finalisation-/app/vue/erreurs/404.php
