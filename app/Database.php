@@ -5,9 +5,9 @@ class Database
 {
 // Définition des constantes permettant la connexion à la DB
     const DBHOST = "localhost";
-    const DBNAME = "mdp_tech_in_sport";
-    const DBUSERNAME = "admintechinsport";
-    const DBUSERPASSWORD = "admintechinsport";
+    const DBNAME = "b3dbdd";
+    const DBUSERNAME = "b3dadmin";
+    const DBUSERPASSWORD = "b3dadmin";
     private static $connection = null;
 // Fonction qui initialise une requête
     public static function query($query)
