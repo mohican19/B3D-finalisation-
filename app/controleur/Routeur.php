@@ -1,18 +1,20 @@
 <?php
+// Espace commun à tous les controleurs + DB avec ce namespace
 namespace app\controleur;
-
+// On appelle le fichier de connexion à la DB et de génération de la vue
 use \app\Database;
 use \app\vue\Vue;
-
+// Class qui va déterminer la page à afficher selon l'action transmise dans l'URL
 class Routeur
 {
+// Ensemble de variables qui vont stocker les données et la vue de chaque page
     private $ctrlAccueil;
     private $ctrlSociete;
     private $ctrlProduit;
     private $ctrlContact;
     private $action = 'langues';
 
-    // Route une requête entrante : exécution l'action associée
+// Route une requête entrante : exécution de l'action associée avec gestion des erreurs
     public function requestRouting()
     {
         try {
@@ -41,7 +43,7 @@ class Routeur
         }
     }
 
-    // Affiche une erreur
+// Affiche une erreur
     private function erreur($msgErreur)
     {
         $vue = new Vue("erreur");

@@ -3,12 +3,13 @@ namespace app;
 
 class Database
 {
+// Définition des constantes permettant la connexion à la DB
     const DBHOST = "localhost";
     const DBNAME = "mdp_tech_in_sport";
     const DBUSERNAME = "admintechinsport";
     const DBUSERPASSWORD = "admintechinsport";
     private static $connection = null;
-
+// Fonction qui initialise une requête
     public static function query($query)
     {
         $pdo = self::connect();
@@ -16,7 +17,7 @@ class Database
         self::disconnect();
         return $stm;
     }
-
+// Fonction de préparation et d'exéction de requête auprès de la DB
     public static function exec($query = '', $data = [])
     {
         $db = self::connect();
@@ -30,7 +31,7 @@ class Database
             return false;
         }
     }
-
+// Fonction de connexion à la DB avec gestion des erreurs
     private static function connect()
     {
         if (self::$connection == null) {
@@ -42,7 +43,7 @@ class Database
         }
         return self::$connection;
     }
-
+// Fonction de déconnexion à la DB
     private static function disconnect()
     {
         self::$connection = null;

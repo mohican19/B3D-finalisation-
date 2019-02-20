@@ -15,6 +15,7 @@
     </head>
 
     <body>
+<!-- Le contenu est généré dans la class Vue, injecté ici, puis l'ensemble est stocké dans $vue, pour ensuite être appelé dans le controleur pour affichage   -->
     <?= $contenu ?>
     </body>
   </html>
