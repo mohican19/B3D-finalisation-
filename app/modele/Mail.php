@@ -22,7 +22,7 @@ class Mail
         }
         $this->getDonnees();
     }
-    private function getDonnees()
+    protected function getDonnees()
     {
         $langue = 'Francais';//placeholder de la variable de session langue
         $statement = Database::query('SELECT '.$langue.', Varkey FROM `dwb3d1_formcontact`');
