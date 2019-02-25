@@ -1,5 +1,5 @@
 <?php $this->titre = "B3D"; ?>
-  <div id="choix-langue" class="container-fluid p-5 justify-content-center align-items-center">
+  <section id="choix-langue" class="container-fluid p-5 justify-content-center align-items-center">
 	<div>
 		<div class="logo">
 			<img src="images/logo_blanc_langue.png" alt="Logo B3D" class="mx-auto d-block img-fluid">
@@ -14,4 +14,4 @@
 			<button value="Espagnol" type="submit" class="btn">ESPAÑOL</button>
 		</form>
 	</div>
-</div>
+</section>

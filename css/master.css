@@ -202,11 +202,35 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.btn, .btnsep {
-  /* background: none; */
+
+#choix-langue img {
+  border: none;
+}
+
+#choix-langue .btn {
+  background: none;
   color: white;
   font-size: 1rem;
   margin: 15px;
+}
+
+.btnsep {
+  background: none;
+  color: white;
+  font-size: 1rem;
+  margin: 20px;
+}
+
+
+#form-choix-langue {
+  margin-top: 5%;
+}
+
+#choix-langue .btn:hover {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px;
 }
 /****** page produit*****/
 
