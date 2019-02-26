@@ -14,13 +14,13 @@ class Routeur
     private $ctrlSociete;
     private $ctrlProduit;
     private $ctrlContact;
-    private $action = 'langues';
+    private $action = [];
     private $langue = 'Francais';
 
     public function __construct()
     {
         if (isset($_GET['action'])) {
-            $this->action = $_GET['action'];
+            $this->action = ['header',$_GET['action'],'blockContact','footer'];
         }
         if (isset($_GET['langue'])) {
             $this->choixLangue($_GET['langue']);
@@ -34,11 +34,11 @@ class Routeur
     public function requestRouting()
     {
         try {
-            if ($this->action == 'societe') {
+            if ($this->action[1] == 'societe') {
                 $this->ctrlSociete = new ControleurSociete($this->action);
-            } elseif ($this->action == 'contact') {
+            } elseif ($this->action[1] == 'contact') {
                 $this->ctrlContact = new ControleurContact($this->action);
-            } elseif ($this->action == 'produit' && isset($_GET['id'])) {
+            } elseif ($this->action[1] == 'produit' && isset($_GET['id'])) {
                 $idProduit = intval($_GET['id']);
                 if ($idProduit != 0) {
                     $this->ctrlProduit = new ControleurProduit($this->action);
@@ -46,7 +46,7 @@ class Routeur
                     throw new \Exception("Identifiant de page non valide");
                 }
             } else {
-                $this->ctrlAccueil = new Controleur($this->action);
+                $this->ctrlAccueil = new Controleur('langues');
             }
         } catch (Exception $e) {
             $this->erreur($e->getMessage());
@@ -60,6 +60,7 @@ class Routeur
         $vue->generer(array('msgErreur' => $msgErreur));
     }
 
+    // Selection de la langue entre des possibilitées prédéfinit
     private function choixLangue($langue)
     {
         switch ($_GET['langue']) {
