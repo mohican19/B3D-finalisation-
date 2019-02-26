@@ -12,7 +12,7 @@ class ControleurContact extends Controleur
         // appel modèle
         $this->modeleMail = new Mail();
         $this->donnees = $this->modeleMail->donnees;
-        $action = 'form'.ucfirst($action);
+        $action[1] = 'form'.ucfirst($action[1]);
         parent::__construct($action);
     }
 }
