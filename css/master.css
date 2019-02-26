@@ -9,7 +9,6 @@
 /*******general******/
 
 @import url('https://fonts.googleapis.com/css?family=Acme');
-
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
 
@@ -49,7 +48,7 @@ header, footer {
   font-family: 'Acme', sans-serif;
 }
 
-h3 {
+h3, h4 {
   font-family: 'Acme', sans-serif;
 }
 
@@ -240,9 +239,28 @@ footer {
   margin: 10px;
 }
 /****** page produit*****/
+#produit h4 {
+  padding: 0.5em 0;
+  border-bottom: 3px solid var(--color-1);
+}
+
+#image-produit {
+  border-right: 1px solid #ededed;
+  padding: 1em;
+}
+
+#show-desc {
+  color: #007bff;
+  cursor: pointer;
+}
 
 /***********tableaux************/
-.table, tr, td, th {
+.hide {
+  display: none;
+}
+
+#tableau thead{
+  background: #FFF8DC;
 }
 
 /****page société******/
