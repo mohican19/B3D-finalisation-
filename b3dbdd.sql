@@ -2,10 +2,10 @@
 -- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  mer. 20 fév. 2019 à 16:32
--- Version du serveur :  5.7.24-0ubuntu0.18.04.1
--- Version de PHP :  7.2.10-0ubuntu0.18.04.1
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  mar. 26 fév. 2019 à 10:10
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `b3dbdd`
 --
-CREATE DATABASE IF NOT EXISTS `b3dbdd` DEFAULT CHARACTER SET latin1 COLLATE latin1_general_ci;
-USE `b3dbdd`;
 
 -- --------------------------------------------------------
 
@@ -31,15 +29,26 @@ USE `b3dbdd`;
 --
 
 DROP TABLE IF EXISTS `dwb3d1_altimages`;
-CREATE TABLE `dwb3d1_altimages` (
-  `ID` smallint(6) NOT NULL,
-  `Francais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Anglais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Espagnol` longtext COLLATE latin1_general_ci NOT NULL,
-  `Allemand` longtext COLLATE latin1_general_ci NOT NULL,
-  `image` longtext COLLATE latin1_general_ci,
-  `Categorie` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+CREATE TABLE IF NOT EXISTS `dwb3d1_altimages` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Francais` text NOT NULL,
+  `Anglais` text NOT NULL,
+  `Espagnol` text NOT NULL,
+  `Allemand` text NOT NULL,
+  `image` text,
+  `Categorie` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_categorie_altimages` (`Categorie`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `dwb3d1_altimages`
+--
+
+INSERT INTO `dwb3d1_altimages` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`, `image`, `Categorie`) VALUES
+(1, 'Trombine', '', '', '', './images/societe-portrait.jpg', 3),
+(2, 'Trombine', '', '', '', './images/societe-produit.jpg', 3),
+(3, 'Trombine', '', '', '', './images/societe-savoirFaire.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -48,13 +57,14 @@ CREATE TABLE `dwb3d1_altimages` (
 --
 
 DROP TABLE IF EXISTS `dwb3d1_blockcontact`;
-CREATE TABLE `dwb3d1_blockcontact` (
-  `ID` int(11) NOT NULL,
-  `Francais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Anglais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Espagnol` longtext COLLATE latin1_general_ci NOT NULL,
-  `Allemand` longtext COLLATE latin1_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+CREATE TABLE IF NOT EXISTS `dwb3d1_blockcontact` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Francais` longtext NOT NULL,
+  `Anglais` longtext NOT NULL,
+  `Espagnol` longtext NOT NULL,
+  `Allemand` longtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -63,10 +73,11 @@ CREATE TABLE `dwb3d1_blockcontact` (
 --
 
 DROP TABLE IF EXISTS `dwb3d1_categories`;
-CREATE TABLE `dwb3d1_categories` (
-  `ID` int(11) NOT NULL,
-  `Categorie` varchar(64) COLLATE latin1_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+CREATE TABLE IF NOT EXISTS `dwb3d1_categories` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Categorie` varchar(64) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_categories`
@@ -91,15 +102,17 @@ INSERT INTO `dwb3d1_categories` (`ID`, `Categorie`) VALUES
 --
 
 DROP TABLE IF EXISTS `dwb3d1_erreurs`;
-CREATE TABLE `dwb3d1_erreurs` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_erreurs` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Categorie` int(11) NOT NULL,
-  `Francais` text COLLATE latin1_general_ci NOT NULL,
-  `Anglais` text COLLATE latin1_general_ci NOT NULL,
-  `Allemand` text COLLATE latin1_general_ci NOT NULL,
-  `Espagnol` text COLLATE latin1_general_ci NOT NULL,
-  `Varkey` varchar(64) COLLATE latin1_general_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+  `Francais` mediumtext NOT NULL,
+  `Anglais` mediumtext NOT NULL,
+  `Allemand` mediumtext NOT NULL,
+  `Espagnol` mediumtext NOT NULL,
+  `Varkey` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_categorie_erreurs` (`Categorie`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_erreurs`
@@ -124,13 +137,14 @@ INSERT INTO `dwb3d1_erreurs` (`ID`, `Categorie`, `Francais`, `Anglais`, `Alleman
 --
 
 DROP TABLE IF EXISTS `dwb3d1_footer`;
-CREATE TABLE `dwb3d1_footer` (
-  `ID` smallint(6) NOT NULL,
-  `Francais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Anglais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Espagnol` longtext COLLATE latin1_general_ci NOT NULL,
-  `Allemand` longtext COLLATE latin1_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+CREATE TABLE IF NOT EXISTS `dwb3d1_footer` (
+  `ID` smallint(6) NOT NULL AUTO_INCREMENT,
+  `Francais` longtext NOT NULL,
+  `Anglais` longtext NOT NULL,
+  `Espagnol` longtext NOT NULL,
+  `Allemand` longtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -139,14 +153,15 @@ CREATE TABLE `dwb3d1_footer` (
 --
 
 DROP TABLE IF EXISTS `dwb3d1_formcontact`;
-CREATE TABLE `dwb3d1_formcontact` (
-  `ID` int(11) NOT NULL,
-  `Francais` text COLLATE latin1_general_ci NOT NULL,
-  `Anglais` text COLLATE latin1_general_ci NOT NULL,
-  `Espagnol` text COLLATE latin1_general_ci NOT NULL,
-  `Allemand` text COLLATE latin1_general_ci NOT NULL,
-  `Varkey` varchar(64) COLLATE latin1_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+CREATE TABLE IF NOT EXISTS `dwb3d1_formcontact` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Francais` mediumtext NOT NULL,
+  `Anglais` mediumtext NOT NULL,
+  `Espagnol` mediumtext NOT NULL,
+  `Allemand` mediumtext NOT NULL,
+  `Varkey` varchar(64) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_formcontact`
@@ -175,13 +190,14 @@ INSERT INTO `dwb3d1_formcontact` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Alle
 --
 
 DROP TABLE IF EXISTS `dwb3d1_header`;
-CREATE TABLE `dwb3d1_header` (
-  `ID` smallint(6) NOT NULL,
-  `Francais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Anglais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Espagnol` longtext COLLATE latin1_general_ci NOT NULL,
-  `Allemand` longtext COLLATE latin1_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+CREATE TABLE IF NOT EXISTS `dwb3d1_header` (
+  `ID` smallint(6) NOT NULL AUTO_INCREMENT,
+  `Francais` longtext NOT NULL,
+  `Anglais` longtext NOT NULL,
+  `Espagnol` longtext NOT NULL,
+  `Allemand` longtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -190,13 +206,14 @@ CREATE TABLE `dwb3d1_header` (
 --
 
 DROP TABLE IF EXISTS `dwb3d1_legal`;
-CREATE TABLE `dwb3d1_legal` (
-  `ID` int(11) NOT NULL,
-  `Francais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Anglais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Espagnol` longtext COLLATE latin1_general_ci NOT NULL,
-  `Allemand` longtext COLLATE latin1_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+CREATE TABLE IF NOT EXISTS `dwb3d1_legal` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Francais` longtext NOT NULL,
+  `Anglais` longtext NOT NULL,
+  `Espagnol` longtext NOT NULL,
+  `Allemand` longtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -205,14 +222,15 @@ CREATE TABLE `dwb3d1_legal` (
 --
 
 DROP TABLE IF EXISTS `dwb3d1_produits`;
-CREATE TABLE `dwb3d1_produits` (
-  `ID` int(11) NOT NULL,
-  `Francais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Anglais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Espagnol` longtext COLLATE latin1_general_ci NOT NULL,
-  `Allemand` longtext COLLATE latin1_general_ci NOT NULL,
-  `Categorie` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+CREATE TABLE IF NOT EXISTS `dwb3d1_produits` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Francais` longtext NOT NULL,
+  `Anglais` longtext NOT NULL,
+  `Espagnol` longtext NOT NULL,
+  `Allemand` longtext NOT NULL,
+  `Categorie` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -221,146 +239,36 @@ CREATE TABLE `dwb3d1_produits` (
 --
 
 DROP TABLE IF EXISTS `dwb3d1_societe`;
-CREATE TABLE `dwb3d1_societe` (
-  `ID` int(11) NOT NULL,
-  `Francais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Anglais` longtext COLLATE latin1_general_ci NOT NULL,
-  `Espagnol` longtext COLLATE latin1_general_ci NOT NULL,
-  `Allemand` longtext COLLATE latin1_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+CREATE TABLE IF NOT EXISTS `dwb3d1_societe` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Francais` text NOT NULL,
+  `Anglais` text NOT NULL,
+  `Espagnol` text NOT NULL,
+  `Allemand` text NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
--- Index pour les tables déchargées
+-- Déchargement des données de la table `dwb3d1_societe`
 --
 
---
--- Index pour la table `dwb3d1_altimages`
---
-ALTER TABLE `dwb3d1_altimages`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_blockcontact`
---
-ALTER TABLE `dwb3d1_blockcontact`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_categories`
---
-ALTER TABLE `dwb3d1_categories`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_erreurs`
---
-ALTER TABLE `dwb3d1_erreurs`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_categorie_erreurs` (`Categorie`);
-
---
--- Index pour la table `dwb3d1_footer`
---
-ALTER TABLE `dwb3d1_footer`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_formcontact`
---
-ALTER TABLE `dwb3d1_formcontact`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_header`
---
-ALTER TABLE `dwb3d1_header`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_legal`
---
-ALTER TABLE `dwb3d1_legal`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_produits`
---
-ALTER TABLE `dwb3d1_produits`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_societe`
---
-ALTER TABLE `dwb3d1_societe`
-  ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_altimages`
---
-ALTER TABLE `dwb3d1_altimages`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_blockcontact`
---
-ALTER TABLE `dwb3d1_blockcontact`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_categories`
---
-ALTER TABLE `dwb3d1_categories`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_erreurs`
---
-ALTER TABLE `dwb3d1_erreurs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_footer`
---
-ALTER TABLE `dwb3d1_footer`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_formcontact`
---
-ALTER TABLE `dwb3d1_formcontact`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_header`
---
-ALTER TABLE `dwb3d1_header`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_legal`
---
-ALTER TABLE `dwb3d1_legal`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_produits`
---
-ALTER TABLE `dwb3d1_produits`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_societe`
---
-ALTER TABLE `dwb3d1_societe`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+INSERT INTO `dwb3d1_societe` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`) VALUES
+(1, 'Nos produits', '', '', ''),
+(2, 'Nos piquets et rondins sont produits à partir de grumes exploitées dans un rayon de 70 km. Le pin provient de coupes d’éclaircies plantées après la tempête de 1999.<br><br> Ces bois juvéniles utilisés généralement pour la mise en place de filets anti-grêle ou le palissage comportent une très faible proportion de bois de cœur leurs donnant une très bonne aptitude au traitement autoclave.<br><br> Nos grumes d’acacia comportent une très faible quantité d’aubier et des cernes d’accroissement serrées conférant au bois une excellente durabilité naturelle et une très bonne résistance mécanique.<br><br> L’ensemble de nos bois proviennent de coupes gérées durablement et bénéficie généralement de la certification PEFC.', '', '', ''),
+(3, 'Notre histoire', '', '', ''),
+(4, 'Notre société est située à Poussignac dans le Lot-et-Garonne aux portes du massif landais et au plus prés de la ressource forestière. Dans les années 80, mon père y a construit une scierie de pin maritime fermée en 2015. En 2018, après avoir travaillé dans différents organismes et sociétés de la filière bois, j’ai choisi de revenir sur le site familial pour installer une unité de fabrication de piquets bois.<br> Fort de 20 ans d’expérience dans la ﬁlière bois, j’ai souhaité faire un retour aux sources en m’installant dans l’ancienne scierie familiale située au plus près de la ressource forestière.<br>Je me suis spécialisé dans la fabrication de piquets et rondins d’acacia, pins ou châtaignier.<br> Mon outil de production souple et flexible permet de produire des piquets ou rondins fendus ou ronds de différentes dimensions.<br> Destinés aux vignerons, paysagistes, arboriculteurs, ou tout simplement aux particuliers désireux de créer une clôture ou un aménagement de jardin, les piquets ou rondins B3D sont une valeur sûre.', '', '', ''),
+(5, 'Notre savoir-faire', '', '', ''),
+(6, 'La présence d’une diversité d’essences de bois locaux a orienté mon choix sur un outil de transformation souple et flexible permettant de produire des piquets acacia, pin et châtaignier de différentes dimensions. Suivant l’essence et le diamètre des bois transformés deux opérations sont réalisées.<br><br> Une opération de planage permettant d’apporter un état de surface raboté et lisse aux bois ronds ou une opération de fente permettant de suivre le fil du bois et conserver la résistance mécanique du bois et éviter les déformations de séchage. En mesure de précaution sanitaire une opération d’écorçage est réalisée pour chaque essence de bois.<br><br> Cette opération permet d’éviter de transporter d’éventuels parasites comme des insectes xylophages sur le site de la clientèle. La satisfaction client est notre objectif premier et un contrôle de la qualité du produit est réalisé à chaque étape de transformation.', '', '', '');
 
 --
 -- Contraintes pour les tables déchargées
 --
+
+--
+-- Contraintes pour la table `dwb3d1_altimages`
+--
+ALTER TABLE `dwb3d1_altimages`
+  ADD CONSTRAINT `fk_categorie_altimages` FOREIGN KEY (`Categorie`) REFERENCES `dwb3d1_categories` (`ID`);
 
 --
 -- Contraintes pour la table `dwb3d1_erreurs`
