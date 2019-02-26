@@ -18,13 +18,12 @@ class Mail
     public function __construct()
     {
         if (isset($_POST['submit'])) {
-            $this->donnees['infoForm'] = $this->traitementForm();
+            $this->donnees['infoForm'] = $this->traitementForm($_SESSION['langue']);
         }
-        $this->getDonnees();
+        $this->getDonnees($_SESSION['langue']);
     }
-    protected function getDonnees()
+    protected function getDonnees($langue)
     {
-        $langue = 'Francais';//placeholder de la variable de session langue
         $statement = Database::query('SELECT '.$langue.', Varkey FROM `dwb3d1_formcontact`');
         while ($item = $statement->fetch()) {
             $this->donnees[$item['Varkey']] = $item[$langue];
@@ -36,9 +35,8 @@ class Mail
         return mail(self::EMAIL, self::OBJET, $this->mail);
     }
 
-    private function traitementForm() // à factoriser
+    private function traitementForm($langue) // à factoriser
     {
-        $langue = 'Francais';//placeholder de la variable de session langue
         $this->formData = new Formcleaning($_POST);
         $this->formData = $this->formData->value;
         foreach ($this->formData as $key => $value) {
