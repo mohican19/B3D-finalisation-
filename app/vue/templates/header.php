@@ -40,22 +40,22 @@ $contactMenu = 'Contact';
 
                 <div class="nav-panel">
                   <div class="product-area-content text-center">
-                        <a class="product-link" href="acacia.php">
+                        <a class="product-link" href="index.php?action=produits&id=1">
                         <img src="images/panel-acacia.jpg" alt="produits B3D - acacia">
                         <?= $acaciaSsMenu ?>
                         </a>
 
-                        <a class="product-link" href="pin.php">
+                        <a class="product-link" href="index.php?action=produits&id=2">
                         <img src="images/panel-pin.jpg"  alt="produits B3D - pin">
                         <?= $pinSsMenu ?>
                         </a>
 
-                        <a class="product-link" href="chataignier.php">
+                        <a class="product-link" href="index.php?action=produits&id=3">
                         <img src="images/panel-chataignier.jpg" alt="produits B3D - chataignier">
                         <?= $chataignierSsMenu ?>
                         </a>
 
-                        <a class="product-link" href="bois-de-chauffe.php">
+                        <a class="product-link" href="index.php?action=produits&id=4">
                         <img src="images/panel-chauffe.jpg" alt="produits B3D - bois de chauffe">
                         <?= $boisFeuSsMenu ?>
                         </a>
