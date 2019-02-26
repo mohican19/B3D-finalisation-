@@ -16,6 +16,7 @@
 :root {
     --color-1: #ae2626; /* utilisable avec var(--color-1), soulignement .... */
     --color-2: #330100; /* bloc sous-menu produits */
+    --color-3: #8f1f1f; /*rouge fonçé ... ex : hover du btn envoyer*/
 }
 
 * {
@@ -76,6 +77,12 @@ section img {
   padding: 10px;
 
 }
+
+.bloc1 {
+  position: relative;
+  top: -2.6em;
+}
+
 /***********************************************************************/
 /******************HEADER***********************************************/
   header {
@@ -239,11 +246,25 @@ footer {
 }
 
 /****page société******/
-#part1-societe {
-  position: relative;
-  top: -2.6em;
-}
+
 /******page-contact(FormContact)*****/
+.etoile-erreur {
+  color: var(--color-1);
+  font-weight: bold;
+}
+
+#form-contact .btn-primary {
+  background-color: var(--color-1);
+  border: var(--color-1);
+  border-radius: 5px;
+  height: 2.5em;
+  width: 7em;
+}
+
+#form-contact .btn-primary:hover{
+  background-color: var(--color-3);
+  border: var(--color-3);
+}
 
 /*********Fil Ariane**********/
 
