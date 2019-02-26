@@ -1,15 +1,5 @@
 <?php $this->titre = $title;
 echo $infoForm ?>
-<?php
-#$firstName = 'Prénom';
-#$name = "Nom";
-#$email = 'Email';
-#$phone = 'Téléphone';
-#$msg = 'Message';
-#$requireText = 'Ces informations sont requises.';
-#$rgpd = " J'ai lu et j'accepte  <a href='url'> la politique de confidentialité</a>";
-#$submit = 'Envoyer';
-?>
 
 <section id="form-contact" class="container">
 		<div class="row justify-content-center bloc-texte bloc1">
@@ -18,13 +8,13 @@ echo $infoForm ?>
 				<div class="row justify-content-center m-0">
 					<div class="col-lg-6">
 						<div class="form-group>">
-							<label for=""><?= $firstName ?><span class="etoile-erreur">*</span> :</label>
+							<label for="champPrenom"><?= $firstName ?><span class="etoile-erreur">*</span> :</label>
 							<input type="text" class="form-control" id="champPrenom" name="first-name" required placeholder="<?= $firstNameHolder ?>">
 						</div>
 					</div>
 					<div class="col-lg-6">
 						<div class="form-group>">
-							<label for=""><?= $name ?><span class="etoile-erreur">*</span> :</label>
+							<label for="champNom"><?= $name ?><span class="etoile-erreur">*</span> :</label>
 							<input type="text" class="form-control" id="champNom" name="last-name" required placeholder="<?= $nameHolder ?>">
 							</div>
 						</div>
@@ -32,20 +22,20 @@ echo $infoForm ?>
 				<div class="row justify-content-center m-0">
 					<div class="col-lg-6">
 						<div class="form-group>">
-							<label for=""><?= $email ?><span class="etoile-erreur">*</span> :</label>
+							<label for="champEmail"><?= $email ?><span class="etoile-erreur">*</span> :</label>
 							<input type="text" class="form-control" id="champEmail" name="email" required pattern="^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$" placeholder="<?= $emailHolder ?>">
 						</div>
 					</div>
 					<div class="col-lg-6">
 						<div class="form-group>">
-							<label for=""><?= $phone ?> :</label>
+							<label for="champTelephone"><?= $phone ?> :</label>
 							<input type="text" class="form-control" id="champTelephone" name="phone" placeholder="<?= $phoneHolder ?>">
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-12">
 					<div class="form-group>">
-						<label for=""><?= $msg ?><span class="etoile-erreur">*</span> :</label>
+						<label for="champMessage"><?= $msg ?><span class="etoile-erreur">*</span> :</label>
 						<textarea type="text" class="form-control" id="champMessage" name="message" rows="5" required placeholder="<?= $msgHolder ?>"></textarea>
 					</div>
 				</div>
@@ -54,7 +44,7 @@ echo $infoForm ?>
 				<p><span class="etoile-erreur">*</span> <?= $requireText ?></p>
 			</div>
 			<div class="col-lg-12">
-        <input id="caseConfidentialite" type="checkbox" required class=""><label><?= $rgpd ?><span class="etoile-erreur">*</span></label>
+        <input id="caseConfidentialite" type="checkbox" required class=""><label for="caseConfidentialite"><?= $rgpd ?><span class="etoile-erreur">*</span></label>
 			</div>
 			<div class="col-lg-12 text-center">
 					<button id="btn-envoi" class="btn btn-primary mt-2 mb-2" type="submit" name="btn-envoyer" value="envoyer"><?= $submit ?></button>
