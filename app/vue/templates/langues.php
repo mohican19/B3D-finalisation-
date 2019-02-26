@@ -4,14 +4,14 @@
 		<div class="logo">
 			<img src="images/logo_blanc_langue.png" alt="Logo B3D" class="mx-auto d-block img-fluid">
 		</div>
-		<form id="form-choix-langue" method="post" class="btnChoix row">
-			<button value="Francais" type="submit" class="btn">FRANÇAIS</button>
+		<div id="form-choix-langue" class="row">
+			<a href="index.php?action=societe&langue=fr" value="Francais" type="submit" class="btn">FRANÇAIS</a>
 			<p class="btnsep">|</p>
-			<button value="Anglais" type="submit" class="btn">ENGLISH</button>
+			<a href="index.php?action=societe&langue=en" value="Anglais" type="submit" class="btn">ENGLISH</a>
 			<p class="btnsep">|</p>
-			<button value="Allemand" type="submit" class="btn">DEUTSCH</button>
+			<a href="index.php?action=societe&langue=de" value="Allemand" type="submit" class="btn">DEUTSCH</a>
 			<p class="btnsep">|</p>
-			<button value="Espagnol" type="submit" class="btn">ESPAÑOL</button>
-		</form>
+			<a href="index.php?action=societe&langue=es" value="Espagnol" type="submit" class="btn">ESPAÑOL</a>
+		</div>
 	</div>
 </section>
