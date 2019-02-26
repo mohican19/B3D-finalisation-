@@ -27,11 +27,15 @@ $contactMenu = 'Contact';
           <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-              <a class="nav-link <?php if(strpos($_SERVER['REQUEST_URI'], 'index')) { echo('active'); } ?>" href="index.php"><?= $societeMenu ;?></a>
+              <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'index')) {
+     echo('active');
+ } ?>" href="index.php?action=societe"><?= $societeMenu ;?></a>
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link  dropdown-toggle<?php if(strpos($_SERVER['REQUEST_URI'], 'society')) { echo('active'); } ?>" data-toggle="dropdown" href="produits.php"><?= $produitsMenu; ?></a>
+              <a class="nav-link  dropdown-toggle<?php if (strpos($_SERVER['REQUEST_URI'], 'society')) {
+     echo('active');
+ } ?>" data-toggle="dropdown" href="index.php?action=produits"><?= $produitsMenu; ?></a>
               <div class="dropdown-menu">
 
                 <div class="nav-panel">
@@ -66,7 +70,9 @@ $contactMenu = 'Contact';
             </li>
 
             <li class="nav-item">
-              <a class="nav-link <?php if(strpos($_SERVER['REQUEST_URI'], 'society')) { echo('active'); } ?>" href="contacts.php"><?= $contactMenu ;?></a>
+              <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'society')) {
+     echo('active');
+ } ?>" href="index.php?action=contact"><?= $contactMenu ;?></a>
             </li>
 
           </ul>
