@@ -2,18 +2,6 @@
 création du header,
 utilisation via include 'app/vue/templates/header.php';
 --------------------------------->
-<?php
-$societeMenu = 'Société';
-$produitsMenu = 'Produits';
-$chataignierSsMenu = 'Chataignier';
-$acaciaSsMenu = 'Acacia';
-$pinSsMenu = 'Pin';
-$boisFeuSsMenu = 'Bois de Feu';
-$contactMenu = 'Contact';
- ?>
-
-
-
 <header class="container-fluid ">
   <div class="en-tete row">
     <div class="col-lg-1 col-md-3 col-sm-10  d-flex  align-items-center">
