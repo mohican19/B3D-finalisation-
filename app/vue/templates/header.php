@@ -14,7 +14,7 @@ $contactMenu = 'Contact';
 
 
 
-<header class="container-fluid ">
+<header id="header" class="container-fluid ">
   <div class="en-tete row">
     <div class="col-lg-1 col-md-3 col-sm-10  d-flex  align-items-center">
         <a class="" href="./index.php">
