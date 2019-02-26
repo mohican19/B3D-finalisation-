@@ -124,6 +124,44 @@ section img {
     border-top: 2px solid var(--color-1);
   }
 
+/*******dropdown******/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  color: #fff !important;
+  background-color: transparent;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  position:fixed;
+}
+
+.dropdown .dropdown-menu a {
+  border-top: 1px solid #fff;
+  margin-top: 2px;
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: table-cell;
+}
+
+.dropdown .dropdown-menu a:hover{
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    border-top: 2px solid #ae2626 !important;
+    margin-top: 0px;
+  }
+
+
+.dropdown:hover .dropdown-menu {display: block;}
+
+
+
   /**** nav panel jeremy *****/
 
   nav>ul>li .nav-panel {
