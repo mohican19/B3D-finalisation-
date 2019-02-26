@@ -14,7 +14,7 @@ class Routeur
     private $ctrlSociete;
     private $ctrlProduit;
     private $ctrlContact;
-    private $action = [];
+    private $action;
     private $langue = 'Francais';
 
     public function __construct()
@@ -38,12 +38,16 @@ class Routeur
                 $this->ctrlSociete = new ControleurSociete($this->action);
             } elseif ($this->action[1] == 'contact') {
                 $this->ctrlContact = new ControleurContact($this->action);
-            } elseif ($this->action[1] == 'produit' && isset($_GET['id'])) {
-                $idProduit = intval($_GET['id']);
-                if ($idProduit != 0) {
-                    $this->ctrlProduit = new ControleurProduit($this->action);
+            } elseif ($this->action[1] == 'produits') {
+                if (isset($_GET['id'])) {
+                    $idProduit = intval($_GET['id']);
+                    if ($idProduit != 0) {
+                        $this->ctrlProduit = new ControleurProduit($this->action);
+                    } else {
+                        throw new \Exception("Identifiant de page non valide");
+                    }
                 } else {
-                    throw new \Exception("Identifiant de page non valide");
+                    $this->ctrlProduit = new ControleurProduit($this->action);
                 }
             } else {
                 $this->ctrlAccueil = new Controleur('langues');
