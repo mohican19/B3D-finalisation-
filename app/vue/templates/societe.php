@@ -7,24 +7,20 @@
     <?php else: ?>
       <div class="row justify-content-around mb-5">
     <?php endif; ?>
-    <?php if(($i % 2) == 1): ?>
-    <div class="col-md-4">
-      <img class="img-fluid" src="<?= $img[$i]['image'] ?>">
-    </div>
-    <div class="col-md-7 bloc-texte">
-      <h3 class="titre-de-bloc"><?= $item[$i-1][$langue] ?></h3>
-      <p class="contenu-bloc-texte"><?= $item[$i][$langue] ?></p>
-    </div>
-  </div>
-    <?php else: ?>
-      <div class="col-md-7 bloc-texte">
-        <h3 class="titre-de-bloc"><?= $item[$i+2][$langue] ?></h3>
-        <p class="contenu-bloc-texte"><?= $item[$i+3][$langue] ?></p>
-      </div>
+    <?php if (($i % 2) == 1): ?>
       <div class="col-md-4">
-        <img class="img-fluid" src="<?= $img[$i]['image'] ?>">
+        <img class="img-fluid" alt="<?= $img[$i][$langue] ?>" src="<?= $img[$i]['image'] ?>">
       </div>
-    </div>
     <?php endif; ?>
+    <div class="col-md-7 bloc-texte">
+      <h3 class="titre-de-bloc"><?= $item[(2*$i)][$langue] ?></h3>
+      <p class="contenu-bloc-texte"><?= $item[(2*$i+1)][$langue] ?></p>
+    </div>
+  <?php if (($i % 2) == 0): ?>
+    <div class="col-md-4">
+      <img class="img-fluid" alt="<?= $img[$i][$langue] ?>" src="<?= $img[$i]['image'] ?>">
+    </div>
+  <?php endif; ?>
+  </div>
   <?php  endfor; ?>
 </section>
