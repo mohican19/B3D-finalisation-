@@ -39,16 +39,8 @@ class Routeur
             } elseif ($this->action[1] == 'contact') {
                 $this->ctrlContact = new ControleurContact($this->action);
             } elseif ($this->action[1] == 'produits') {
-                if (isset($_GET['id'])) {
-                    $idProduit = intval($_GET['id']);
-                    if ($idProduit != 0) {
-                        $this->ctrlProduit = new ControleurProduit($this->action);
-                    } else {
-                        throw new \Exception("Identifiant de page non valide");
-                    }
-                } else {
-                    $this->ctrlProduit = new ControleurProduit($this->action);
-                }
+                $id = isset($_GET['id']) ? $_GET['id'] : '';
+                $this->ctrlProduit = new ControleurProduit($this->action, $id);
             } else {
                 $this->ctrlAccueil = new Controleur('langues');
             }

@@ -5,18 +5,20 @@ namespace app\controleur;
 class ControleurProduit extends Controleur
 {
     private $produit;
+    private $id;
 
     public function __construct($action, $idProduit ='')
     {
-        //$this->produit = new produit();
+        $action[1] = $this->produit($action[1], $idProduit);
         parent::__construct($action);
     }
 
     // Affiche le bon produit
-    public function produit()
+    public function produit($action, $id)
     {
-        // $produit = $this->produit->getProduit($idProduit);
-        // $vue = new Vue("produit");
-        // $vue->generer(array('produit' => $produit));
+        if (is_numeric($id)) {
+            $action = 'produit';
+        }
+        return $action;
     }
 }
