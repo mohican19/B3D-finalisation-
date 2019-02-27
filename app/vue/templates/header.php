@@ -27,13 +27,13 @@ $contactMenu = 'Contact';
           <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-              <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'index')) {
+              <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=societe')) {
      echo('active');
  } ?>" href="index.php?action=societe"><?= $societeMenu ;?></a>
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle<?php if (strpos($_SERVER['REQUEST_URI'], 'society')) {
+              <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=produits')) {
      echo('active');
  } ?>"  href="index.php?action=produits"><?= $produitsMenu; ?></a>
               <div class="dropdown-menu">
@@ -70,7 +70,7 @@ $contactMenu = 'Contact';
             </li>
 
             <li class="nav-item">
-              <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'society')) {
+              <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=contact')) {
      echo('active');
  } ?>" href="index.php?action=contact"><?= $contactMenu ;?></a>
             </li>
