@@ -9,4 +9,4 @@ $(".scroll-up").click(function() {
   $("html,body").animate({
   scrollTop: section.offset().top
   }, "slow");
-        });
+});

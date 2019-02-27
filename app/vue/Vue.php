@@ -23,6 +23,8 @@ class Vue
             for ($i=0; $i <count($action) ; $i++) {
                 $this->fichier[$i] = self::VUETEMPLATES . $action[$i] . ".php";
             }
+        } else {
+            throw new \Exception("L'action est invalide");
         }
     }
     // Génère et affiche la vue grâce aux données extraites dans genererFichier()(les variables $donnees et $vue sont appelées pour affichage dans controleur.php)

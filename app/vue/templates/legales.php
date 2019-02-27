@@ -1,4 +1,4 @@
-<?=
+<?php
 $titrePage = "Conditions générales d'utilisation du site B3D";
 $titreArticle01 = "ARTICLE 1 : Objet";
 $article01 = "Les présentes « conditions générales d'utilisation » ont pour objet l'encadrement juridique de l’utilisation du site B3D et de ses services.<br>Ce contrat est conclu entre :<br>Le gérant du site internet, ci-après désigné « l’Éditeur »,<br>Toute personne physique ou morale souhaitant accéder au site et à ses services, ci-après appelé « l’Utilisateur ».<br>Les conditions générales d'utilisation doivent être acceptées par tout Utilisateur, et son accès au site vaut acceptation de ces conditions.";
