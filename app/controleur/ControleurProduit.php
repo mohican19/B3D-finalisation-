@@ -2,6 +2,8 @@
 // Espace commun à tous les contrôleurs
 namespace app\controleur;
 
+use app\modele\Produit;
+
 class ControleurProduit extends Controleur
 {
     private $produit;
@@ -18,6 +20,8 @@ class ControleurProduit extends Controleur
     {
         if (is_numeric($id)) {
             $action = 'produit';
+        } else {
+            $action = 'produits';
         }
         return $action;
     }

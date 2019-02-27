@@ -38,7 +38,7 @@ class Routeur
                 $this->ctrlSociete = new ControleurSociete($this->action);
             } elseif ($this->action[1] == 'contact') {
                 $this->ctrlContact = new ControleurContact($this->action);
-            } elseif ($this->action[1] == 'produits') {
+            } elseif ($this->action[1] == 'produits' || $this->action[1] == 'produit') {
                 $id = isset($_GET['id']) ? $_GET['id'] : '';
                 $this->ctrlProduit = new ControleurProduit($this->action, $id);
             } else {

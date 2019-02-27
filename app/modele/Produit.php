@@ -1,7 +1,12 @@
-<?php /**
+<?php
+namespace app\modele;
+
+use app\Database;
+
+/**
  *
  */
-class ClassName extends AnotherClass
+class Produit
 {
     public function __construct()
     {
