@@ -43,7 +43,5 @@
 
 </section>
 <script>
-$('#show-desc').on('click', function(){
-          $("#tableau").slideToggle("hide");
-        })
+
 </script>
