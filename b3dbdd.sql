@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 27 fév. 2019 à 15:39
+-- Généré le :  jeu. 28 fév. 2019 à 10:27
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `dwb3d1_altimages` (
   `Categorie` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `fk_categorie_altimages` (`Categorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_altimages`
@@ -48,7 +48,11 @@ CREATE TABLE IF NOT EXISTS `dwb3d1_altimages` (
 INSERT INTO `dwb3d1_altimages` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`, `image`, `Categorie`) VALUES
 (1, 'Portrait', '', '', '', './images/societe-portrait.jpg', 3),
 (2, 'Produit', '', '', '', './images/societe-produit.jpg', 3),
-(3, 'Savoir-faire', '', '', '', './images/societe-savoirFaire.jpg', 3);
+(3, 'Savoir-faire', '', '', '', './images/societe-savoirFaire.jpg', 3),
+(4, 'produits 1', '', '', '', './images/001.jpg', 11),
+(5, 'Carrousel 1', '', '', '', './images/Acacia1.jpg', 11),
+(6, 'Menu 1', '', '', '', './images/panel-acacia.jpg', 1),
+(7, 'Drapeau 1', '', '', '', './images/FR.svg', 1);
 
 -- --------------------------------------------------------
 
@@ -92,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `dwb3d1_categories` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Categorie` varchar(64) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_categories`
@@ -108,7 +112,8 @@ INSERT INTO `dwb3d1_categories` (`ID`, `Categorie`) VALUES
 (7, 'accacia'),
 (8, 'chataigner'),
 (9, 'pin'),
-(10, 'bois de chauffe');
+(10, 'bois de chauffe'),
+(11, 'Produits');
 
 -- --------------------------------------------------------
 
@@ -293,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `dwb3d1_produits` (
   `Allemand` longtext NOT NULL,
   `Categorie` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_produits`
@@ -390,7 +395,13 @@ INSERT INTO `dwb3d1_produits` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Alleman
 (88, 'Bois de chauffe', '', '', '', 10),
 (89, 'Description du produit', '', '', '', 10),
 (90, 'Notre bois de chauffage issu de notre production de piquets acacia est vendu sous forme de fagots de 2 ou 2,5 stères ou de bûches fendues de 30 cm.', '', '', '', 10),
-(91, 'Voir la fiche détaillée', '', '', '', 10);
+(91, 'Voir la fiche détaillée', '', '', '', 10),
+(93, 'Produits', '', '', '', 11),
+(94, 'Nos piquets et rondins sont produits à partir de grumes exploitées dans un rayon de 70 km. Le pin provient de coupes d’éclaircies plantées après la tempête de 1999.</br></br>Ces bois juvéniles utilisés généralement pour la mise en place de filets anti-grêle ou le palissage comportent une très faible proportion de bois de cœur leurs donnant une très bonne aptitude au traitement autoclave.</br></br>Nos grumes d’acacia comportent une très faible quantité d’aubier et des cernes d’accroissement serrées conférant au bois une excellente durabilité naturelle et une très bonne résistance mécanique. L’ensemble de nos bois proviennent de coupes gérées durablement et bénéficie généralement de la certification PEFC.', '', '', '', 11),
+(95, 'Essence imputrescible découvrez les spécifications de nos piquets.', '', '', '', 8),
+(96, 'Ecorchés pour apporter plus de propreté, découvrez l\'acacia.', '', '', '', 7),
+(97, 'Nos piquets et poteaux pins sont planés. Découvrez-en plus.', '', '', '', 9),
+(98, 'Notre bois de chauffage est issu d\'acacia. Découvrez le !', '', '', '', 10);
 
 -- --------------------------------------------------------
 
