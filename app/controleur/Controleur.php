@@ -10,6 +10,7 @@ class Controleur
     // On stock la vue et les données dans des variables
     protected $donnees = [];
     protected $vue;
+    protected $langue;
     // On appelle de façon automatique la fonction de création de la vue ci-dessous
     public function __construct($action)
     {
@@ -20,5 +21,9 @@ class Controleur
     {
         $this->vue = new Vue($action);
         $this->vue->generer($donnees);
+    }
+    protected function setLangue($langue)
+    {
+        $this->langue = $langue ;
     }
 }

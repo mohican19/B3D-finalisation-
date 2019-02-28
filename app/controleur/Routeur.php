@@ -35,12 +35,12 @@ class Routeur
     {
         try {
             if ($this->action[1] == 'societe') {
-                $this->ctrlSociete = new ControleurSociete($this->action);
+                $this->ctrlSociete = new ControleurSociete($this->action, $this->langue);
             } elseif ($this->action[1] == 'contact') {
-                $this->ctrlContact = new ControleurContact($this->action);
+                $this->ctrlContact = new ControleurContact($this->action, $this->langue);
             } elseif ($this->action[1] == 'produits' || $this->action[1] == 'produit') {
                 $id = isset($_GET['id']) ? $_GET['id'] : '';
-                $this->ctrlProduit = new ControleurProduit($this->action, $id);
+                $this->ctrlProduit = new ControleurProduit($this->action, $this->langue, $id);
             } else {
                 $this->ctrlAccueil = new Controleur('langues');
             }
