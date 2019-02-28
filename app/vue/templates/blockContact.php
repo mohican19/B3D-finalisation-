@@ -10,7 +10,7 @@ $mail_titre = "Email";
 $mail = "julien.procedes@orange.fr";
 ?>
 
-<section class="container bloc-texte mb-5">
+<section id="bloc-contact" class="container container-contact bloc-texte mb-5">
               <h3 class="titre-de-bloc"><?= $titre; ?></h3>
               <div class="row contenu-bloc-texte">
                 <div class="col-md-3 ">

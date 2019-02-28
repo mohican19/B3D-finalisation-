@@ -338,13 +338,22 @@ footer {
 /***********************************/
 /********Tablette/Petit pc**********/
 @media screen and (min-width: 768px) and (max-width: 992px){
+/*****REGLAGES PAGES PRODUITS NLA*****/
+  #bloc-cards-products{
+    flex-direction: column;
+  }
 
 }
 /*************************************
 /*****Tablette/grand smartphone******/
 @media screen and (min-width:576px) and (max-width:768px){
+/***REGLAGES PAGE CHOIX DE LANGUES NLA***/
   .btnsep{
     display: none;
+  }
+/*****REGLAGES PAGES PRODUITS NLA*****/
+  #bloc-cards-products{
+    flex-direction: column;
   }
 }
 
@@ -361,5 +370,13 @@ footer {
   }
   .btnsep{
     display: none;
+  }
+/*****REGLAGES PAGES PRODUITS NLA*****/
+  #bloc-cards-products{
+    flex-direction: column;
+  }
+/*******REGLAGES BLOC CONTACT NLA******/
+  #bloc-contact{
+    width: 95%;
   }
 }
