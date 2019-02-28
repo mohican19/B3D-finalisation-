@@ -7,10 +7,10 @@ use app\modele\Mail;
 class ControleurContact extends Controleur
 {
     private $modeleMail;
-    public function __construct($action)
+    public function __construct($action, $langue)
     {
-        // appel modèle
-        $this->modeleMail = new Mail();
+        $this->setLangue($langue);
+        $this->modeleMail = new Mail($this->langue);
         $this->donnees = $this->modeleMail->donnees;
         $action[1] = 'form'.ucfirst($action[1]);
         parent::__construct($action);
