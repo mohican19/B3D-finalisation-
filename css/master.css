@@ -335,18 +335,31 @@ footer {
 
 /*********Fil Ariane**********/
 
+
 /***********************************/
 /********Tablette/Petit pc**********/
 @media screen and (min-width: 768px) and (max-width: 992px){
+/******REGLAGES DIVERS NLA********/
+  .container{
+    max-width: 90%;
+  }
 /*****REGLAGES PAGES PRODUITS NLA*****/
   #bloc-cards-products{
     flex-direction: column;
   }
-
+/*******REGLAGES BLOC CONTACT NLA******/
+  #bloc-contact{
+    width: 95%;
+  }
 }
+
 /*************************************
 /*****Tablette/grand smartphone******/
 @media screen and (min-width:576px) and (max-width:768px){
+/******REGLAGES DIVERS NLA********/
+  .container{
+    max-width: 90%;
+  }
 /***REGLAGES PAGE CHOIX DE LANGUES NLA***/
   .btnsep{
     display: none;
@@ -360,6 +373,10 @@ footer {
 /*************************/
 /*******Smartphone********/
 @media screen and (max-width: 576px) {
+/******REGLAGES DIVERS NLA********/
+  .container{
+    max-width: 95%;
+  }
 /***REGLAGES PAGE CHOIX DE LANGUES NLA***/
   .logo > img{
     width: 70%;
