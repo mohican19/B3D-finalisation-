@@ -343,9 +343,23 @@ footer {
 /*************************************
 /*****Tablette/grand smartphone******/
 @media screen and (min-width:576px) and (max-width:768px){
+  .btnsep{
+    display: none;
+  }
 }
 
 /*************************/
 /*******Smartphone********/
 @media screen and (max-width: 576px) {
+/***REGLAGES PAGE CHOIX DE LANGUES NLA***/
+  .logo > img{
+    width: 70%;
+  }
+  #form-choix-langue{
+    display: flex;
+    flex-direction: column;
+  }
+  .btnsep{
+    display: none;
+  }
 }

@@ -87,13 +87,13 @@ $contactMenu = 'Contact';
 							<a href="index.php?action=<?= $_GET['action']?>&langue=fr"><img src="images/FR.svg" class="drapeau" alt="French Flag" style=""></a>
 						</li>
             <li class="list-inline-item">
+              <a  href="index.php?action=<?= $_GET['action']?>&langue=en"><img src="images/EN.svg" class="drapeau" alt="English Flag" style=""></a>
+            </li>
+            <li class="list-inline-item">
 							<a href="index.php?action=<?= $_GET['action']?>&langue=de"><img src="images/DE.svg" class="drapeau" alt="Germen Flag" style=""></a>
 						</li>
             <li class="list-inline-item">
 							<a  href="index.php?action=<?= $_GET['action']?>&langue=es"><img src="images/ES.svg" class="drapeau" alt="Spanish Flag" style=""></a>
-						</li>
-            <li class="list-inline-item">
-							<a  href="index.php?action=<?= $_GET['action']?>&langue=en"><img src="images/EN.svg" class="drapeau" alt="English Flag" style=""></a>
 						</li>
 					</ul>
 				</div>
