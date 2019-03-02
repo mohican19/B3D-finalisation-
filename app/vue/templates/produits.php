@@ -79,3 +79,4 @@
         </div>
     </div>
 </section>
+<?php require('app/modal.php'); ?>
