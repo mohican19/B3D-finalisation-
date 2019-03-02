@@ -12,7 +12,7 @@
         <img class="card-img-top" src="images/001.jpg" alt="Image Carte Chataignier">
             <div class="mx-2">
                 <p>Essence imputrescible découvrez les spécifications de nos piquets.</p>
-                <a href="#" class="btn btn-block btn-sm btn-outline-danger">Voir les produits</a>
+                <a href="index.php?action=produits&id=3" class="btn btn-block btn-sm btn-outline-danger">Voir les produits</a>
             </div>
     </div>
 
@@ -21,7 +21,7 @@
         <img class="card-img-top" src="images/001.jpg" alt="Image Carte Acacia">
             <div class="mx-2">
                 <p>Ecorchés pour apporter plus de propreté, découvrez l'acacia.</p>
-                <a href="#" class="btn btn-block btn-sm btn-outline-danger">Voir les produits</a>
+                <a href="index.php?action=produits&id=1" class="btn btn-block btn-sm btn-outline-danger">Voir les produits</a>
             </div>
     </div>
 
@@ -30,7 +30,7 @@
         <img class="card-img-top" src="images/001.jpg" alt="Image Carte Pin">
             <div class="mx-2">
                 <p>Nos piquets et poteaux pins sont planés. Découvrez-en plus.</p>
-                <a href="#" class="btn btn-block btn-sm btn-outline-danger">Voir les produits</a>
+                <a href="index.php?action=produits&id=2" class="btn btn-block btn-sm btn-outline-danger">Voir les produits</a>
             </div>
     </div>
 
@@ -39,7 +39,7 @@
         <img class="card-img-top" src="images/001.jpg" alt="Image Carte Bois de chauffe">
             <div class="mx-2">
                 <p>Notre bois de chauffage est issu d'acacia. Découvrez le !</p>
-                <a href="#" class="btn btn-block btn-sm btn-outline-danger">Voir le produit</a>
+                <a href="index.php?action=produits&id=4" class="btn btn-block btn-sm btn-outline-danger">Voir le produit</a>
             </div>
     </div>
 </div>
