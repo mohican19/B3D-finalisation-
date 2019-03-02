@@ -22,7 +22,7 @@ $textFooter3 = "Mentions légales";
         </div>
       </div>
       <div class="col-lg-4 text-center">
-						<a href="#header" class="scroll-up"><i class="fas fa-angle-up fa-3x" style="color: white"></i></a>
+						
 			</div>
       <div class="col-lg-2 col-md-2  col-sm-11 justify-content-end d-flex align-items-center">
         <p><?= $textFooter2;?></p>
@@ -32,4 +32,7 @@ $textFooter3 = "Mentions légales";
       </div>
     </div>
 </footer>
+<div>
+<a id ="" class="scroll-up" href="#header" ><i class=" far fa-arrow-alt-circle-up fa-2x" ></i>
+</div>
 <script src="js/js.js"></script>

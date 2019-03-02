@@ -85,6 +85,27 @@ section img {
   top: -2.6em;
 }
 
+/**** flêche de scroll-up  ****/
+.scroll-up {
+  border-radius: 100%;
+	position: fixed;
+	bottom: 50px;
+	right: 40px;
+	display:;
+	color: white;
+	background-color: var(--color-1);
+	/*border: 3px solid var(--color-1);*/
+	font-size: 20px;
+  text-align: center;
+  line-height: 2;
+}
+
+/*.scroll-up:hover {
+	color: white;
+}
+
+
+
 /***********************************************************************/
 /******************HEADER***********************************************/
   header {
