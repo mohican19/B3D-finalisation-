@@ -7,14 +7,6 @@
 </div>
 
 <div id="bloc-cards-products" class="container justify-content-around d-flex">
-    <div id="" class="card bloc-texte col-lg-3 pb-2 m-1">
-        <h3 class="titre-de-bloc">Châtaignier</h3>
-        <img class="card-img-top" src="images/001.jpg" alt="Image Carte Chataignier">
-            <div class="mx-2">
-                <p>Essence imputrescible découvrez les spécifications de nos piquets.</p>
-                <a href="index.php?action=produits&id=3" class="btn btn-block btn-sm btn-outline-danger">Voir les produits</a>
-            </div>
-    </div>
 
     <div id="" class="card bloc-texte col-lg-3 pb-2 m-1">
         <h3 class="titre-de-bloc">Acacia</h3>
@@ -35,13 +27,14 @@
     </div>
 
     <div id="" class="card bloc-texte col-lg-3 pb-2 m-1">
-        <h3 class="titre-de-bloc">Bois de chauffe</h3>
-        <img class="card-img-top" src="images/001.jpg" alt="Image Carte Bois de chauffe">
+        <h3 class="titre-de-bloc">Châtaignier</h3>
+        <img class="card-img-top" src="images/001.jpg" alt="Image Carte Chataignier">
             <div class="mx-2">
-                <p>Notre bois de chauffage est issu d'acacia. Découvrez le !</p>
-                <a href="index.php?action=produits&id=4" class="btn btn-block btn-sm btn-outline-danger">Voir le produit</a>
+                <p>Essence imputrescible découvrez les spécifications de nos piquets.</p>
+                <a href="index.php?action=produits&id=3" class="btn btn-block btn-sm btn-outline-danger">Voir les produits</a>
             </div>
     </div>
+
 </div>
 </section>
 
