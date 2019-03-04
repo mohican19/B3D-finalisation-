@@ -22,7 +22,7 @@ $contactMenu = 'Contact';
         </a>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-10 justify-content-start d-flex align-items-center">
-      <nav id="large-desktop" class="navbar navbar-expand-lg ">
+      <nav id="large-desktop" class="navbar navbar-expand-lg">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
 
