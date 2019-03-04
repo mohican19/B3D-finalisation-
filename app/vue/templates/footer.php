@@ -21,8 +21,8 @@ $textFooter3 = "Mentions légales";
             <a href="index.php"><?= $textFooter3 ?></a>
         </div>
       </div>
-      <div class="col-lg-4 text-center">
-						
+      <div class="col-lg-2 text-center">
+
 			</div>
       <div class="col-lg-3 col-md-3 justify-content-end d-flex align-items-center">
         <p><?= $textFooter2;?></p>
