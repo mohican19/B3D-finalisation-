@@ -31,11 +31,7 @@ $contactMenu = 'Contact';
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
 
-            <li class="nav-item">
-              <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=societe')) {
-     echo('active');
- } ?>" href="index.php?action=societe"><?= $societeMenu ;?></a>
-            </li>
+
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=produits')) {
@@ -60,18 +56,15 @@ $contactMenu = 'Contact';
                         <?= $chataignierSsMenu ?>
                         </a>
 
-                        <a class="product-link" href="index.php?action=produits&id=4">
-                        <img src="images/panel-chauffe.jpg" alt="produits B3D - bois de chauffe">
-                        <?= $boisFeuSsMenu ?>
-                        </a>
-                  </div><!-- product-area-content -->
+                    </div><!-- product-area-content -->
                 </div><!-- nav-panel -->
-
-
-          <!--      <a class="dropdown-item" href="details_produits1.php"><?= $chataignierSsMenu ;?></a>
-                <a class="dropdown-item" href="details_produits2.php"><?= $acaciaSsMenu ;?></a>
-                <a class="dropdown-item" href="details_produits3.php"><?= $pinSsMenu ;?></a> -->
               </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=societe')) {
+     echo('active');
+ } ?>" href="index.php?action=societe"><?= $societeMenu ;?></a>
             </li>
 
             <li class="nav-item">
