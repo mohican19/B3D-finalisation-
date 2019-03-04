@@ -51,11 +51,7 @@ $contactMenu = 'Contact';
                         <?= $chataignierSsMenu ?>
                         </a>
 
-                        <a class="product-link" href="index.php?action=produits&id=4">
-                        <img src="images/panel-chauffe.jpg" alt="produits B3D - bois de chauffe">
-                        <?= $boisFeuSsMenu ?>
-                        </a>
-                  </div><!-- product-area-content -->
+                    </div><!-- product-area-content -->
                 </div><!-- nav-panel -->
               </div>
             </li>
