@@ -23,6 +23,11 @@ $contactMenu = 'Contact';
     </div>
     <div class="col-lg-8 col-md-8 col-sm-10 justify-content-start d-flex align-items-center">
       <nav id="large-desktop" class="navbar navbar-expand-lg">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
 

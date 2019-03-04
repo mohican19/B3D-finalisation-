@@ -218,6 +218,14 @@ section img {
 
 .dropdown:hover .dropdown-menu {display: block;}
 
+/*****AJOUT NOEMIE MENU RESPONSIVE*******/
+.navbar-toggler{
+  background-color: white;
+}
+.navbar-toggler-icon{
+  
+}
+
 
 
   /**** nav panel jeremy *****/
