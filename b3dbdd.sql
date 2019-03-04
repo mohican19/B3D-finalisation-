@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 04 mars 2019 à 13:19
+-- Généré le :  lun. 04 mars 2019 à 14:36
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -39,20 +39,28 @@ CREATE TABLE IF NOT EXISTS `dwb3d1_altimages` (
   `Categorie` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `fk_categorie_altimages` (`Categorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_altimages`
 --
 
 INSERT INTO `dwb3d1_altimages` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`, `image`, `Categorie`) VALUES
-(1, 'Portrait', '', '', '', './images/societe-portrait.jpg', 3),
-(2, 'Produit', '', '', '', './images/societe-produit.jpg', 3),
-(3, 'Savoir-faire', '', '', '', './images/societe-savoirFaire.jpg', 3),
-(4, 'produits 1', '', '', '', './images/001.jpg', 11),
-(5, 'Carrousel 1', '', '', '', './images/Acacia1.jpg', 11),
-(6, 'Menu 1', '', '', '', './images/panel-acacia.jpg', 1),
-(7, 'Drapeau 1', '', '', '', './images/FR.svg', 1);
+(1, 'Histoire', '', '', '', './images/societe-histoire.jpg', 3),
+(2, 'Production', '', '', '', './images/societe-production.jpg', 3),
+(3, 'Clientele', '', '', '', './images/societe-clientele.jpg', 3),
+(4, 'Produits_Acacia', '', '', '', './images/produits-acacia.jpg', 10),
+(5, 'Produits_Chataignier', '', '', '', './images/produits-chataignier.jpg', 10),
+(6, 'Produits_Pin', '', '', '', './images/produits-pin.jpg', 10),
+(7, 'Drapeau_FR', '', '', '', './images/FR.svg', 1),
+(8, 'Drapeau_EN', '', '', '', './images/EN.svg', 1),
+(9, 'Drapeau_ES', '', '', '', './images/ES.svg', 1),
+(10, 'Drapeau_DE', '', '', '', './images/DE.svg', 1),
+(11, 'Menu_Acacia', '', '', '', './images/panel-acacia.jpg', 1),
+(12, 'Menu_Pin', '', '', '', './images/panel-pin.jpg', 1),
+(13, 'Menu_Chataignier', '', '', '', './images/panel-chataignier.jpg', 1),
+(14, 'Logo_Corrtech', '', '', '', './images/CorrTech_transparence.png', 2),
+(15, 'Carrousel 1', '', '', '', './images/Acacia1.jpg', 10);
 
 -- --------------------------------------------------------
 
@@ -79,7 +87,7 @@ INSERT INTO `dwb3d1_blockcontact` (`ID`, `Francais`, `Anglais`, `Espagnol`, `All
 (2, 'Adresse', '', '', ''),
 (3, 'B3D \\\"L\'intendant\\\" <br>47700 Poussignac', '', '', ''),
 (4, 'Téléphone', '', '', ''),
-(5, '+33 (0)6 74 90 65 96', '', '', ''),
+(5, '+33 (0)6 95 51 77 05', '', '', ''),
 (6, 'Horaires', '', '', ''),
 (7, 'Du lundi au vendredi<br>8h - 12h / 14h - 18h<br>Sauf le samedi 9h - 12h', '', '', ''),
 (8, 'Email', '', '', ''),
@@ -109,12 +117,11 @@ INSERT INTO `dwb3d1_categories` (`ID`, `Categorie`) VALUES
 (4, 'formcontact'),
 (5, 'blockcontact'),
 (6, 'rgpd'),
-(7, 'accacia'),
+(7, 'acacia'),
 (8, 'chataigner'),
 (9, 'pin'),
-(10, 'bois de chauffe'),
-(11, 'Produits'),
-(12, 'pages_erreurs');
+(10, 'Produits'),
+(11, 'pages_erreurs');
 
 -- --------------------------------------------------------
 
@@ -150,12 +157,12 @@ INSERT INTO `dwb3d1_erreurs` (`ID`, `Categorie`, `Francais`, `Anglais`, `Alleman
 (8, 4, 'Merci à vous !', '', '', '', ''),
 (9, 4, 'Votre demande nous a bien été envoyée !', '', '', '', ''),
 (10, 4, 'Vous devez indiquer votre prénom', '', '', '', 'first-name'),
-(11, 12, 'Erreur 404', '', '', '', NULL),
-(12, 12, 'Oups ! Désolé mais la page demandée n\'existe pas !', '', '', '', NULL),
-(13, 12, 'Erreur 403', '', '', '', NULL),
-(14, 12, 'Vous n\'avez pas la permission d\'accéder à ce contenu !', '', '', '', NULL),
-(15, 12, 'Erreur 503', '', '', '', NULL),
-(16, 12, 'Service momentanément indisponible, veuillez réessayer ultérieurement.', '', '', '', NULL);
+(11, 11, 'Erreur 404', '', '', '', NULL),
+(12, 11, 'Oups ! Désolé mais la page demandée n\'existe pas !', '', '', '', NULL),
+(13, 11, 'Erreur 403', '', '', '', NULL),
+(14, 11, 'Vous n\'avez pas la permission d\'accéder à ce contenu !', '', '', '', NULL),
+(15, 11, 'Erreur 503', '', '', '', NULL),
+(16, 11, 'Service momentanément indisponible, veuillez réessayer ultérieurement.', '', '', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -246,8 +253,7 @@ INSERT INTO `dwb3d1_header` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`
 (3, 'Chataignier', '', '', ''),
 (4, 'Acacia', '', '', ''),
 (5, 'Pin', '', '', ''),
-(6, 'Bois de Feu', '', '', ''),
-(7, 'Contact', '', '', '');
+(6, 'Contact', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -305,43 +311,39 @@ CREATE TABLE IF NOT EXISTS `dwb3d1_produits` (
   `Allemand` longtext NOT NULL,
   `Categorie` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_produits`
 --
 
 INSERT INTO `dwb3d1_produits` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`, `Categorie`) VALUES
-(1, 'Piquets en châtaignier', '', '', '', 8),
+(1, 'Châtaignier', '', '', '', 8),
 (2, 'Description du produit', '', '', '', 8),
 (3, 'Moins durable dans le temps que l’acacia, le châtaignier en reste néanmoins une essence imputrescible grâce à sa présence d’acide tannique.</br></br>L’ensemble de nos produits châtaignier sont écorcés pour apporter plus d’esthétique et de propreté aux piquets mais surtout pour éviter de transporter des parasites sur le site de la clientèle.</br></br>Nos piquets châtaignier sont fendus ou planés et une pointe carrée d’une surface comprise entre 1 et 1,5 cm² est réalisée gros bout.</br></br>L’opération de fente permet au bois de conserver sa résistance mécanique et limiter les déformations de séchage.\r\n', '', '', '', 8),
 (4, 'Voir la fiche détaillée', '', '', '', 8),
 (5, '<table class=\"table table-bordered text-center\">\r\n  <thead>\r\n    <tr>\r\n     <th scope=\"col\" colspan=\"2\">Longueurs</th>\r\n     <th scope=\"col\">2 m </th>\r\n     <th scope=\"col\">2 m 30</th>\r\n     <th scope=\"col\">2 m 50</th>\r\n    </tr>\r\n   </thead>\r\n   <tbody>\r\n    <tr>\r\n     <td  rowspan=\"2\"> Périmètres fin bout</td>\r\n     <td >24/29 cm</td>\r\n     <td  colspan=\"3\">130 pièces/palettes</td>\r\n    </tr>\r\n    <tr>\r\n     <td>28cm et +</td>\r\n     <td colspan=\"3\">110 pièces/palettes</td>\r\n    </tr>\r\n   </tbody>\r\n</table>', '', '', '', 8),
-(6, 'Description du produit', '', '', '', 7),
-(7, 'L’ensemble de nos produits acacia sont écorcés pour apporter plus d’esthétique et de propreté aux piquets mais surtout pour éviter de transporter des parasites sur le site de la clientèle.</br></br>Nos piquets acacia sont fendus ou planés et une pointe carrée d’une surface comprise entre 1 et 1,5 cm2 est réalisée gros bout.</br></br>L’opération de fente permet au bois de conserver sa résistance mécanique et limiter les déformations de séchage.', '', '', '', 7),
-(8, 'Voir la fiche détaillée', '', '', '', 7),
-(9, 'Piquets fendus', '', '', '', 7),
-(10, '<table>\r\n        <tr>\r\n          <th colspan=\"2\">Longueurs</th>\r\n          <th>1m 40</th>\r\n          <th>1m 80</th>\r\n          <th>2m 00</th>\r\n          <th>2m 30</th>\r\n          <th>2m 50</th>\r\n        </tr>\r\n        <tr>\r\n          <td rowspan=\"4\">Périmètres fin bout</td>\r\n          <td>19/23 cm</td>\r\n          <td colspan=\"3\">160 pièces / palette</td>\r\n          <td>-</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>23/26 cm</td>\r\n          <td colspan=\"4\">150 pièces / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>26/29 cm</td>\r\n          <td colspan=\"5\">130 pièces / palette</td>\r\n        </tr>\r\n        <tr>\r\n          <td>29 cm et plus</td>\r\n          <td>-</td>\r\n          <td colspan=\"4\">110 pièces / palette</td>\r\n        </tr>\r\n      </table>', '', '', '', 7),
-(11, 'Piquets ronds', '', '', '', 7),
-(12, '<table>\r\n        <tr>\r\n          <th colspan=\"2\">Longueurs</th>\r\n          <th>1m 80</th>\r\n          <th>2m 00</th>\r\n          <th>2m 30</th>\r\n          <th>2m 50</th>\r\n          <th>3m 00</th>\r\n          <th>4m 00</th>\r\n        </tr>\r\n        <tr>\r\n          <td rowspan=\"4\">Diamètres fin bout</td>\r\n          <td>6/8 cm</td>\r\n          <td colspan=\"5\">80 µ / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>8/10 cm</td>\r\n          <td colspan=\"5\">71 µ / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>10/12 cm</td>\r\n          <td colspan=\"6\">56 µ / palette</td>\r\n        </tr>\r\n        <tr>\r\n          <td>12/15 cm</td>\r\n          <td colspan=\"6\">42 µ / palette</td>\r\n        </tr>\r\n      </table>', '', '', '', 7),
-(13, 'Piquets en pin', '', '', '', 9),
-(14, 'Description du produit', '', '', '', 9),
-(15, 'Nos piquets et poteaux pins sont planés et une pointe carrée d’une surface comprise entre 1 et 1,5 cm2 est réalisée gros bout.</br></br>La qualité de nos bois est conforme aux spécifications de la norme NF B 50-100-3 pour une classe d’emploi classe IV après avoir subi un traitement en autoclave suivant le procédé Bethell vide et pression 12 bars dans une station certifiée CTB B+.</br></br>La proportion de bois de cœur présente dans nos pins est faible ce qui permet une pénétration et une rétention de produit de préservation optimum pour une longévité accrue de nos piquets et poteaux.', '', '', '', 9),
-(16, 'Voir la fiche détaillée', '', '', '', 9),
-(17, 'Piquets viticoles', '', '', '', 9),
-(18, '<table >\r\n      	<tbody>\r\n      		<tr>\r\n      			<td colspan=\"2\">Longueurs</td>\r\n      			<td>2m 00</td>\r\n      			<td>2m 30</td>\r\n      			<td>2m 50</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td rowspan=\"3\"><span class=\"verticalCells\">Diamètres fin bout</span></td>\r\n      			<td>7/10 cm</td>\r\n      			<td colspan=\"3\">80 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>10/12 cm</td>\r\n      			<td colspan=\"3\">72 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>12/14 cm</td>\r\n      			<td colspan=\"3\">56 pièces / palettes</td>\r\n      		</tr>\r\n      	</tbody>\r\n      </table>', '', '', '', 9),
-(19, 'Poteaux arboricoles', '', '', '', 9),
-(20, '<table>\r\n      	<tbody>\r\n      		<tr>\r\n      			<td colspan=\"2\">Longueurs</td>\r\n      			<td>2m 50</td>\r\n      			<td>2m 80</td>\r\n      			<td>3m 00</td>\r\n      			<td>3m 50</td>\r\n      			<td>4m 00</td>\r\n      			<td>4m 50</td>\r\n      			<td>5m 00</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td rowspan=\"4\"><span class=\"verticalCells\">Diamètres fin bout</span></td>\r\n      			<td>7/10 cm</td>\r\n      			<td colspan=\"3\">80 pièces / palettes</td>\r\n      			<td colspan=\"4\">-</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>10/12 cm</td>\r\n      			<td colspan=\"4\">72 pièces / palettes</td>\r\n      			<td colspan=\"3\">64 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n            <td>12/14 cm</td>\r\n      			<td colspan=\"4\">56 pièces / palettes</td>\r\n      			<td colspan=\"3\">48 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n            <td>14/16 cm</td>\r\n      			<td colspan=\"4\">42 pièces / palettes</td>\r\n      			<td colspan=\"3\">36 pièces / palettes</td>\r\n      		</tr>\r\n      	</tbody>\r\n      </table>', '', '', '', 9),
-(21, 'Bois de chauffe', '', '', '', 10),
-(22, 'Description du produit', '', '', '', 10),
-(23, 'Notre bois de chauffage issu de notre production de piquets acacia est vendu sous forme de fagots de 2 ou 2,5 stères ou de bûches fendues de 30 cm.', '', '', '', 10),
-(24, 'Voir la fiche détaillée', '', '', '', 10),
-(25, 'Produits', '', '', '', 11),
-(26, 'Nos piquets et rondins sont produits à partir de trois essences de grumes exploitées dans un rayon de 70 km.</br></br>\r\nNos grumes de pin proviennent de coupes d’éclaircies plantées après la tempête de 1999.</br>\r\nCes bois juvéniles utilisés généralement pour la mise en place de filets anti-grêle ou le palissage comportent une très faible proportion de bois de cœur leurs donnant une très bonne aptitude au traitement autoclave.</br></br>\r\nNos grumes d’acacia comportent une très faible quantité d’aubier et des cernes d’accroissement serrées conférant au bois une excellente durabilité naturelle et une très bonne résistance mécanique.</br></br>\r\nNos grumes de châtaignier sont sélectionnées pour leur qualité intrinsèque.</br></br>\r\nL’ensemble de nos bois proviennent de coupes gérées durablement et bénéficient généralement de la certification PEFC.\r\n', '', '', '', 11),
-(27, 'Écorcé par mesure phytosanitaire, pour plus d\'esthétisme et de propreté. Découvrez nos produits chataigner!', '', '', '', 8),
-(28, 'Écorcé par mesure phytosanitaire, pour plus d\'esthétisme et de propreté. Découvrez nos produits acacia!', '', '', '', 7),
-(29, 'Nos piquets et poteaux pin sont planés et traités suivant le référentiel de la marque de certification CTB B+. Découvrez nos produits!', '', '', '', 9),
-(30, 'Notre bois de chauffage est issu d\'acacia. Découvrez le !', '', '', '', 10);
+(6, 'Acacia', '', '', '', 7),
+(7, 'Description du produit', '', '', '', 7),
+(8, 'L’ensemble de nos produits acacia sont écorcés pour apporter plus d’esthétique et de propreté aux piquets mais surtout pour éviter de transporter des parasites sur le site de la clientèle.</br></br>Nos piquets acacia sont fendus ou planés et une pointe carrée d’une surface comprise entre 1 et 1,5 cm2 est réalisée gros bout.</br></br>L’opération de fente permet au bois de conserver sa résistance mécanique et limiter les déformations de séchage.', '', '', '', 7),
+(9, 'Voir la fiche détaillée', '', '', '', 7),
+(10, 'Piquets fendus', '', '', '', 7),
+(11, '<table>\r\n        <tr>\r\n          <th colspan=\"2\">Longueurs</th>\r\n          <th>1m 40</th>\r\n          <th>1m 80</th>\r\n          <th>2m 00</th>\r\n          <th>2m 30</th>\r\n          <th>2m 50</th>\r\n        </tr>\r\n        <tr>\r\n          <td rowspan=\"4\">Périmètres fin bout</td>\r\n          <td>19/23 cm</td>\r\n          <td colspan=\"3\">160 pièces / palette</td>\r\n          <td>-</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>23/26 cm</td>\r\n          <td colspan=\"4\">150 pièces / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>26/29 cm</td>\r\n          <td colspan=\"5\">130 pièces / palette</td>\r\n        </tr>\r\n        <tr>\r\n          <td>29 cm et plus</td>\r\n          <td>-</td>\r\n          <td colspan=\"4\">110 pièces / palette</td>\r\n        </tr>\r\n      </table>', '', '', '', 7),
+(12, 'Piquets ronds', '', '', '', 7),
+(13, '<table>\r\n        <tr>\r\n          <th colspan=\"2\">Longueurs</th>\r\n          <th>1m 80</th>\r\n          <th>2m 00</th>\r\n          <th>2m 30</th>\r\n          <th>2m 50</th>\r\n          <th>3m 00</th>\r\n          <th>4m 00</th>\r\n        </tr>\r\n        <tr>\r\n          <td rowspan=\"4\">Diamètres fin bout</td>\r\n          <td>6/8 cm</td>\r\n          <td colspan=\"5\">80 µ / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>8/10 cm</td>\r\n          <td colspan=\"5\">71 µ / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>10/12 cm</td>\r\n          <td colspan=\"6\">56 µ / palette</td>\r\n        </tr>\r\n        <tr>\r\n          <td>12/15 cm</td>\r\n          <td colspan=\"6\">42 µ / palette</td>\r\n        </tr>\r\n      </table>', '', '', '', 7),
+(14, 'Pin', '', '', '', 9),
+(15, 'Description du produit', '', '', '', 9),
+(16, 'Nos piquets et poteaux pins sont planés et une pointe carrée d’une surface comprise entre 1 et 1,5 cm2 est réalisée gros bout.</br></br>La qualité de nos bois est conforme aux spécifications de la norme NF B 50-100-3 pour une classe d’emploi classe IV après avoir subi un traitement en autoclave suivant le procédé Bethell vide et pression 12 bars dans une station certifiée CTB B+.</br></br>La proportion de bois de cœur présente dans nos pins est faible ce qui permet une pénétration et une rétention de produit de préservation optimum pour une longévité accrue de nos piquets et poteaux.', '', '', '', 9),
+(17, 'Voir la fiche détaillée', '', '', '', 9),
+(18, 'Piquets viticoles', '', '', '', 9),
+(19, '<table >\r\n      	<tbody>\r\n      		<tr>\r\n      			<td colspan=\"2\">Longueurs</td>\r\n      			<td>2m 00</td>\r\n      			<td>2m 30</td>\r\n      			<td>2m 50</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td rowspan=\"3\"><span class=\"verticalCells\">Diamètres fin bout</span></td>\r\n      			<td>7/10 cm</td>\r\n      			<td colspan=\"3\">80 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>10/12 cm</td>\r\n      			<td colspan=\"3\">72 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>12/14 cm</td>\r\n      			<td colspan=\"3\">56 pièces / palettes</td>\r\n      		</tr>\r\n      	</tbody>\r\n      </table>', '', '', '', 9),
+(20, 'Poteaux arboricoles', '', '', '', 9),
+(21, '<table>\r\n      	<tbody>\r\n      		<tr>\r\n      			<td colspan=\"2\">Longueurs</td>\r\n      			<td>2m 50</td>\r\n      			<td>2m 80</td>\r\n      			<td>3m 00</td>\r\n      			<td>3m 50</td>\r\n      			<td>4m 00</td>\r\n      			<td>4m 50</td>\r\n      			<td>5m 00</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td rowspan=\"4\"><span class=\"verticalCells\">Diamètres fin bout</span></td>\r\n      			<td>7/10 cm</td>\r\n      			<td colspan=\"3\">80 pièces / palettes</td>\r\n      			<td colspan=\"4\">-</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>10/12 cm</td>\r\n      			<td colspan=\"4\">72 pièces / palettes</td>\r\n      			<td colspan=\"3\">64 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n            <td>12/14 cm</td>\r\n      			<td colspan=\"4\">56 pièces / palettes</td>\r\n      			<td colspan=\"3\">48 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n            <td>14/16 cm</td>\r\n      			<td colspan=\"4\">42 pièces / palettes</td>\r\n      			<td colspan=\"3\">36 pièces / palettes</td>\r\n      		</tr>\r\n      	</tbody>\r\n      </table>', '', '', '', 9),
+(22, 'Produits', '', '', '', 10),
+(23, 'Nos piquets et rondins sont produits à partir de trois essences de grumes exploitées dans un rayon de 70 km.</br></br>\r\nNos grumes de pin proviennent de coupes d’éclaircies plantées après la tempête de 1999.</br>\r\nCes bois juvéniles utilisés généralement pour la mise en place de filets anti-grêle ou le palissage comportent une très faible proportion de bois de cœur leurs donnant une très bonne aptitude au traitement autoclave.</br></br>\r\nNos grumes d’acacia comportent une très faible quantité d’aubier et des cernes d’accroissement serrées conférant au bois une excellente durabilité naturelle et une très bonne résistance mécanique.</br></br>\r\nNos grumes de châtaignier sont sélectionnées pour leur qualité intrinsèque.</br></br>\r\nL’ensemble de nos bois proviennent de coupes gérées durablement et bénéficient généralement de la certification PEFC.\r\n', '', '', '', 10),
+(24, 'Écorcé par mesure phytosanitaire, pour plus d\'esthétisme et de propreté. Découvrez nos produits chataigner!', '', '', '', 8),
+(25, 'Écorcé par mesure phytosanitaire, pour plus d\'esthétisme et de propreté. Découvrez nos produits acacia!', '', '', '', 7),
+(26, 'Nos piquets et poteaux pin sont planés et traités suivant le référentiel de la marque de certification CTB B+. Découvrez nos produits!', '', '', '', 9);
 
 -- --------------------------------------------------------
 
