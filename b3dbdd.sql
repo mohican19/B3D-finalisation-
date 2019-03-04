@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 04 mars 2019 à 15:06
+-- Généré le :  lun. 04 mars 2019 à 15:15
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -62,7 +62,7 @@ INSERT INTO `dwb3d1_altimages` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allema
 (14, 'Logo_Corrtech', '', '', '', './images/CorrTech_transparence.png', 2),
 (15, 'Carrousel_1', '', '', '', './images/caroussel-01.jpg', 10),
 (18, 'Caroussel_2', '', '', '', './images/caroussel-02.jpg', 10),
-(19, 'Caroussel_3', '', '', '', './images/caroussel-03.jpg', 11),
+(19, 'Caroussel_3', '', '', '', './images/caroussel-03.jpg', 10),
 (20, 'Caroussel_4', '', '', '', './images/caroussel-04.jpg', 10),
 (21, 'Caroussel_5', '', '', '', './images/caroussel-05.jpg', 10),
 (22, 'Caroussel_6', '', '', '', './images/caroussel-06.jpg', 10),
@@ -352,7 +352,7 @@ INSERT INTO `dwb3d1_produits` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Alleman
 (24, 'Écorcé par mesure phytosanitaire, pour plus d\'esthétisme et de propreté. Découvrez nos produits acacia!', '', '', '', 10),
 (25, 'Nos piquets et poteaux pin sont planés et traités suivant le référentiel de la marque de certification CTB B+. Découvrez nos produits!', '', '', '', 10),
 (26, 'Écorcé par mesure phytosanitaire, pour plus d\'esthétisme et de propreté. Découvrez nos produits chataigner!', '', '', '', 10),
-(119, 'Voir les produits', '', '', '', 10);
+(27, 'Voir les produits', '', '', '', 10);
 
 -- --------------------------------------------------------
 
@@ -376,11 +376,11 @@ CREATE TABLE IF NOT EXISTS `dwb3d1_societe` (
 
 INSERT INTO `dwb3d1_societe` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`) VALUES
 (1, 'Notre histoire\r\n', '', '', ''),
-(2, 'Notre société est située à Poussignac dans le Lot-et-Garonne aux portes du massif landais et au plus près de la ressource forestière.</br>\r\nDans les années 80, mon père y a construit une scierie de pin maritime fermée en 2015.</br>\r\nEn 2018, fort de 20 ans d’expérience dans différents organismes et sociétés de la filière bois, j’ai souhaité revenir sur le site familial pour installer une unité de fabrication de piquets bois.</br>\r\nJe me suis spécialisé dans la fabrication de piquets et rondins d’acacia, pins ou châtaignier.', '', '', ''),
+(2, 'Notre société est située à Poussignac dans le Lot-et-Garonne aux portes du massif landais et au plus près de la ressource forestière.</br></br>\r\nDans les années 80, mon père y a construit une scierie de pin maritime fermée en 2015.</br></br>\r\nEn 2018, fort de 20 ans d’expérience dans différents organismes et sociétés de la filière bois, j’ai souhaité revenir sur le site familial pour installer une unité de fabrication de piquets bois.</br></br>\r\nJe me suis spécialisé dans la fabrication de piquets et rondins d’acacia, pins ou châtaignier.', '', '', ''),
 (3, 'Présentation de la production', '', '', ''),
-(4, 'La présence d’une diversité d’essences de bois locaux a orienté mon choix sur un outil de transformation souple et flexible permettant de produire des piquets acacia, pins et châtaignier de différentes dimensions.</br>\r\nSuivant l’essence et le diamètre des bois transformés deux opérations sont réalisées.</br></br> \r\nUne opération de planage permettant d’apporter un état de surface raboté et lisse aux bois ronds ou une opération de fente permettant de suivre le fil du bois et conserver sa résistance mécanique et éviter des déformations de séchage.</br></br> \r\nPar mesure de précaution sanitaire une opération d’écorçage est réalisée sur l’ensemble des grumes. ', '', '', ''),
+(4, 'La présence d’une diversité d’essences de bois locaux a orienté mon choix sur un outil de transformation souple et flexible permettant de produire des piquets acacia, pins et châtaignier de différentes dimensions.</br></br>\r\nSuivant l’essence et le diamètre des bois transformés deux opérations sont réalisées.</br></br> \r\nUne opération de planage permettant d’apporter un état de surface raboté et lisse aux bois ronds ou une opération de fente permettant de suivre le fil du bois et conserver sa résistance mécanique et éviter des déformations de séchage.</br></br> \r\nPar mesure de précaution sanitaire une opération d’écorçage est réalisée sur l’ensemble des grumes. ', '', '', ''),
 (5, 'Clientèle', '', '', ''),
-(6, 'Destinés aux vignerons, paysagistes, arboriculteurs, ou tout simplement aux particuliers désireux de créer une clôture ou un aménagement de jardin, les piquets ou rondins B3D sont une valeur sûre.</br>\r\nLa satisfaction client est notre objectif premier et un contrôle de la qualité du produit est réalisé à chaque étape de transformation.\r\n', '', '', '');
+(6, 'Destinés aux vignerons, paysagistes, arboriculteurs, ou tout simplement aux particuliers désireux de créer une clôture ou un aménagement de jardin, les piquets ou rondins B3D sont une valeur sûre.</br></br>\r\nLa satisfaction client est notre objectif premier et un contrôle de la qualité du produit est réalisé à chaque étape de transformation.\r\n', '', '', '');
 
 --
 -- Contraintes pour les tables déchargées
