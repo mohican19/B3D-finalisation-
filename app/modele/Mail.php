@@ -17,14 +17,12 @@ class Mail extends Modele
     public function __construct($langue)
     {
         parent::__construct($langue);
-        if (isset($_POST['submit'])) {
-            $this->donnees['infoForm'] = $this->traitementForm();
-        }
-        $this->getDonnees();
+        $this->donnees['infoForm'] = isset($_POST['submit']) ? $this->traitementForm() : '';
+        $this->getDonnees('SELECT '.$this->langue.', Varkey FROM `dwb3d1_formcontact`');
     }
-    public function getDonnees()
+    public function getDonnees($query, $key='item')
     {
-        $statement = Database::query('SELECT '.$this->langue.', Varkey FROM `dwb3d1_formcontact`');
+        $statement = Database::query($query);
         while ($item = $statement->fetch()) {
             $this->donnees[$item['Varkey']] = $item[$this->langue];
         }
