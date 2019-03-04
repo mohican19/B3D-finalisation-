@@ -27,7 +27,7 @@ $contactMenu = 'Contact';
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
 
@@ -52,7 +52,7 @@ $contactMenu = 'Contact';
                         </a>
 
                         <a class="product-link" href="index.php?action=produits&id=3">
-                        <img src="images/panel-chataignier.jpg" alt="produits B3D - chataignier">
+                        <img src="images/panel-chataigner.jpg" alt="produits B3D - chataignier">
                         <?= $chataignierSsMenu ?>
                         </a>
 

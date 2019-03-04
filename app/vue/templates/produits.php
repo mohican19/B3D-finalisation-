@@ -8,27 +8,27 @@
 
 <div id="bloc-cards-products" class="container justify-content-around d-flex">
 
-    <div id="" class="card bloc-texte col-lg-3 pb-2 m-1">
+    <div id="" class="card bloc-texte col-lg-4 pb-2 m-1">
         <h3 class="titre-de-bloc">Acacia</h3>
-        <img class="card-img-top" src="images/001.jpg" alt="Image Carte Acacia">
+        <img class="card-img-top" src="images/produits-acacia.jpg" alt="Image Carte Acacia">
             <div class="mx-2">
                 <p>Ecorchés pour apporter plus de propreté, découvrez l'acacia.</p>
                 <a href="index.php?action=produits&id=1" class="btn btn-block btn-sm btn-outline-danger">Voir les produits</a>
             </div>
     </div>
 
-    <div id="" class="card bloc-texte col-lg-3 pb-2 m-1">
+    <div id="" class="card bloc-texte col-lg-4 pb-2 m-1">
         <h3 class="titre-de-bloc">Pin</h3>
-        <img class="card-img-top" src="images/001.jpg" alt="Image Carte Pin">
+        <img class="card-img-top" src="images/produits-pin.jpg" alt="Image Carte Pin">
             <div class="mx-2">
                 <p>Nos piquets et poteaux pins sont planés. Découvrez-en plus.</p>
                 <a href="index.php?action=produits&id=2" class="btn btn-block btn-sm btn-outline-danger">Voir les produits</a>
             </div>
     </div>
 
-    <div id="" class="card bloc-texte col-lg-3 pb-2 m-1">
+    <div id="" class="card bloc-texte col-lg-4 pb-2 m-1">
         <h3 class="titre-de-bloc">Châtaignier</h3>
-        <img class="card-img-top" src="images/001.jpg" alt="Image Carte Chataignier">
+        <img class="card-img-top" src="images/produits-chataigner.jpg" alt="Image Carte Chataignier">
             <div class="mx-2">
                 <p>Essence imputrescible découvrez les spécifications de nos piquets.</p>
                 <a href="index.php?action=produits&id=3" class="btn btn-block btn-sm btn-outline-danger">Voir les produits</a>
@@ -43,22 +43,31 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="images/Acacia1.jpg" alt="#">
+                    <img class="d-block w-100" src="images/caroussel-01.jpg" alt="#">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="images/tas1.jpg" alt="#">
+                    <img class="d-block w-100" src="images/caroussel-02.jpg" alt="#">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="images/Acacia3.jpg" alt="#">
+                    <img class="d-block w-100" src="images/caroussel-03.jpg" alt="#">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="images/Acacia7.jpg" alt="#">
+                    <img class="d-block w-100" src="images/caroussel-04.jpg" alt="#">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="images/tas2.jpg" alt="#">
+                    <img class="d-block w-100" src="images/caroussel-05.jpg" alt="#">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="images/tas3.jpg" alt="#">
+                    <img class="d-block w-100" src="images/caroussel-06.jpg" alt="#">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/caroussel-07.jpg" alt="#">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/caroussel-08.jpg" alt="#">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/caroussel-09.jpg" alt="#">
                 </div>
             </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
