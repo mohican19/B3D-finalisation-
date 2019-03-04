@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 04 mars 2019 à 14:36
+-- Généré le :  lun. 04 mars 2019 à 15:06
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `dwb3d1_altimages` (
   `Categorie` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `fk_categorie_altimages` (`Categorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_altimages`
@@ -60,7 +60,15 @@ INSERT INTO `dwb3d1_altimages` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allema
 (12, 'Menu_Pin', '', '', '', './images/panel-pin.jpg', 1),
 (13, 'Menu_Chataignier', '', '', '', './images/panel-chataignier.jpg', 1),
 (14, 'Logo_Corrtech', '', '', '', './images/CorrTech_transparence.png', 2),
-(15, 'Carrousel 1', '', '', '', './images/Acacia1.jpg', 10);
+(15, 'Carrousel_1', '', '', '', './images/caroussel-01.jpg', 10),
+(18, 'Caroussel_2', '', '', '', './images/caroussel-02.jpg', 10),
+(19, 'Caroussel_3', '', '', '', './images/caroussel-03.jpg', 11),
+(20, 'Caroussel_4', '', '', '', './images/caroussel-04.jpg', 10),
+(21, 'Caroussel_5', '', '', '', './images/caroussel-05.jpg', 10),
+(22, 'Caroussel_6', '', '', '', './images/caroussel-06.jpg', 10),
+(23, 'Caroussel_7', '', '', '', './images/caroussel-07.jpg', 10),
+(24, 'Caroussel_8', '', '', '', './images/caroussel-08.jpg', 10),
+(25, 'Caroussel_9', '', '', '', './images/caroussel-09.jpg', 10);
 
 -- --------------------------------------------------------
 
@@ -311,7 +319,7 @@ CREATE TABLE IF NOT EXISTS `dwb3d1_produits` (
   `Allemand` longtext NOT NULL,
   `Categorie` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_produits`
@@ -341,9 +349,10 @@ INSERT INTO `dwb3d1_produits` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Alleman
 (21, '<table>\r\n      	<tbody>\r\n      		<tr>\r\n      			<td colspan=\"2\">Longueurs</td>\r\n      			<td>2m 50</td>\r\n      			<td>2m 80</td>\r\n      			<td>3m 00</td>\r\n      			<td>3m 50</td>\r\n      			<td>4m 00</td>\r\n      			<td>4m 50</td>\r\n      			<td>5m 00</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td rowspan=\"4\"><span class=\"verticalCells\">Diamètres fin bout</span></td>\r\n      			<td>7/10 cm</td>\r\n      			<td colspan=\"3\">80 pièces / palettes</td>\r\n      			<td colspan=\"4\">-</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>10/12 cm</td>\r\n      			<td colspan=\"4\">72 pièces / palettes</td>\r\n      			<td colspan=\"3\">64 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n            <td>12/14 cm</td>\r\n      			<td colspan=\"4\">56 pièces / palettes</td>\r\n      			<td colspan=\"3\">48 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n            <td>14/16 cm</td>\r\n      			<td colspan=\"4\">42 pièces / palettes</td>\r\n      			<td colspan=\"3\">36 pièces / palettes</td>\r\n      		</tr>\r\n      	</tbody>\r\n      </table>', '', '', '', 9),
 (22, 'Produits', '', '', '', 10),
 (23, 'Nos piquets et rondins sont produits à partir de trois essences de grumes exploitées dans un rayon de 70 km.</br></br>\r\nNos grumes de pin proviennent de coupes d’éclaircies plantées après la tempête de 1999.</br>\r\nCes bois juvéniles utilisés généralement pour la mise en place de filets anti-grêle ou le palissage comportent une très faible proportion de bois de cœur leurs donnant une très bonne aptitude au traitement autoclave.</br></br>\r\nNos grumes d’acacia comportent une très faible quantité d’aubier et des cernes d’accroissement serrées conférant au bois une excellente durabilité naturelle et une très bonne résistance mécanique.</br></br>\r\nNos grumes de châtaignier sont sélectionnées pour leur qualité intrinsèque.</br></br>\r\nL’ensemble de nos bois proviennent de coupes gérées durablement et bénéficient généralement de la certification PEFC.\r\n', '', '', '', 10),
-(24, 'Écorcé par mesure phytosanitaire, pour plus d\'esthétisme et de propreté. Découvrez nos produits chataigner!', '', '', '', 8),
-(25, 'Écorcé par mesure phytosanitaire, pour plus d\'esthétisme et de propreté. Découvrez nos produits acacia!', '', '', '', 7),
-(26, 'Nos piquets et poteaux pin sont planés et traités suivant le référentiel de la marque de certification CTB B+. Découvrez nos produits!', '', '', '', 9);
+(24, 'Écorcé par mesure phytosanitaire, pour plus d\'esthétisme et de propreté. Découvrez nos produits acacia!', '', '', '', 10),
+(25, 'Nos piquets et poteaux pin sont planés et traités suivant le référentiel de la marque de certification CTB B+. Découvrez nos produits!', '', '', '', 10),
+(26, 'Écorcé par mesure phytosanitaire, pour plus d\'esthétisme et de propreté. Découvrez nos produits chataigner!', '', '', '', 10),
+(119, 'Voir les produits', '', '', '', 10);
 
 -- --------------------------------------------------------
 
