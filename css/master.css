@@ -216,9 +216,11 @@ section img {
   }
 
 
-.dropdown:hover .dropdown-menu {display: block;}
+.dropdown:hover .dropdown-menu{
+  display: block;
+}
 
-/*****AJOUT NOEMIE MENU RESPONSIVE*******/
+/*****AJOUT NOEMIE BOUTON MENU RESPONSIVE*******/
 .navbar-toggler{
   background-color: #AE2626;
 }
