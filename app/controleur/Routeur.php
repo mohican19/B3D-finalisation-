@@ -24,10 +24,11 @@ class Routeur
         }
         if (isset($_GET['langue'])) {
             $this->choixLangue($_GET['langue']);
-            $_SESSION['langue']= $this->langue;
+            $_SESSION['langue'] = $this->langue;
         } elseif (!isset($_SESSION['langue'])) {
-            $_SESSION['langue']= $this->langue;
+            $_SESSION['langue'] = $this->langue;
         }
+        $this->langue = $_SESSION['langue'];
     }
 
     // Route une requête entrante : exécution de l'action associée avec gestion des erreurs
