@@ -28,7 +28,7 @@ $textFooter3 = "Mentions légales";
         <p><?= $textFooter2;?></p>
       </div>
       <div class="col-lg-2 col-md-1 col-sm-1 pl-0 justify-content-start d-flex align-items-center">
-        <a href="https://corrtech.fr/"><img src='images/CorrTech.jpg' width="60%"></a>
+        <a href="https://corrtech.fr/"><img src='images/CorrTech_transparence.png' width="60%"></a>
       </div>
     </div>
 </footer>
