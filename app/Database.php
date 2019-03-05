@@ -24,13 +24,8 @@ class Database
         $db = self::connect();
         $statement = $db->prepare($query);
         $statement->execute($data);
-        if ($item = $statement->fetch()) {
-            self::disconnect();
-            return $statement;
-        } else {
-            self::disconnect();
-            return false;
-        }
+        self::disconnect();
+        return $statement;
     }
     // Fonction de connexion à la DB avec gestion des erreurs
     private static function connect()
