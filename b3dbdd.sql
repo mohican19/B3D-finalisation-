@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 05 mars 2019 à 14:38
+-- Généré le :  mar. 05 mars 2019 à 15:01
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `dwb3d1_altimages` (
   `Categorie` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `fk_categorie_altimages` (`Categorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_altimages`
@@ -68,7 +68,8 @@ INSERT INTO `dwb3d1_altimages` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allema
 (22, 'Caroussel_6', '', '', '', './images/caroussel-06.jpg', 10),
 (23, 'Caroussel_7', '', '', '', './images/caroussel-07.jpg', 10),
 (24, 'Caroussel_8', '', '', '', './images/caroussel-08.jpg', 10),
-(25, 'Caroussel_9', '', '', '', './images/caroussel-09.jpg', 10);
+(25, 'Caroussel_9', '', '', '', './images/caroussel-09.jpg', 10),
+(26, 'LogoB3D', '', '', '', './images/logo_blanc_100.png', 2);
 
 -- --------------------------------------------------------
 
@@ -196,9 +197,7 @@ CREATE TABLE IF NOT EXISTS `dwb3d1_footer` (
 INSERT INTO `dwb3d1_footer` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`) VALUES
 (1, 'B3D, \". date(\'Y\') .\". Tous droits réservés', 'B3D, \". date(\'Y\') .\". All rights reserved', 'B3D, \". date(\'Y\') .\". todos los derechos reservados', 'B3D, \". date(\'Y\') .\". Alle Rechte vorbehalten'),
 (2, 'Site développé par : ', 'Website developed by :', 'Sitio web desarrollado por :', 'Website entwickelt von :'),
-(3, 'Mentions légales', 'Legal Notice', 'Notas legales', 'Rechtliche hinweise'),
-(4, 'images/logo_blanc_100.png', 'images/logo_blanc_100.png', 'images/logo_blanc_100.png', 'images/logo_blanc_100.png'),
-(5, 'images/CorrTech_transparence.png', 'images/CorrTech_transparence.png', 'images/CorrTech_transparence.png', 'images/CorrTech_transparence.png');
+(3, 'Mentions légales', 'Legal Notice', 'Notas legales', 'Rechtliche hinweise');
 
 -- --------------------------------------------------------
 
