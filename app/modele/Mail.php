@@ -39,7 +39,7 @@ class Mail extends Modele
         $this->formData = $this->formData->value;
         foreach ($this->formData as $key => $value) {
             $statement = Database::query('SELECT '.$this->langue.', Categorie, Varkey FROM dwb3d1_erreurs WHERE Categorie = 4 AND Varkey =\''.$key.'\'');
-            if (!$value || ($key === 'phone' && !preg_match("/^[0-9]{9,13}[0-9]$/", $value)) ||($key === 'email' && !filter_var($value, FILTER_VALIDATE_EMAIL))) {
+            if (!$value && ($key !== 'phone') ||$value && ($key === 'phone' && !preg_match("/^[0-9]{9,13}[0-9]$/", $value)) ||($key === 'email' && !filter_var($value, FILTER_VALIDATE_EMAIL))) {
                 $item = $statement->fetch();
                 $this->infoForm .= '<b>*</b> '.$item[$this->langue].' <br>';
                 $error = true;
@@ -47,7 +47,7 @@ class Mail extends Modele
         }
         $statement = Database::query('SELECT '.$this->langue.', Varkey, Categorie FROM dwb3d1_erreurs WHERE Categorie = 4 AND Varkey = \'\'');
         $item = $statement->fetchall();
-        if ($error) {
+        if (isset($error)) {
             return $this->infoForm ='<div class="alert alert-danger">
             <h2>'.$item[0][$this->langue].'</h2>
            <div id="errors">'.$this->infoForm.'</div>
@@ -72,6 +72,6 @@ class Mail extends Modele
 
     private function createMail()
     {
-        return $message = 'De : '.$this->donnees->value['last-name'].' '.$this->donnees->value['first-name']."\n email : ".$this->donnees->value['email']."\n Téléphone : ".$this->donnees->value['phone']."\n".$this->donnees->value['message'];
+        return $message = 'De : '.$this->formData['last-name'].' '.$this->formData['first-name']."\n email : ".$this->formData['email']."\n Téléphone : ".$this->formData['phone']."\n".$this->formData['message'];
     }
 }

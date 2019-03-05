@@ -13,7 +13,10 @@ class Produit extends Modele
 
     public function getProduit($id)
     {
-        $id += self::BDD_OFFSET; //offset de l'id dans la bdd
+        $id += self::BDD_OFFSET/2;
+        $stm = Database::exec('SELECT image, '.$this->langue.' FROM dwb3d1_altimages WHERE ID = ?', [$id]);
+        $this->donnees['img'] = $stm->fetch();
+        $id += self::BDD_OFFSET/2; //offset de l'id dans la bdd
         $stm = Database::exec('SELECT '.$this->langue.' FROM dwb3d1_produits WHERE Categorie = ?', [$id]);
         $this->donnees['item'] = $stm->fetchAll();
     }

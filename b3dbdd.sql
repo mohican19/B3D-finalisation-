@@ -2,10 +2,10 @@
 -- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  mar. 05 mars 2019 à 10:25
--- Version du serveur :  5.7.24-0ubuntu0.18.04.1
--- Version de PHP :  7.2.10-0ubuntu0.18.04.1
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  mar. 05 mars 2019 à 10:03
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,15 +29,17 @@ SET time_zone = "+00:00";
 --
 
 DROP TABLE IF EXISTS `dwb3d1_altimages`;
-CREATE TABLE `dwb3d1_altimages` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_altimages` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` text NOT NULL,
   `Anglais` text NOT NULL,
   `Espagnol` text NOT NULL,
   `Allemand` text NOT NULL,
   `image` text,
-  `Categorie` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Categorie` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_categorie_altimages` (`Categorie`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_altimages`
@@ -75,13 +77,14 @@ INSERT INTO `dwb3d1_altimages` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allema
 --
 
 DROP TABLE IF EXISTS `dwb3d1_blockcontact`;
-CREATE TABLE `dwb3d1_blockcontact` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_blockcontact` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` longtext NOT NULL,
   `Anglais` longtext NOT NULL,
   `Espagnol` longtext NOT NULL,
-  `Allemand` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Allemand` longtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_blockcontact`
@@ -105,10 +108,11 @@ INSERT INTO `dwb3d1_blockcontact` (`ID`, `Francais`, `Anglais`, `Espagnol`, `All
 --
 
 DROP TABLE IF EXISTS `dwb3d1_categories`;
-CREATE TABLE `dwb3d1_categories` (
-  `ID` int(11) NOT NULL,
-  `Categorie` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `dwb3d1_categories` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Categorie` varchar(64) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_categories`
@@ -134,15 +138,17 @@ INSERT INTO `dwb3d1_categories` (`ID`, `Categorie`) VALUES
 --
 
 DROP TABLE IF EXISTS `dwb3d1_erreurs`;
-CREATE TABLE `dwb3d1_erreurs` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_erreurs` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Categorie` int(11) NOT NULL,
   `Francais` mediumtext NOT NULL,
   `Anglais` mediumtext NOT NULL,
   `Allemand` mediumtext NOT NULL,
   `Espagnol` mediumtext NOT NULL,
-  `Varkey` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Varkey` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_categorie_erreurs` (`Categorie`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_erreurs`
@@ -173,13 +179,14 @@ INSERT INTO `dwb3d1_erreurs` (`ID`, `Categorie`, `Francais`, `Anglais`, `Alleman
 --
 
 DROP TABLE IF EXISTS `dwb3d1_footer`;
-CREATE TABLE `dwb3d1_footer` (
-  `ID` smallint(6) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_footer` (
+  `ID` smallint(6) NOT NULL AUTO_INCREMENT,
   `Francais` longtext NOT NULL,
   `Anglais` longtext NOT NULL,
   `Espagnol` longtext NOT NULL,
-  `Allemand` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Allemand` longtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_footer`
@@ -198,14 +205,15 @@ INSERT INTO `dwb3d1_footer` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`
 --
 
 DROP TABLE IF EXISTS `dwb3d1_formcontact`;
-CREATE TABLE `dwb3d1_formcontact` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_formcontact` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` mediumtext NOT NULL,
   `Anglais` mediumtext NOT NULL,
   `Espagnol` mediumtext NOT NULL,
   `Allemand` mediumtext NOT NULL,
-  `Varkey` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Varkey` varchar(64) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_formcontact`
@@ -234,13 +242,14 @@ INSERT INTO `dwb3d1_formcontact` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Alle
 --
 
 DROP TABLE IF EXISTS `dwb3d1_header`;
-CREATE TABLE `dwb3d1_header` (
-  `ID` smallint(6) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_header` (
+  `ID` smallint(6) NOT NULL AUTO_INCREMENT,
   `Francais` longtext NOT NULL,
   `Anglais` longtext NOT NULL,
   `Espagnol` longtext NOT NULL,
-  `Allemand` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Allemand` longtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_header`
@@ -261,13 +270,14 @@ INSERT INTO `dwb3d1_header` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`
 --
 
 DROP TABLE IF EXISTS `dwb3d1_legal`;
-CREATE TABLE `dwb3d1_legal` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_legal` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` longtext NOT NULL,
   `Anglais` longtext NOT NULL,
   `Espagnol` longtext NOT NULL,
-  `Allemand` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Allemand` longtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_legal`
@@ -301,14 +311,16 @@ INSERT INTO `dwb3d1_legal` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`)
 --
 
 DROP TABLE IF EXISTS `dwb3d1_produits`;
-CREATE TABLE `dwb3d1_produits` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_produits` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` longtext NOT NULL,
   `Anglais` longtext NOT NULL,
   `Espagnol` longtext NOT NULL,
   `Allemand` longtext NOT NULL,
-  `Categorie` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Categorie` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_categorie_produits` (`Categorie`)
+) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_produits`
@@ -325,17 +337,17 @@ INSERT INTO `dwb3d1_produits` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Alleman
 (8, 'L’ensemble de nos produits acacia sont écorcés pour apporter plus d’esthétique et de propreté aux piquets mais surtout pour éviter de transporter des parasites sur le site de la clientèle.</br></br>Nos piquets acacia sont fendus ou planés et une pointe carrée d’une surface comprise entre 1 et 1,5 cm2 est réalisée gros bout.</br></br>L’opération de fente permet au bois de conserver sa résistance mécanique et limiter les déformations de séchage.', '', '', '', 7),
 (9, 'Voir la fiche détaillée', '', '', '', 7),
 (10, 'Piquets fendus', '', '', '', 7),
-(11, '<table>\r\n        <tr>\r\n          <th colspan=\"2\">Longueurs</th>\r\n          <th>1m 40</th>\r\n          <th>1m 80</th>\r\n          <th>2m 00</th>\r\n          <th>2m 30</th>\r\n          <th>2m 50</th>\r\n        </tr>\r\n        <tr>\r\n          <td rowspan=\"4\">Périmètres fin bout</td>\r\n          <td>19/23 cm</td>\r\n          <td colspan=\"3\">160 pièces / palette</td>\r\n          <td>-</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>23/26 cm</td>\r\n          <td colspan=\"4\">150 pièces / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>26/29 cm</td>\r\n          <td colspan=\"5\">130 pièces / palette</td>\r\n        </tr>\r\n        <tr>\r\n          <td>29 cm et plus</td>\r\n          <td>-</td>\r\n          <td colspan=\"4\">110 pièces / palette</td>\r\n        </tr>\r\n      </table>', '', '', '', 7),
+(11, '<table class=\"table table-bordered text-center\">\r\n        <tr>\r\n          <th colspan=\"2\">Longueurs</th>\r\n          <th>1m 40</th>\r\n          <th>1m 80</th>\r\n          <th>2m 00</th>\r\n          <th>2m 30</th>\r\n          <th>2m 50</th>\r\n        </tr>\r\n        <tr>\r\n          <td rowspan=\"4\">Périmètres fin bout</td>\r\n          <td>19/23 cm</td>\r\n          <td colspan=\"3\">160 pièces / palette</td>\r\n          <td>-</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>23/26 cm</td>\r\n          <td colspan=\"4\">150 pièces / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>26/29 cm</td>\r\n          <td colspan=\"5\">130 pièces / palette</td>\r\n        </tr>\r\n        <tr>\r\n          <td>29 cm et plus</td>\r\n          <td>-</td>\r\n          <td colspan=\"4\">110 pièces / palette</td>\r\n        </tr>\r\n      </table>', '', '', '', 7),
 (12, 'Piquets ronds', '', '', '', 7),
-(13, '<table>\r\n        <tr>\r\n          <th colspan=\"2\">Longueurs</th>\r\n          <th>1m 80</th>\r\n          <th>2m 00</th>\r\n          <th>2m 30</th>\r\n          <th>2m 50</th>\r\n          <th>3m 00</th>\r\n          <th>4m 00</th>\r\n        </tr>\r\n        <tr>\r\n          <td rowspan=\"4\">Diamètres fin bout</td>\r\n          <td>6/8 cm</td>\r\n          <td colspan=\"5\">80 µ / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>8/10 cm</td>\r\n          <td colspan=\"5\">71 µ / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>10/12 cm</td>\r\n          <td colspan=\"6\">56 µ / palette</td>\r\n        </tr>\r\n        <tr>\r\n          <td>12/15 cm</td>\r\n          <td colspan=\"6\">42 µ / palette</td>\r\n        </tr>\r\n      </table>', '', '', '', 7),
+(13, '<table class=\"table table-bordered text-center\">\r\n        <tr>\r\n          <th colspan=\"2\">Longueurs</th>\r\n          <th>1m 80</th>\r\n          <th>2m 00</th>\r\n          <th>2m 30</th>\r\n          <th>2m 50</th>\r\n          <th>3m 00</th>\r\n          <th>4m 00</th>\r\n        </tr>\r\n        <tr>\r\n          <td rowspan=\"4\">Diamètres fin bout</td>\r\n          <td>6/8 cm</td>\r\n          <td colspan=\"5\">80 µ / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>8/10 cm</td>\r\n          <td colspan=\"5\">71 µ / palette</td>\r\n          <td>-</td>\r\n        </tr>\r\n        <tr>\r\n          <td>10/12 cm</td>\r\n          <td colspan=\"6\">56 µ / palette</td>\r\n        </tr>\r\n        <tr>\r\n          <td>12/15 cm</td>\r\n          <td colspan=\"6\">42 µ / palette</td>\r\n        </tr>\r\n      </table>', '', '', '', 7),
 (14, 'Pin', '', '', '', 8),
 (15, 'Description du produit', '', '', '', 8),
 (16, 'Nos piquets et poteaux pins sont planés et une pointe carrée d’une surface comprise entre 1 et 1,5 cm2 est réalisée gros bout.</br></br>La qualité de nos bois est conforme aux spécifications de la norme NF B 50-100-3 pour une classe d’emploi classe IV après avoir subi un traitement en autoclave suivant le procédé Bethell vide et pression 12 bars dans une station certifiée CTB B+.</br></br>La proportion de bois de cœur présente dans nos pins est faible ce qui permet une pénétration et une rétention de produit de préservation optimum pour une longévité accrue de nos piquets et poteaux.', '', '', '', 8),
 (17, 'Voir la fiche détaillée', '', '', '', 8),
 (18, 'Piquets viticoles', '', '', '', 8),
-(19, '<table >\r\n      	<tbody>\r\n      		<tr>\r\n      			<td colspan=\"2\">Longueurs</td>\r\n      			<td>2m 00</td>\r\n      			<td>2m 30</td>\r\n      			<td>2m 50</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td rowspan=\"3\"><span class=\"verticalCells\">Diamètres fin bout</span></td>\r\n      			<td>7/10 cm</td>\r\n      			<td colspan=\"3\">80 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>10/12 cm</td>\r\n      			<td colspan=\"3\">72 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>12/14 cm</td>\r\n      			<td colspan=\"3\">56 pièces / palettes</td>\r\n      		</tr>\r\n      	</tbody>\r\n      </table>', '', '', '', 8),
+(19, '<table class=\"table table-bordered text-center\">\r\n      	<tbody>\r\n      		<tr>\r\n      			<td colspan=\"2\">Longueurs</td>\r\n      			<td>2m 00</td>\r\n      			<td>2m 30</td>\r\n      			<td>2m 50</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td rowspan=\"3\"><span class=\"verticalCells\">Diamètres fin bout</span></td>\r\n      			<td>7/10 cm</td>\r\n      			<td colspan=\"3\">80 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>10/12 cm</td>\r\n      			<td colspan=\"3\">72 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>12/14 cm</td>\r\n      			<td colspan=\"3\">56 pièces / palettes</td>\r\n      		</tr>\r\n      	</tbody>\r\n      </table>', '', '', '', 8),
 (20, 'Poteaux arboricoles', '', '', '', 8),
-(21, '<table>\r\n      	<tbody>\r\n      		<tr>\r\n      			<td colspan=\"2\">Longueurs</td>\r\n      			<td>2m 50</td>\r\n      			<td>2m 80</td>\r\n      			<td>3m 00</td>\r\n      			<td>3m 50</td>\r\n      			<td>4m 00</td>\r\n      			<td>4m 50</td>\r\n      			<td>5m 00</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td rowspan=\"4\"><span class=\"verticalCells\">Diamètres fin bout</span></td>\r\n      			<td>7/10 cm</td>\r\n      			<td colspan=\"3\">80 pièces / palettes</td>\r\n      			<td colspan=\"4\">-</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>10/12 cm</td>\r\n      			<td colspan=\"4\">72 pièces / palettes</td>\r\n      			<td colspan=\"3\">64 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n            <td>12/14 cm</td>\r\n      			<td colspan=\"4\">56 pièces / palettes</td>\r\n      			<td colspan=\"3\">48 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n            <td>14/16 cm</td>\r\n      			<td colspan=\"4\">42 pièces / palettes</td>\r\n      			<td colspan=\"3\">36 pièces / palettes</td>\r\n      		</tr>\r\n      	</tbody>\r\n      </table>', '', '', '', 8),
+(21, '<table class=\"table table-bordered text-center\">\r\n      	<tbody>\r\n      		<tr>\r\n      			<td colspan=\"2\">Longueurs</td>\r\n      			<td>2m 50</td>\r\n      			<td>2m 80</td>\r\n      			<td>3m 00</td>\r\n      			<td>3m 50</td>\r\n      			<td>4m 00</td>\r\n      			<td>4m 50</td>\r\n      			<td>5m 00</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td rowspan=\"4\"><span class=\"verticalCells\">Diamètres fin bout</span></td>\r\n      			<td>7/10 cm</td>\r\n      			<td colspan=\"3\">80 pièces / palettes</td>\r\n      			<td colspan=\"4\">-</td>\r\n      		</tr>\r\n      		<tr>\r\n      			<td>10/12 cm</td>\r\n      			<td colspan=\"4\">72 pièces / palettes</td>\r\n      			<td colspan=\"3\">64 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n            <td>12/14 cm</td>\r\n      			<td colspan=\"4\">56 pièces / palettes</td>\r\n      			<td colspan=\"3\">48 pièces / palettes</td>\r\n      		</tr>\r\n      		<tr>\r\n            <td>14/16 cm</td>\r\n      			<td colspan=\"4\">42 pièces / palettes</td>\r\n      			<td colspan=\"3\">36 pièces / palettes</td>\r\n      		</tr>\r\n      	</tbody>\r\n      </table>', '', '', '', 8),
 (22, 'Produits', '', '', '', 10),
 (23, 'Nos piquets et rondins sont produits à partir de trois essences de grumes exploitées dans un rayon de 70 km.</br></br>\r\nNos grumes de pin proviennent de coupes d’éclaircies plantées après la tempête de 1999.</br>\r\nCes bois juvéniles utilisés généralement pour la mise en place de filets anti-grêle ou le palissage comportent une très faible proportion de bois de cœur leurs donnant une très bonne aptitude au traitement autoclave.</br></br>\r\nNos grumes d’acacia comportent une très faible quantité d’aubier et des cernes d’accroissement serrées conférant au bois une excellente durabilité naturelle et une très bonne résistance mécanique.</br></br>\r\nNos grumes de châtaignier sont sélectionnées pour leur qualité intrinsèque.</br></br>\r\nL’ensemble de nos bois proviennent de coupes gérées durablement et bénéficient généralement de la certification PEFC.\r\n', '', '', '', 10),
 (24, 'Écorcé par mesure phytosanitaire, pour plus d\'esthétisme et de propreté. Découvrez nos produits acacia!', '', '', '', 10),
@@ -350,13 +362,14 @@ INSERT INTO `dwb3d1_produits` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Alleman
 --
 
 DROP TABLE IF EXISTS `dwb3d1_societe`;
-CREATE TABLE `dwb3d1_societe` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_societe` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` text NOT NULL,
   `Anglais` text NOT NULL,
   `Espagnol` text NOT NULL,
-  `Allemand` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Allemand` text NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_societe`
@@ -369,137 +382,6 @@ INSERT INTO `dwb3d1_societe` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand
 (4, 'La présence d’une diversité d’essences de bois locaux a orienté mon choix sur un outil de transformation souple et flexible permettant de produire des piquets acacia, pins et châtaignier de différentes dimensions.</br></br>\r\nSuivant l’essence et le diamètre des bois transformés deux opérations sont réalisées.</br></br> \r\nUne opération de planage permettant d’apporter un état de surface raboté et lisse aux bois ronds ou une opération de fente permettant de suivre le fil du bois et conserver sa résistance mécanique et éviter des déformations de séchage.</br></br> \r\nPar mesure de précaution sanitaire une opération d’écorçage est réalisée sur l’ensemble des grumes. ', '', '', ''),
 (5, 'Clientèle', '', '', ''),
 (6, 'Destinés aux vignerons, paysagistes, arboriculteurs, ou tout simplement aux particuliers désireux de créer une clôture ou un aménagement de jardin, les piquets ou rondins B3D sont une valeur sûre.</br></br>\r\nLa satisfaction client est notre objectif premier et un contrôle de la qualité du produit est réalisé à chaque étape de transformation.\r\n', '', '', '');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `dwb3d1_altimages`
---
-ALTER TABLE `dwb3d1_altimages`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_categorie_altimages` (`Categorie`);
-
---
--- Index pour la table `dwb3d1_blockcontact`
---
-ALTER TABLE `dwb3d1_blockcontact`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_categories`
---
-ALTER TABLE `dwb3d1_categories`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_erreurs`
---
-ALTER TABLE `dwb3d1_erreurs`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_categorie_erreurs` (`Categorie`);
-
---
--- Index pour la table `dwb3d1_footer`
---
-ALTER TABLE `dwb3d1_footer`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_formcontact`
---
-ALTER TABLE `dwb3d1_formcontact`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_header`
---
-ALTER TABLE `dwb3d1_header`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_legal`
---
-ALTER TABLE `dwb3d1_legal`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_produits`
---
-ALTER TABLE `dwb3d1_produits`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_categorie_produits` (`Categorie`);
-
---
--- Index pour la table `dwb3d1_societe`
---
-ALTER TABLE `dwb3d1_societe`
-  ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_altimages`
---
-ALTER TABLE `dwb3d1_altimages`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_blockcontact`
---
-ALTER TABLE `dwb3d1_blockcontact`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_categories`
---
-ALTER TABLE `dwb3d1_categories`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_erreurs`
---
-ALTER TABLE `dwb3d1_erreurs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_footer`
---
-ALTER TABLE `dwb3d1_footer`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_formcontact`
---
-ALTER TABLE `dwb3d1_formcontact`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_header`
---
-ALTER TABLE `dwb3d1_header`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_legal`
---
-ALTER TABLE `dwb3d1_legal`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_produits`
---
-ALTER TABLE `dwb3d1_produits`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_societe`
---
-ALTER TABLE `dwb3d1_societe`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Contraintes pour les tables déchargées

@@ -1,10 +1,10 @@
-<?php $this->titre = $title;
-echo $infoForm ?>
+<?php $this->titre = $title;?>
 
 <section id="form-contact" class="container">
 		<div class="row justify-content-center bloc-texte bloc1">
       <h3 class="titre-de-bloc">Formulaire de Contact</h3>
-			<form class="col-lg-8 " method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
+			<?= $infoForm; ?>
+			<form class="col-lg-8 " method="post" >
 				<div class="row justify-content-center m-0">
 					<div class="col-lg-6">
 						<div class="form-group>">
@@ -47,7 +47,7 @@ echo $infoForm ?>
         <input id="caseConfidentialite" type="checkbox" required class=""><label for="caseConfidentialite"><?= $rgpd ?><span class="etoile-erreur">*</span></label>
 			</div>
 			<div class="col-lg-12 text-center">
-					<button id="btn-envoi" class="btn btn-primary mt-2 mb-2" type="submit" name="btn-envoyer" value="envoyer"><?= $submit ?></button>
+					<button id="btn-envoi" class="btn btn-primary mt-2 mb-2" type="submit" name="submit" value="envoyer"><?= $submit ?></button>
 			</div>
 
 			</form>
