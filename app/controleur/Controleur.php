@@ -34,7 +34,13 @@ class Controleur
     protected function getBasiqueDonnees()
     {
         $header = new Modele($this->langue);
+        $key = 'header';
+
         $footer = new Modele($this->langue);
+        $query = ['footer'=>'SELECT '.$this->langue.' FROM dwb3d1_footer',
+        'footerImgs'=>'SELECT image, '.$this->langue.' FROM dwb3d1_altimages WHERE Categorie = 2'];
+        $footer->getDonnees($query);
+        $this->donnees = array_merge($this->donnees, $footer->donnees);
         $key = 'block';
         $query = 'SELECT Varkey, '.$this->langue.' FROM dwb3d1_blockcontact';
         $block = new Block($this->langue, $key);
