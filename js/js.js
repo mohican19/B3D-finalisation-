@@ -47,7 +47,7 @@ StopElt=function() {
             $('.scroll-up').css('bottom', '200px').animate('slow');
           } else if ( h < limiteY ) {
              console.log ("non");
-            /*$('.scroll-up').css('bottom', '70px').animate('slow');*/
+            $('.scroll-up').css('bottom', '70px');
             }
 
 }
