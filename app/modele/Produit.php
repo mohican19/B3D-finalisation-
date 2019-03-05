@@ -16,6 +16,5 @@ class Produit extends Modele
         $id += self::BDD_OFFSET; //offset de l'id dans la bdd
         $stm = Database::exec('SELECT '.$this->langue.' FROM dwb3d1_produits WHERE Categorie = ?', [$id]);
         $this->donnees['item'] = $stm->fetchAll();
-        // var_dump($this->donnees['item']);
     }
 }

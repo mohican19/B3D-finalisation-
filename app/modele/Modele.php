@@ -12,11 +12,18 @@ class Modele
     public $donnees = [];
     public function __construct($langue)
     {
-        $this->langue = $langue;
+        $this->donnees['langue'] = $this->langue = $langue ;
     }
     public function getDonnees($query, $key='item')
     {
-        $stm = Database::query($query);
-        $this->donnees[$key] = $stm->fetchAll();
+        if (is_array($query)) {
+            foreach ($query as $key => $value) {
+                $stm = Database::query($value);
+                $this->donnees[$key] = $stm->fetchAll();
+            }
+        } else {
+            $stm = Database::query($query);
+            $this->donnees[$key] = $stm->fetchAll();
+        }
     }
 }
