@@ -42,6 +42,8 @@ class Routeur
             } elseif ($this->action[1] == 'produits' || $this->action[1] == 'produit') {
                 $id = isset($_GET['id']) ? $_GET['id'] : '';
                 $this->ctrlProduit = new ControleurProduit($this->action, $this->langue, $id);
+            } elseif ($this->action[1] == 'legales') {
+                $this->ctrlLegales = new ControleurLegales($this->action, $this->langue);
             } else {
                 $this->ctrlAccueil = new Controleur('langues');
             }
