@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mar. 05 mars 2019 à 16:35
+-- Généré le :  mar. 05 mars 2019 à 16:39
 -- Version du serveur :  5.7.25-0ubuntu0.18.04.2
 -- Version de PHP :  7.2.15-0ubuntu0.18.04.1
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `dwb3d1_altimages`
 --
 
+DROP TABLE IF EXISTS `dwb3d1_altimages`;
 CREATE TABLE `dwb3d1_altimages` (
   `ID` int(11) NOT NULL,
   `Francais` text NOT NULL,
@@ -73,6 +74,7 @@ INSERT INTO `dwb3d1_altimages` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allema
 -- Structure de la table `dwb3d1_blockcontact`
 --
 
+DROP TABLE IF EXISTS `dwb3d1_blockcontact`;
 CREATE TABLE `dwb3d1_blockcontact` (
   `ID` int(11) NOT NULL,
   `Francais` longtext NOT NULL,
@@ -102,6 +104,7 @@ INSERT INTO `dwb3d1_blockcontact` (`ID`, `Francais`, `Anglais`, `Espagnol`, `All
 -- Structure de la table `dwb3d1_categories`
 --
 
+DROP TABLE IF EXISTS `dwb3d1_categories`;
 CREATE TABLE `dwb3d1_categories` (
   `ID` int(11) NOT NULL,
   `Categorie` varchar(64) NOT NULL
@@ -130,6 +133,7 @@ INSERT INTO `dwb3d1_categories` (`ID`, `Categorie`) VALUES
 -- Structure de la table `dwb3d1_erreurs`
 --
 
+DROP TABLE IF EXISTS `dwb3d1_erreurs`;
 CREATE TABLE `dwb3d1_erreurs` (
   `ID` int(11) NOT NULL,
   `Categorie` int(11) NOT NULL,
@@ -168,6 +172,7 @@ INSERT INTO `dwb3d1_erreurs` (`ID`, `Categorie`, `Francais`, `Anglais`, `Alleman
 -- Structure de la table `dwb3d1_footer`
 --
 
+DROP TABLE IF EXISTS `dwb3d1_footer`;
 CREATE TABLE `dwb3d1_footer` (
   `ID` smallint(6) NOT NULL,
   `Francais` longtext NOT NULL,
@@ -193,6 +198,7 @@ INSERT INTO `dwb3d1_footer` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`
 -- Structure de la table `dwb3d1_formcontact`
 --
 
+DROP TABLE IF EXISTS `dwb3d1_formcontact`;
 CREATE TABLE `dwb3d1_formcontact` (
   `ID` int(11) NOT NULL,
   `Francais` mediumtext NOT NULL,
@@ -228,6 +234,7 @@ INSERT INTO `dwb3d1_formcontact` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Alle
 -- Structure de la table `dwb3d1_header`
 --
 
+DROP TABLE IF EXISTS `dwb3d1_header`;
 CREATE TABLE `dwb3d1_header` (
   `ID` smallint(6) NOT NULL,
   `Francais` longtext NOT NULL,
@@ -254,6 +261,7 @@ INSERT INTO `dwb3d1_header` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`
 -- Structure de la table `dwb3d1_legal`
 --
 
+DROP TABLE IF EXISTS `dwb3d1_legal`;
 CREATE TABLE `dwb3d1_legal` (
   `ID` int(11) NOT NULL,
   `Francais` longtext NOT NULL,
@@ -293,6 +301,7 @@ INSERT INTO `dwb3d1_legal` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`)
 -- Structure de la table `dwb3d1_produits`
 --
 
+DROP TABLE IF EXISTS `dwb3d1_produits`;
 CREATE TABLE `dwb3d1_produits` (
   `ID` int(11) NOT NULL,
   `Francais` longtext NOT NULL,
@@ -341,6 +350,7 @@ INSERT INTO `dwb3d1_produits` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Alleman
 -- Structure de la table `dwb3d1_societe`
 --
 
+DROP TABLE IF EXISTS `dwb3d1_societe`;
 CREATE TABLE `dwb3d1_societe` (
   `ID` int(11) NOT NULL,
   `Francais` text NOT NULL,
