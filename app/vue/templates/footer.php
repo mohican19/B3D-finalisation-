@@ -18,7 +18,7 @@ $textFooter3 = "Mentions légales";
       <div class="col-lg-3 col-md-3 pt-1 justify-content-start d-flex align-items-center">
         <div class="texte-footer">
             <p><?= $textFooter1 ?></p>
-            <a href="index.php"><?= $textFooter3 ?></a>
+            <a href="index.php?action=legales"><?= $textFooter3 ?></a>
         </div>
       </div>
       <div class="col-lg-2 text-center">
