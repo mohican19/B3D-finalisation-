@@ -2,10 +2,10 @@
 -- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  mar. 05 mars 2019 à 16:39
--- Version du serveur :  5.7.25-0ubuntu0.18.04.2
--- Version de PHP :  7.2.15-0ubuntu0.18.04.1
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  mar. 05 mars 2019 à 15:52
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,15 +29,17 @@ SET time_zone = "+00:00";
 --
 
 DROP TABLE IF EXISTS `dwb3d1_altimages`;
-CREATE TABLE `dwb3d1_altimages` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_altimages` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` text NOT NULL,
   `Anglais` text NOT NULL,
   `Espagnol` text NOT NULL,
   `Allemand` text NOT NULL,
   `image` text,
-  `Categorie` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Categorie` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_categorie_altimages` (`Categorie`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_altimages`
@@ -75,28 +77,30 @@ INSERT INTO `dwb3d1_altimages` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allema
 --
 
 DROP TABLE IF EXISTS `dwb3d1_blockcontact`;
-CREATE TABLE `dwb3d1_blockcontact` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_blockcontact` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` longtext NOT NULL,
   `Anglais` longtext NOT NULL,
   `Espagnol` longtext NOT NULL,
-  `Allemand` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Allemand` longtext NOT NULL,
+  `Varkey` varchar(20) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_blockcontact`
 --
 
-INSERT INTO `dwb3d1_blockcontact` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`) VALUES
-(1, 'Contact', '', '', ''),
-(2, 'Adresse', '', '', ''),
-(3, 'B3D \\\"L\'intendant\\\" <br>47700 Poussignac', '', '', ''),
-(4, 'Téléphone', '', '', ''),
-(5, '+33 (0)6 95 51 77 05', '', '', ''),
-(6, 'Horaires', '', '', ''),
-(7, 'Du lundi au vendredi<br>8h - 12h / 14h - 18h<br>Sauf le samedi 9h - 12h', '', '', ''),
-(8, 'Email', '', '', ''),
-(9, 'julien.procedes@orange.fr', '', '', '');
+INSERT INTO `dwb3d1_blockcontact` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`, `Varkey`) VALUES
+(1, 'Contact', '', '', '', 'titre'),
+(2, 'Adresse', '', '', '', 'adresse_titre'),
+(3, 'B3D \"L\'intendant\" <br>47700 Poussignac', '', '', '', 'adresse'),
+(4, 'Téléphone', '', '', '', 'tel_titre'),
+(5, '+33 (0)6 95 51 77 05', '', '', '', 'tel'),
+(6, 'Horaires', '', '', '', 'horaires_titre'),
+(7, 'Du lundi au vendredi<br>8h - 12h / 14h - 18h<br>Sauf le samedi 9h - 12h', '', '', '', 'horaires'),
+(8, 'Email', '', '', '', 'mail_titre'),
+(9, 'julien.procedes@orange.fr', '', '', '', 'mail');
 
 -- --------------------------------------------------------
 
@@ -105,10 +109,11 @@ INSERT INTO `dwb3d1_blockcontact` (`ID`, `Francais`, `Anglais`, `Espagnol`, `All
 --
 
 DROP TABLE IF EXISTS `dwb3d1_categories`;
-CREATE TABLE `dwb3d1_categories` (
-  `ID` int(11) NOT NULL,
-  `Categorie` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `dwb3d1_categories` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Categorie` varchar(64) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_categories`
@@ -134,15 +139,17 @@ INSERT INTO `dwb3d1_categories` (`ID`, `Categorie`) VALUES
 --
 
 DROP TABLE IF EXISTS `dwb3d1_erreurs`;
-CREATE TABLE `dwb3d1_erreurs` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_erreurs` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Categorie` int(11) NOT NULL,
   `Francais` mediumtext NOT NULL,
   `Anglais` mediumtext NOT NULL,
   `Allemand` mediumtext NOT NULL,
   `Espagnol` mediumtext NOT NULL,
-  `Varkey` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Varkey` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_categorie_erreurs` (`Categorie`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_erreurs`
@@ -173,13 +180,14 @@ INSERT INTO `dwb3d1_erreurs` (`ID`, `Categorie`, `Francais`, `Anglais`, `Alleman
 --
 
 DROP TABLE IF EXISTS `dwb3d1_footer`;
-CREATE TABLE `dwb3d1_footer` (
-  `ID` smallint(6) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_footer` (
+  `ID` smallint(6) NOT NULL AUTO_INCREMENT,
   `Francais` longtext NOT NULL,
   `Anglais` longtext NOT NULL,
   `Espagnol` longtext NOT NULL,
-  `Allemand` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Allemand` longtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_footer`
@@ -199,14 +207,15 @@ INSERT INTO `dwb3d1_footer` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`
 --
 
 DROP TABLE IF EXISTS `dwb3d1_formcontact`;
-CREATE TABLE `dwb3d1_formcontact` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_formcontact` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` mediumtext NOT NULL,
   `Anglais` mediumtext NOT NULL,
   `Espagnol` mediumtext NOT NULL,
   `Allemand` mediumtext NOT NULL,
-  `Varkey` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Varkey` varchar(64) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_formcontact`
@@ -235,13 +244,14 @@ INSERT INTO `dwb3d1_formcontact` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Alle
 --
 
 DROP TABLE IF EXISTS `dwb3d1_header`;
-CREATE TABLE `dwb3d1_header` (
-  `ID` smallint(6) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_header` (
+  `ID` smallint(6) NOT NULL AUTO_INCREMENT,
   `Francais` longtext NOT NULL,
   `Anglais` longtext NOT NULL,
   `Espagnol` longtext NOT NULL,
-  `Allemand` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Allemand` longtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_header`
@@ -262,13 +272,14 @@ INSERT INTO `dwb3d1_header` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`
 --
 
 DROP TABLE IF EXISTS `dwb3d1_legal`;
-CREATE TABLE `dwb3d1_legal` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_legal` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` longtext NOT NULL,
   `Anglais` longtext NOT NULL,
   `Espagnol` longtext NOT NULL,
-  `Allemand` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Allemand` longtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_legal`
@@ -302,14 +313,16 @@ INSERT INTO `dwb3d1_legal` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`)
 --
 
 DROP TABLE IF EXISTS `dwb3d1_produits`;
-CREATE TABLE `dwb3d1_produits` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_produits` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` longtext NOT NULL,
   `Anglais` longtext NOT NULL,
   `Espagnol` longtext NOT NULL,
   `Allemand` longtext NOT NULL,
-  `Categorie` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Categorie` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_categorie_produits` (`Categorie`)
+) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_produits`
@@ -351,13 +364,14 @@ INSERT INTO `dwb3d1_produits` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Alleman
 --
 
 DROP TABLE IF EXISTS `dwb3d1_societe`;
-CREATE TABLE `dwb3d1_societe` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dwb3d1_societe` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Francais` text NOT NULL,
   `Anglais` text NOT NULL,
   `Espagnol` text NOT NULL,
-  `Allemand` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Allemand` text NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `dwb3d1_societe`
@@ -370,137 +384,6 @@ INSERT INTO `dwb3d1_societe` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand
 (4, 'La présence d’une diversité d’essences de bois locaux a orienté mon choix sur un outil de transformation souple et flexible permettant de produire des piquets acacia, pins et châtaignier de différentes dimensions.</br></br>\r\nSuivant l’essence et le diamètre des bois transformés deux opérations sont réalisées.</br></br> \r\nUne opération de planage permettant d’apporter un état de surface raboté et lisse aux bois ronds ou une opération de fente permettant de suivre le fil du bois et conserver sa résistance mécanique et éviter des déformations de séchage.</br></br> \r\nPar mesure de précaution sanitaire une opération d’écorçage est réalisée sur l’ensemble des grumes. ', '', '', ''),
 (5, 'Clientèle', '', '', ''),
 (6, 'Destinés aux vignerons, paysagistes, arboriculteurs, ou tout simplement aux particuliers désireux de créer une clôture ou un aménagement de jardin, les piquets ou rondins B3D sont une valeur sûre.</br></br>\r\nLa satisfaction client est notre objectif premier et un contrôle de la qualité du produit est réalisé à chaque étape de transformation.\r\n', '', '', '');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `dwb3d1_altimages`
---
-ALTER TABLE `dwb3d1_altimages`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_categorie_altimages` (`Categorie`);
-
---
--- Index pour la table `dwb3d1_blockcontact`
---
-ALTER TABLE `dwb3d1_blockcontact`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_categories`
---
-ALTER TABLE `dwb3d1_categories`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_erreurs`
---
-ALTER TABLE `dwb3d1_erreurs`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_categorie_erreurs` (`Categorie`);
-
---
--- Index pour la table `dwb3d1_footer`
---
-ALTER TABLE `dwb3d1_footer`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_formcontact`
---
-ALTER TABLE `dwb3d1_formcontact`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_header`
---
-ALTER TABLE `dwb3d1_header`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_legal`
---
-ALTER TABLE `dwb3d1_legal`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `dwb3d1_produits`
---
-ALTER TABLE `dwb3d1_produits`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_categorie_produits` (`Categorie`);
-
---
--- Index pour la table `dwb3d1_societe`
---
-ALTER TABLE `dwb3d1_societe`
-  ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_altimages`
---
-ALTER TABLE `dwb3d1_altimages`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_blockcontact`
---
-ALTER TABLE `dwb3d1_blockcontact`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_categories`
---
-ALTER TABLE `dwb3d1_categories`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_erreurs`
---
-ALTER TABLE `dwb3d1_erreurs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_footer`
---
-ALTER TABLE `dwb3d1_footer`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_formcontact`
---
-ALTER TABLE `dwb3d1_formcontact`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_header`
---
-ALTER TABLE `dwb3d1_header`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_legal`
---
-ALTER TABLE `dwb3d1_legal`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_produits`
---
-ALTER TABLE `dwb3d1_produits`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
-
---
--- AUTO_INCREMENT pour la table `dwb3d1_societe`
---
-ALTER TABLE `dwb3d1_societe`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Contraintes pour les tables déchargées
