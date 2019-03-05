@@ -23,12 +23,33 @@ ScrollToTop=function() {
       $("html, body").animate({ scrollTop: 0 }, 500);
       return false;
   });
+}
 
-  /*if ( s > 720) {
-    $('.scroll-up').css('bottom','200px');
-  } else {
-    $('.scroll-up').css('bottom','100px');
-  }*/
+StopElt=function() {
+            var elt = $('.scroll-up');
+            var hFooter = $('footer').outerHeight();
+            var hBody = $('body').outerHeight();
+            var hWindow = $(window).outerHeight();
+            var limiteY = hBody - hFooter - hWindow + 50;
+            var h = window.pageYOffset;
+            var dTop = window.innerHeight - document.getElementById('footer').offsetHeight - 50;
+            var dBottom = window.innerHeight - 120;
+
+            console.log (hWindow);
+            console.log (window.innerHeight);
+            /*console.log (limiteY);
+            console.log (h);
+            console.log (dTop);
+            console.log (dBottom);*/
+
+            if ( h >= limiteY ) {
+              console.log ("ok");
+            $('.scroll-up').css('bottom', '200px').animate('slow');
+          } else if ( h < limiteY ) {
+             console.log ("non");
+            /*$('.scroll-up').css('bottom', '70px').animate('slow');*/
+            }
+
 }
 
 StopAnimation=function() {
@@ -40,4 +61,5 @@ StopAnimation=function() {
 $(window).scroll(function() {
   ScrollToTop();
   StopAnimation();
+  StopElt();
 });

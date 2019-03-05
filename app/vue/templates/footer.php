@@ -33,6 +33,6 @@ $textFooter3 = "Mentions légales";
     </div>
 </footer>
 <div>
-<a id ="" class="scroll-up" href="#header" ><i class=" far fa-arrow-alt-circle-up fa-2x" ></i>
+<a id ="" class="" href="#header" ><i class="scroll-up far fa-arrow-alt-circle-up fa-3x" ></i>
 </div>
 <script src="js/js.js"></script>
