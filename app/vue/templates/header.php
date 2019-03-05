@@ -57,8 +57,7 @@ $contactMenu = 'Contact';
                         <?= $chataignierSsMenu ?>
                         </a>
 
-=======
-              <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=produits')) {echo('active');} ?>"  href="index.php?action=produits" ><?= $produitsMenu; ?>
+<!--              <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=produits')) {echo('active');} ?>"  href="index.php?action=produits" ><?= $produitsMenu; ?>
               </a>
                 <div class="dropdown-menu">
                   <div class="nav-panel">
@@ -70,12 +69,13 @@ $contactMenu = 'Contact';
                         <img src="images/panel-pin.jpg"  alt="produits B3D - pin"><?= $pinSsMenu ?>
                       </a>
                       <a class="product-link" href="index.php?action=produits&id=3">
-                        <img src="images/panel-chataignier.jpg" alt="produits B3D - chataignier"><?= $chataignierSsMenu ?>
+                        <img src="images/panel-chataigner.jpg" alt="produits B3D - chataignier"><?= $chataignierSsMenu ?>
                       </a>
->>>>>>> master
-                    </div><!-- product-area-content -->
+-->
+                    </div><!-- product-area-content
                   </div><!-- nav-panel -->
                 </div>
+
             </li>
 
             <li class="nav-item">
