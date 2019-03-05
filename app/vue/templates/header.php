@@ -23,19 +23,18 @@ $contactMenu = 'Contact';
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-10 justify-content-start d-flex align-items-center">
-      
+
       <nav id="large-desktop" class="navbar navbar-expand-lg">
-        
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          
+
           <ul class="navbar-nav mr-auto">
-            
+
             <li class="nav-item dropdown">
-<<<<<<< HEAD
               <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=produits')) {
      echo('active');
  } ?>"  href="index.php?action=produits"><?= $produitsMenu; ?></a>
@@ -78,12 +77,12 @@ $contactMenu = 'Contact';
                   </div><!-- nav-panel -->
                 </div>
             </li>
-            
+
             <li class="nav-item">
               <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=societe')) {echo('active');} ?>" href="index.php?action=societe"><?= $societeMenu ;?>
               </a>
             </li>
-            
+
             <li class="nav-item">
               <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=contact')) {echo('active');} ?>" href="index.php?action=contact"><?= $contactMenu ;?>
               </a>
