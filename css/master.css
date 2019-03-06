@@ -90,14 +90,14 @@ section img {
   border-radius: 100%;
 	position: fixed;
 	bottom: 70px;
-	right: 4px;
-	display:none;
+	right: 7px;
+	display: none;
 	color: white;
 	background-color: var(--color-1);
 	/*border: 3px solid var(--color-1);*/
-	/*font-size: 20px;*/
+	font-size: 20px;
   text-align: center;
-  /*line-height: 2;*/
+  line-height: 2;
   z-index: 50;
 }
 
