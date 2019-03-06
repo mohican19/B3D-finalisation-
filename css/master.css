@@ -121,19 +121,29 @@ section img {
 #modalCo2 table {
   width: 100%;
   text-align: center;
-  background-color: #c09066;
-  border: 2px solid #570d0b;
+  background-color: #fff;
+  border: 2px solid #dee2e6s;
+}
+.table thead {
+  background-color: #FFF8DC;
 }
 
 #modalCo2 tr, #modalCo2 td, #modalCo2 th {
-  border: 1px solid #570d0b;
+  border: 1px solid #dee2e6s;
 }
-
-.modal-content {
+.modal-header {
   background-color: var(--color-1);
 }
-.modal-content p, .modal-content h5 {
+.modal-content {
+  background-color: #fff;
+}
+.modal-content p {
+  color: #000;
+}
+.modal-content h4 {
+  font-family: 'Acme', sans-serif;
   color: #fff;
+  text-align: center;
 }
 .modal-dialog {
   max-width: 1000px !important;

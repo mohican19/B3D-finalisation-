@@ -6,18 +6,20 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalCo2Label">Comparaison des émissions de CO2 pour la fabrication de pieux en béton, en acier et en bois</h5>
+        <h4 class="modal-title" id="modalCo2Label">Comparaison des émissions de CO2 pour la fabrication de pieux en béton, en acier et en bois</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <table>
-    <tr>
-      <th>Pieux béton</th>
-      <th>Pieux acier</th>
-      <th>Pieux bois</th>
-    </tr>
+        <table class="table table-bordered text-center">
+          <thead>
+          <tr>
+            <th scope="col">Pieux béton</th>
+            <th scope="col">Pieux acier</th>
+            <th scope="col">Pieux bois</th>
+          </tr>
+        </thead>
     <tr>
       <td>
       Fabrication béton armé : 367 kg CO2/tonne (Ademe)Extraction de grannulats : 88 kg CO2/tonne (Ademe)
