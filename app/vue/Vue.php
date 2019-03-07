@@ -1,6 +1,6 @@
 <?php
 // On définit un namespace commun à tous les fichiers liés à la vue
-  namespace app\vue;
+namespace app\vue;
 
 class Vue
 {

@@ -44,7 +44,7 @@ $contactMenu = 'Contact';
                         <?= $pinSsMenu ?>
                         </a>
                         <a class="product-link dropdown-item" href="index.php?action=produits&id=3">
-                        <img src="images/panel-chataigner.jpg" alt="produits B3D - chataignier">
+                        <img src="images/panel-chataignier.jpg" alt="produits B3D - chataignier">
                         <?= $chataignierSsMenu ?>
                         </a>
                     </div><!-- product-area-content -->
