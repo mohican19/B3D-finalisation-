@@ -301,7 +301,6 @@ footer {
   height: 10em;
   border-top: 3px solid var(--color-1);
   color: white;
-
   /* position: absolute;
   bottom: 0; */
 }
@@ -311,7 +310,8 @@ footer {
 }
 
 .texte-footer {
-  line-height: 0.2em;
+  line-height: 1.2rem;
+    font-size: 0.8rem;
 }
 
 /*****bloc-contact*******/
