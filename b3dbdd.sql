@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mer. 06 mars 2019 à 15:32
+-- Généré le :  ven. 08 mars 2019 à 10:30
 -- Version du serveur :  5.7.25-0ubuntu0.18.04.2
 -- Version de PHP :  7.2.15-0ubuntu0.18.04.1
 
@@ -275,8 +275,8 @@ CREATE TABLE `dwb3d1_legal` (
 --
 
 INSERT INTO `dwb3d1_legal` (`ID`, `Francais`, `Anglais`, `Espagnol`, `Allemand`) VALUES
-(1, 'Conditions générales d\'utilisation du site B3D', 'General conditions of use of the B3D website', 'Condiciones generales de uso del sitio web de B3D', 'Allgemeine Nutzungsbedingungen der B3D-Website'),
-(2, 'ARTICLE 1 : Objet', 'Article 1 : object', 'ARTÍCULO 1 : Propósito', 'ARTIKEL 1 : Zweck'),
+(1, 'Conditions générales d\'utilisation', 'General conditions of use', 'Condiciones generales de uso', 'Allgemeine Nutzungsbedingungen'),
+(2, 'ARTICLE 1 : Objet', 'ARTICLE 1 : object', 'ARTÍCULO 1 : Propósito', 'ARTIKEL 1 : Zweck'),
 (3, 'Les présentes « conditions générales d\'utilisation » ont pour objet l\'encadrement juridique de l’utilisation du site B3D et de ses services.<br>Ce contrat est conclu entre :<br>Le gérant du site internet, ci-après désigné « l’Éditeur »,<br>Toute personne physique ou morale souhaitant accéder au site et à ses services, ci-après appelé « l’Utilisateur ».<br>Les conditions générales d\'utilisation doivent être acceptées par tout Utilisateur, et son accès au site vaut acceptation de ces conditions.', 'The present \"general conditions of use\" aim at the legal framework of the use of the site B3D and its services. <br>This contract is concluded between: The manager of the website, hereinafter designated \"The Publisher\", <br> Any natural or legal person wishing to access the site and its services, hereinafter called \"the User\". <br> The general conditions of use must be accepted by any User, and his access to the site constitutes acceptance of these conditions.', 'Las presentes \"condiciones generales de uso\" apuntan al marco legal del uso del sitio B3D y sus servicios. <br>Este contrato se concluye entre: El administrador del sitio web, en lo sucesivo denominado \"The Publisher\", <br> Cualquier persona física o jurídica que desee acceder al sitio y sus servicios, en lo sucesivo denominado \"el Usuario\". <br> Las condiciones generales de uso deben ser aceptadas por cualquier Usuario, y Su acceso al sitio constituye la aceptación de estas condiciones.', 'Die vorliegenden \"Allgemeinen Nutzungsbedingungen\" beziehen sich auf den rechtlichen Rahmen der Nutzung der Website B3D und ihrer Dienste. <br>Dieser Vertrag wird geschlossen zwischen: dem Betreiber der Website, nachstehend bezeichnet \"Der Herausgeber\", <br> Jede natürliche oder juristische Person, die auf die Website und ihre Dienste zugreifen möchte, im Folgenden \"Nutzer\".<br> Die allgemeinen Nutzungsbedingungen müssen von jedem Nutzer akzeptiert werden, und sein Zugriff auf die Website bedeutet die Annahme dieser Bedingungen.'),
 (4, 'ARTICLE 2 : Mentions légales', 'ARTICLE 2 : Legal notice', 'ARTÍCULO 2 : Aviso legal', 'ARTIKEL 2 : Rechtliche Hinweise'),
 (5, 'Pour les personnes morales :<br><br>Le site B3D est édité par la société B3D, SARL à associé unique au capital de 10 000 €, dont le siège social est situé à L\'intendant, 47700 Poussignac.<br>La société est représentée par Mr Procedes Julien, Marc.<br><br>Pour les personnes physiques : <br><br>Le site B3D est édité par la société B3D, SARL à associé unique au capital de 10 000 €, dont le siège social est situé à L\'intendant, 47700 Poussignac.<br>La société est représentée par Mr Procedes Julien, Marc.', 'For legal entities: <br> <br> The site B3D is published by the company B3D, limited liability company with a capital of 10 000 €, whose head office is located at L\'intendant, 47700 Poussignac. company is represented by Mr Procedes Julien, Marc. <br> <br> For individuals: <br> <br> The site B3D is published by the company B3D, SARL with a single shareholder capital of 10 000 €, whose head office is located at L\'intendant, 47700 Poussignac. <br> The company is represented by Mr Procedes Julien, Marc.', 'Para entidades legales: <br> <br> El sitio B3D es publicado por la compañía B3D, sociedad de responsabilidad limitada con un capital de 10 000 €, cuya oficina central se encuentra en L\'intendant, 47700 Poussignac. la empresa está representada por el Sr. Procedes Julien, Marc. <br> <br> Para individuos: <br> <br> El sitio B3D está publicado por la compañía B3D, SARL con un capital accionario único de 10 000 €, cuyo la oficina central está ubicada en L\'intendant, 47700 Poussignac. La compañía está representada por el Sr. Procedes Julien, Marc.', 'Für juristische Personen: <br> <br> Die Website B3D wird von der Firma B3D, einer Gesellschaft mit beschränkter Haftung mit einem Kapital von 10 000 €, mit Sitz in L\'intendant, 47700 Poussignac, veröffentlicht. Das Unternehmen wird vertreten durch Herrn Procedes Julien, Marc. <br> <br> Für Privatpersonen: <br> <br> Die Website B3D wird von der Firma B3D, SARL mit einem einzigen Gesellschaftskapital von 10 000 € veröffentlicht, dessen Hauptsitz befindet sich in L\'intendant, 47700 Poussignac. <br> Das Unternehmen wird vertreten durch Herrn Procedes Julien, Marc.'),
@@ -458,7 +458,7 @@ ALTER TABLE `dwb3d1_blockcontact`
 -- AUTO_INCREMENT pour la table `dwb3d1_categories`
 --
 ALTER TABLE `dwb3d1_categories`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `dwb3d1_erreurs`
@@ -470,7 +470,7 @@ ALTER TABLE `dwb3d1_erreurs`
 -- AUTO_INCREMENT pour la table `dwb3d1_footer`
 --
 ALTER TABLE `dwb3d1_footer`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `dwb3d1_formcontact`
@@ -482,7 +482,7 @@ ALTER TABLE `dwb3d1_formcontact`
 -- AUTO_INCREMENT pour la table `dwb3d1_header`
 --
 ALTER TABLE `dwb3d1_header`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `dwb3d1_legal`
@@ -494,7 +494,7 @@ ALTER TABLE `dwb3d1_legal`
 -- AUTO_INCREMENT pour la table `dwb3d1_produits`
 --
 ALTER TABLE `dwb3d1_produits`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT pour la table `dwb3d1_societe`
