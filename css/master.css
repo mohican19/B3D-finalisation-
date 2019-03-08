@@ -267,14 +267,9 @@ footer {
   /* position: absolute;
   bottom: 0; */
 }
-
-.bas-de-page {
-  height: 100%;
-}
-
-.texte-footer {
-  line-height: 1.2rem;
-  font-size: 0.75rem;
+.lien-footer {
+  width: 60%;
+  text-align: center;
 }
 
 /*****legales*******/
