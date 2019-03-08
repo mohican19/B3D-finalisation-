@@ -447,6 +447,32 @@ footer {
 /*************************/
 /*******Smartphone********/
 @media screen and (max-width: 576px) {
+
+header {
+  position: relative;
+  z-index: 10;
+  height: inherit;
+}
+
+/*hauteur de la ligne/row dans le header */
+  .en-tete {
+    height: inherit;
+  }
+
+  .bloc1 {
+    position: inherit;
+    top: inherit;
+    margin-top: 1em;
+  }
+
+  .active {
+    display: none;
+  }
+/******footer *****/
+
+
+
+
 /******REGLAGES DIVERS NLA********/
   .container{
     max-width: 95%;
