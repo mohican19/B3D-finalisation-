@@ -104,50 +104,7 @@ section img {
 	color: white;
 }
 
-/* bulle C02 */
-#bubulle {
-  /* background-color: #036338; */
-  text-align: right;
-  position: fixed;
-  bottom: 7vh;
-  left: -2vh;
-  /* border-radius: 50%; */
-  width: 14vh;
-  height: 14vh;
-  z-index: 500;
-  filter: drop-shadow(0px 0px 3px #fff)
-}
 
-#modalCo2 table {
-  width: 100%;
-  text-align: center;
-  background-color: #fff;
-  border: 2px solid #dee2e6s;
-}
-.table thead {
-  background-color: #FFF8DC;
-}
-
-#modalCo2 tr, #modalCo2 td, #modalCo2 th {
-  border: 1px solid #dee2e6s;
-}
-.modal-header {
-  background-color: var(--color-1);
-}
-.modal-content {
-  background-color: #fff;
-}
-.modal-content p {
-  color: #000;
-}
-.modal-content h4 {
-  font-family: 'Acme', sans-serif;
-  color: #fff;
-  text-align: center;
-}
-.modal-dialog {
-  max-width: 1000px !important;
-}
 
 /***********************************************************************/
 /******************HEADER***********************************************/
@@ -358,6 +315,53 @@ footer {
   margin: 10px;
 }
 /****** page produit*****/
+
+/* bulle C02 */
+#bubulle {
+  /* background-color: #036338; */
+  text-align: right;
+  position: fixed;
+  bottom: 7vh;
+  left: -2vh;
+  width: 14vh;
+  height: 14vh;
+  z-index: 500;
+  filter: drop-shadow(0px 0px 3px #fff)
+}
+
+#modalCo2 table {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  border: 2px solid #dee2e6s;
+}
+.table thead {
+  background-color: #FFF8DC;
+}
+
+#modalCo2 tr, #modalCo2 td, #modalCo2 th {
+  border: 1px solid #dee2e6s;
+}
+.modal-header {
+  background-color: var(--color-1);
+}
+.modal-content {
+  background-color: #fff;
+}
+.modal-content p {
+  color: #000;
+}
+.modal-content h4 {
+  font-family: 'Acme', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+.modal-dialog {
+  max-width: 1000px !important;
+}
+
+
+
 #produit h4 {
   padding: 0.5em 0;
   border-bottom: 3px solid var(--color-1);
@@ -430,6 +434,26 @@ footer {
 /*************************************
 /*****Tablette/grand smartphone******/
 @media screen and (min-width:576px) and (max-width:768px){
+
+  header {
+    position: relative;
+    z-index: 10;
+    height: inherit;
+  }
+
+header img {
+  }
+
+  /*hauteur de la ligne/row dans le header */
+    .en-tete {
+      height: inherit;
+    }
+
+    .bloc1 {
+      position: inherit;
+      top: inherit;
+      margin-top: 1em;
+    }
 /******REGLAGES DIVERS NLA********/
   .container{
     max-width: 90%;
@@ -465,9 +489,7 @@ header {
     margin-top: 1em;
   }
 
-  .active {
-    display: none;
-  }
+
 /******footer *****/
 
 

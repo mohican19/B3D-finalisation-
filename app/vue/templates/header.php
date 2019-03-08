@@ -14,20 +14,19 @@ $contactMenu = 'Contact';
 
 
 
-<header id="header" class="container-fluid ">
-  <div class="en-tete row">
-    <div class="col-lg-1 col-md-2 col-sm-10  d-flex  align-items-center">
+<header id="header" class="container-fluid">
+  <div class="en-tete row ">
+    <div class="col-lg-1 col-md-2 col-sm-1  d-flex  align-items-center">
         <a class="" href="./index.php">
           <img src="images/logo_blanc_100.png" class=""/>
         </a>
     </div>
 
-    <div class="col-lg-8 col-md-2 col-sm-10 justify-content-start d-flex align-items-center">
-      <nav id="large-desktop" class="navbar navbar-expand-lg">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="col-lg-8 col-md-2 d-sm-none justify-content-start d-flex align-items-center">
+      <nav id="large-desktop" class="navbar navbar-expand-lg d-none d-lg-block">
+
+
+        <div class="collapse navbar-collapse" id="">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'index.php?action=produits')) {
@@ -64,9 +63,13 @@ $contactMenu = 'Contact';
       </nav>
     </div>
     <!-- icones choix langue  -->
-    <div class="col-lg-3 col-md-8 col-sm-10 d-flex justify-content-end align-items-start pt-2 pr-5">
+    <div class="col-lg-3 col-md-8 col-sm-11 d-flex justify-content-end align-items-start pt-2 pr-5">
       <div class="row">
 					<ul class="list-inline">
+            <li class="list-inline-item">
+							<!-- icone menu-responsive -->
+							<nav class="d-lg-none d-xl-none"><a class="menu navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="" aria-label="Toggle navigation"><i class="fas fa-bars fa-1x" ></i></a></nav>
+						</li>
 						<li class="list-inline-item">
 							<a href="index.php?action=<?= $_GET['action']?>&langue=fr"><img src="images/FR.svg" class="drapeau" alt="Français" style=""></a>
 						</li>
@@ -83,27 +86,19 @@ $contactMenu = 'Contact';
 				</div>
     </div>
   </div>
+
 <!-- menu sur mobile ... -->
-<!--
-<div id="mobile" class="mobile-navbar-content">
-  <img id="background" src="images/header_bg.png">
-  <img id="logo" style="width: 80px;margin: 10px 0;" src="images/logo_blanc_100.png" />
-  <ul class="navb">
-    <a href="society.php"><li class="link"><?= $societeMenu ;?></li></a>
-      <div id="mobile-dropdown">
-        <a href="#" id="open-mobile-dropdown"><li class="link"><?= $produitsMenu;?> <span id="arrow"><i class="fas fa-caret-down"></i></i></span></li></a>
+<div id="navbarSupportedContent" class="d-lg-none">
+  <ul id="" class="" >
+        <a href="#" id=""><li class="link"><?= $produitsMenu;?> <span id="arrow"><i class="fas fa-caret-down"></i></i></span></li></a>
         <div class="mobile-dropdown-content">
-          <a href="produits.php">Produits</a>
-          <hr />
           <a href="details_produits.php"><?= $chataignierSsMenu;?></a>
           <a href="details_produits.php"><?= $acaciaSsMenu;?></a>
           <a href="details_produits.php"><?= $pinSsMenu;?></a>
         </div>
-      </div>
-
-
+      <a href="society.php"><li class="link"><?= $societeMenu ;?></li></a>
      <a href="contacts.php"><li class="link"><?= $contactMenu;?></li></a>
   </ul>
 </div>
--->
+
 </header>
