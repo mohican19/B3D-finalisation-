@@ -59,6 +59,12 @@ section img {
   border: 3px solid #fff;
 }
 
+li {
+  list-style: none;
+}
+.list-group-item {
+  background: none
+}
 .bloc-texte {
   background: white;
   border-radius: 7px 7px 0 0;
@@ -270,6 +276,11 @@ footer {
   line-height: 1.2rem;
   font-size: 0.75rem;
 }
+
+/*****legales*******/
+  #legales {
+    padding: 0;
+  }
 
 /*****bloc-contact*******/
 
