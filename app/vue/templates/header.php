@@ -22,8 +22,8 @@ $contactMenu = 'Contact';
         </a>
     </div>
 
-    <div class="col-lg-8 col-md-2 d-sm-none justify-content-start d-flex align-items-center">
-      <nav id="large-desktop" class="navbar navbar-expand-lg d-none d-lg-block">
+    <div class="col-lg-8 col-md-2  justify-content-start d-flex align-items-center">
+      <nav id="large-desktop" class="navbar navbar-expand-lg ">
 
 
         <div class="collapse navbar-collapse" id="">
