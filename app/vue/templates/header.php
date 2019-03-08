@@ -16,7 +16,7 @@ $contactMenu = 'Contact';
 
 <header id="header" class="container-fluid">
   <div class="en-tete row ">
-    <div class="col-lg-1 col-md-2 col-sm-1  d-flex  align-items-center">
+    <div class="col-lg-1 col-md-2 col-sm-3  d-flex  align-items-center">
         <a class="" href="./index.php">
           <img src="images/logo_blanc_100.png" class=""/>
         </a>
@@ -63,12 +63,12 @@ $contactMenu = 'Contact';
       </nav>
     </div>
     <!-- icones choix langue  -->
-    <div class="col-lg-3 col-md-8 col-sm-11 d-flex justify-content-end align-items-start pt-2 pr-5">
+    <div class="col-lg-3 col-md-8 col-sm-9 d-flex justify-content-end align-items-start pt-2 pr-5">
       <div class="row">
 					<ul class="list-inline">
             <li class="list-inline-item">
 							<!-- icone menu-responsive -->
-							<nav class="d-lg-none d-xl-none"><a class="menu navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="" aria-label="Toggle navigation"><i class="fas fa-bars fa-1x" ></i></a></nav>
+							<nav class="d-lg-none d-xl-none"><a class="menu navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars fa-1x" ></i></a></nav>
 						</li>
 						<li class="list-inline-item">
 							<a href="index.php?action=<?= $_GET['action']?>&langue=fr"><img src="images/FR.svg" class="drapeau" alt="Français" style=""></a>
@@ -88,16 +88,18 @@ $contactMenu = 'Contact';
   </div>
 
 <!-- menu sur mobile ... -->
-<div id="navbarSupportedContent" class="d-lg-none">
-  <ul id="" class="" >
-        <a href="#" id=""><li class="link"><?= $produitsMenu;?> <span id="arrow"><i class="fas fa-caret-down"></i></i></span></li></a>
-        <div class="mobile-dropdown-content">
-          <a href="details_produits.php"><?= $chataignierSsMenu;?></a>
-          <a href="details_produits.php"><?= $acaciaSsMenu;?></a>
-          <a href="details_produits.php"><?= $pinSsMenu;?></a>
-        </div>
-      <a href="society.php"><li class="link"><?= $societeMenu ;?></li></a>
-     <a href="contacts.php"><li class="link"><?= $contactMenu;?></li></a>
+<div id="navbarSupportedContent" class="d-lg-none collapse">
+  <ul id="" class="navbar-nav" >
+        <li class="nav-item ">
+          <a href="index.php?action=produits" id="" class="nav-link" > <?= $produitsMenu;?> </a>
+              <div class="">
+                <a href="index.php?action=produits&id=1" class=""><?= $chataignierSsMenu;?></a>
+                <a href="index.php?action=produits&id=2"  class=""><?= $acaciaSsMenu;?></a>
+                <a href="index.php?action=produits&id=3"  class=""><?= $pinSsMenu;?></a>
+              </div>
+        </li>
+      <li class="nav-item"><a href="index.php?action=societe" class="nav-link"><?= $societeMenu ;?></a></li>
+     <li class="nav-item"><a href="index.php?action=contact" class="nav-link"><?= $contactMenu;?></a></li>
   </ul>
 </div>
 
