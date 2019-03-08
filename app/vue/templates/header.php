@@ -12,7 +12,7 @@ $boisFeuSsMenu = 'Bois de Feu';
 $contactMenu = 'Contact';
  ?>
 
-<header>
+<header id="header">
   <!-- icones choix langue  -->
   <div class="d-flex justify-content-end pt-2 pr-3">
     <div class="">
@@ -34,7 +34,7 @@ $contactMenu = 'Contact';
   </div>
   <nav class="navbar navbar-expand-md">
     <!-- logo -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.php">
       <img src="images/logo_blanc_100.png" alt="logo">
     </a>
     <!-- Toggler/collapsibe Button -->
