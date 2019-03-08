@@ -12,7 +12,7 @@
         <img class="img-fluid" alt="<?= $img[$i][$langue] ?>" src="<?= $img[$i]['image'] ?>">
       </div>
     <?php endif; ?>
-    <div class="col-md-6 bloc-texte mx-0 px-0 mb-5">
+    <div class="col-md-7 bloc-texte mx-0 px-0 mb-5">
       <h3 class="titre-de-bloc"><?= $item[(2*$i)][$langue] ?></h3>
       <p class="contenu-bloc-texte"><?= $item[(2*$i+1)][$langue] ?></p>
     </div>
