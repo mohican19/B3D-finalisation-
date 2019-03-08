@@ -28,11 +28,10 @@ $('#show-desc').on('click', function(){
           var h = window.pageYOffset;
 
           if ( h >= limiteY ) {
-              console.log ("ok");
             $('.scroll-up').css({ bottom: '205px'}).animate();
-            /*elt.animate({position: 'sticky', bottom: '205'}, 1);*/
+            $('#bubulle').css({ bottom: '205px'}).animate();
           } else if ( h < limiteY ) {
-             console.log ("non");
             $('.scroll-up').css({ bottom: '70px'}).animate();
+            $('#bubulle').css({ bottom: '7vh'}).animate();
           }
         });
