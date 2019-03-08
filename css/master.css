@@ -454,6 +454,12 @@ header img {
       top: inherit;
       margin-top: 1em;
     }
+
+  #menu-mobile {
+    text-align: center;
+  }
+
+
 /******REGLAGES DIVERS NLA********/
   .container{
     max-width: 90%;
@@ -488,6 +494,11 @@ header {
     top: inherit;
     margin-top: 1em;
   }
+
+  #menu-mobile {
+      text-align: center;
+  }
+
 
 
 /******footer *****/

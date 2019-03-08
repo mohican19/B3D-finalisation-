@@ -89,17 +89,17 @@ $contactMenu = 'Contact';
 
 <!-- menu sur mobile ... -->
 <div id="navbarSupportedContent" class="d-lg-none collapse">
-  <ul id="" class="navbar-nav" >
+  <ul id="menu-mobile" class="navbar-nav" >
         <li class="nav-item ">
-          <a href="index.php?action=produits" id="" class="nav-link" > <?= $produitsMenu;?> </a>
-              <div class="">
+          <a href="index.php?action=produits" id="" class="" > <?= $produitsMenu;?> </a>
+              <div id="sous-menu-mobile" class="">
                 <a href="index.php?action=produits&id=1" class=""><?= $chataignierSsMenu;?></a>
                 <a href="index.php?action=produits&id=2"  class=""><?= $acaciaSsMenu;?></a>
                 <a href="index.php?action=produits&id=3"  class=""><?= $pinSsMenu;?></a>
               </div>
         </li>
-      <li class="nav-item"><a href="index.php?action=societe" class="nav-link"><?= $societeMenu ;?></a></li>
-     <li class="nav-item"><a href="index.php?action=contact" class="nav-link"><?= $contactMenu;?></a></li>
+      <li class="nav-item"><a href="index.php?action=societe" class=""><?= $societeMenu ;?></a></li>
+     <li class="nav-item"><a href="index.php?action=contact" class=""><?= $contactMenu;?></a></li>
   </ul>
 </div>
 
